@@ -2,24 +2,24 @@
  * Lobby Page - Candidate waits here for admission
  */
 
-import React, { useEffect, useState } from 'react';
-import { useParams, useNavigate, useSearchParams } from 'react-router-dom';
-import { getSocket, disconnectSocket } from '../../services/socket';
-import { interviewService } from '../../services/interviews';
-import toast from 'react-hot-toast';
+import React, { useEffect, useState } from "react";
+import { useParams, useNavigate, useSearchParams } from "react-router-dom";
+import { getSocket, disconnectSocket } from "../../services/socket";
+import { interviewService } from "../../services/interviews";
+import toast from "react-hot-toast";
 
 export default function LobbyPage() {
   const { id } = useParams();
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
-  const token = searchParams.get('token');
-  const [status, setStatus] = useState('connecting'); // connecting | waiting | admitted | error
-  const [message, setMessage] = useState('Connecting to lobby...');
+  const token = searchParams.get("token");
+  const [status, setStatus] = useState("connecting"); // connecting | waiting | admitted | error
+  const [message, setMessage] = useState("Connecting to lobby...");
 
   useEffect(() => {
     const socket = getSocket(token);
 
-    socket.emit('subscribe:personal');
+    socket.emit("subscribe:personal");
 
     // Join lobby
     const joinLobby = async () => {
@@ -28,60 +28,68 @@ export default function LobbyPage() {
           await interviewService.joinLobby(id, token);
         }
 
-        socket.emit('lobby:enter', { interviewId: id });
-        setStatus('waiting');
-        setMessage('You are in the waiting room. The interviewer will admit you shortly.');
+        socket.emit("lobby:enter", { interviewId: id });
+        setStatus("waiting");
+        setMessage(
+          "You are in the waiting room. The interviewer will admit you shortly.",
+        );
       } catch (err) {
-        setStatus('error');
-        setMessage(err.response?.data?.message || 'Failed to join lobby');
-        toast.error('Failed to join lobby');
+        setStatus("error");
+        setMessage(err.response?.data?.message || "Failed to join lobby");
+        toast.error("Failed to join lobby");
       }
     };
 
     joinLobby();
 
     // Listen for admission
-    socket.on('lobby:admitted', ({ interviewId }) => {
+    socket.on("lobby:admitted", ({ interviewId }) => {
       if (interviewId === id) {
-        setStatus('admitted');
-        setMessage('You have been admitted! Joining the interview room now...');
-        toast.success('Admitted to interview!');
+        setStatus("admitted");
+        setMessage("You have been admitted! Joining the interview room now...");
+        toast.success("Admitted to interview!");
         setTimeout(() => {
-          navigate(`/room/${id}${token ? `?token=${token}` : ''}`);
+          navigate(`/room/${id}${token ? `?token=${token}` : ""}`);
         }, 1500);
       }
     });
 
     return () => {
-      socket.off('lobby:admitted');
+      socket.off("lobby:admitted");
     };
   }, [id, token, navigate]);
 
   const statusConfig = {
-    connecting: { icon: '🔄', color: 'blue', animate: true },
-    waiting: { icon: '⏳', color: 'indigo', animate: true },
-    admitted: { icon: '✅', color: 'green', animate: false },
-    error: { icon: '❌', color: 'red', animate: false },
+    connecting: { icon: "🔄", color: "blue", animate: true },
+    waiting: { icon: "⏳", color: "indigo", animate: true },
+    admitted: { icon: "✅", color: "green", animate: false },
+    error: { icon: "❌", color: "red", animate: false },
   };
 
   const config = statusConfig[status] || statusConfig.connecting;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 to-purple-50 flex items-center justify-center p-4">
-      <div className="bg-white rounded-2xl shadow-xl p-12 max-w-md w-full text-center">
-        <div className={`text-6xl mb-6 ${config.animate ? 'animate-pulse' : ''}`}>
+    <div className="flex items-center justify-center min-h-screen p-4 bg-gradient-to-br from-indigo-50 to-purple-50">
+      <div className="w-full max-w-md p-12 text-center bg-white shadow-xl rounded-2xl">
+        <div
+          className={`text-6xl mb-6 ${config.animate ? "animate-pulse" : ""}`}
+        >
           {config.icon}
         </div>
 
-        <h1 className="text-2xl font-bold text-gray-900 mb-3">
-          {status === 'waiting' ? 'You\'re in the Waiting Room' :
-           status === 'admitted' ? 'Admitted!' :
-           status === 'error' ? 'Connection Error' : 'Connecting...'}
+        <h1 className="mb-3 text-2xl font-bold text-gray-900">
+          {status === "waiting"
+            ? "You're in the Waiting Room"
+            : status === "admitted"
+              ? "Admitted!"
+              : status === "error"
+                ? "Connection Error"
+                : "Connecting..."}
         </h1>
 
-        <p className="text-gray-500 text-sm leading-relaxed">{message}</p>
+        <p className="text-sm leading-relaxed text-gray-500">{message}</p>
 
-        {status === 'waiting' && (
+        {status === "waiting" && (
           <div className="mt-8 space-y-3">
             <div className="flex items-center justify-center gap-2 text-xs text-gray-400">
               <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
@@ -96,19 +104,16 @@ export default function LobbyPage() {
           </div>
         )}
 
-        {status === 'error' && (
-          <button
-            onClick={() => navigate(-1)}
-            className="mt-6 btn-secondary"
-          >
+        {status === "error" && (
+          <button onClick={() => navigate(-1)} className="mt-6 btn-secondary">
             ← Go Back
           </button>
         )}
 
-        {status === 'admitted' && (
+        {status === "admitted" && (
           <div className="mt-6">
-            <div className="w-8 h-8 border-4 border-indigo-200 border-t-indigo-600 rounded-full animate-spin mx-auto" />
-            <p className="text-xs text-gray-400 mt-2">Redirecting to room...</p>
+            <div className="w-8 h-8 mx-auto border-4 border-indigo-200 rounded-full border-t-indigo-600 animate-spin" />
+            <p className="mt-2 text-xs text-gray-400">Redirecting to room...</p>
           </div>
         )}
       </div>

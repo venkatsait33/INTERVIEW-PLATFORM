@@ -82,13 +82,13 @@ const initializeSocket = (server) => {
     socket.on("room:join", async ({ interviewId }) => {
       try {
         const interview = await Interview.findById(interviewId);
-        if (!interview) {
+        if (!interview)
           return socket.emit("error", { message: "Interview not found" });
-        }
 
         const userId = socket.userId;
         const role = socket.user.role;
 
+        // Verify user is assigned to this interview
         const isInterviewer = interview.interviewer.toString() === userId;
         const isCandidate = interview.candidate.toString() === userId;
 
@@ -98,15 +98,18 @@ const initializeSocket = (server) => {
           });
         }
 
+        // Candidate must be admitted before entering room
         if (isCandidate && !interview.candidateAdmitted) {
           return socket.emit("error", {
             message: "Not yet admitted to room. Please wait in lobby.",
           });
         }
 
+        // Join socket room
         socket.join(interviewId);
         socket.currentRoom = interviewId;
 
+        // Track room state
         if (!activeRooms.has(interviewId)) {
           activeRooms.set(interviewId, {
             code: "// Start coding here...\n",
@@ -115,25 +118,23 @@ const initializeSocket = (server) => {
         }
 
         const room = activeRooms.get(interviewId);
+        room.participants[socket.id] = { userId, role, name: socket.user.name };
 
-        // Add participant (keyed by socketId)
-        room.participants[socket.id] = {
-          socketId: socket.id,
-          userId,
-          role,
-          name: socket.user.name,
-        };
-
-        // 🔥 Always emit FULL authoritative list
-        io.to(interviewId).emit("room:update-participants", {
-          participants: Object.values(room.participants),
-        });
-
-        // Send room joined confirmation
+        // Send current code to the joining participant
         socket.emit("room:joined", {
           interviewId,
           code: room.code,
+          participants: Object.values(room.participants),
         });
+
+        // Notify others in room
+        socket.to(interviewId).emit("room:participant-joined", {
+          userId,
+          name: socket.user.name,
+          role,
+        });
+
+        logger.info(`${socket.user.name} joined room ${interviewId}`);
       } catch (error) {
         logger.error("room:join error:", error);
         socket.emit("error", { message: "Failed to join room" });
@@ -148,20 +149,6 @@ const initializeSocket = (server) => {
 
         if (interview.candidate.toString() !== socket.userId) return;
 
-        // 🔥 UPDATE DB STATE
-        interview.candidateInLobby = true;
-        interview.candidateJoinedLobby = true;
-        interview.candidateSocketId = socket.id; // optional
-        await interview.save();
-
-        // const io = req.app.get("io");
-
-        // if (!interview.candidateSocketId) {
-        //   io.to(interview.candidateSocketId).emit("lobby:admitted", {
-        //     interviewId: interview._id,
-        //   });
-        // }
-
         // Notify the interviewer's socket
         socket
           .to(`interviewer-${interview.interviewer.toString()}`)
@@ -170,6 +157,9 @@ const initializeSocket = (server) => {
             candidateName: socket.user.name,
             candidateId: socket.userId,
           });
+
+        interview.candidateSocketId = socket.id;
+        await interview.save();
 
         socket.emit("lobby:entered", {
           message: "Waiting for interviewer to admit you...",
@@ -271,24 +261,24 @@ const initializeSocket = (server) => {
     });
 
     // ── Disconnect ──
-    socket.on("disconnect", async () => {
+    socket.on("disconnect", () => {
       logger.info(`Socket disconnected: ${socket.id} [${socket.user?.name}]`);
 
       if (socket.currentRoom) {
         const room = activeRooms.get(socket.currentRoom);
-
         if (room) {
           delete room.participants[socket.id];
-
+          // Clean up empty rooms
           if (Object.keys(room.participants).length === 0) {
             activeRooms.delete(socket.currentRoom);
-          } else {
-            // 🔥 Re-emit full participant list
-            io.to(socket.currentRoom).emit("room:update-participants", {
-              participants: Object.values(room.participants),
-            });
           }
         }
+
+        socket.to(socket.currentRoom).emit("room:participant-left", {
+          userId: socket.userId,
+          name: socket.user.name,
+          role: socket.user.role,
+        });
       }
     });
   });

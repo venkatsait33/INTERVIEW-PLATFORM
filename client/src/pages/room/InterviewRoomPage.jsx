@@ -39,6 +39,7 @@ export default function InterviewRoomPage() {
   const localStreamRef = useRef(null);
   const debounceTimer = useRef(null);
   const socketRef = useRef(null);
+  const makingOffer = useRef(false);
 
   // State
   const [connected, setConnected] = useState(false);
@@ -123,6 +124,30 @@ export default function InterviewRoomPage() {
 
       socket.on("room:update-participants", ({ participants }) => {
         setParticipants(participants);
+
+        const pc = peerConnectionRef.current;
+
+        if (
+          isInterviewer &&
+          participants.length === 2 &&
+          pc &&
+          !makingOffer.current
+        ) {
+          makingOffer.current = true;
+
+          pc.createOffer()
+            .then((offer) => pc.setLocalDescription(offer))
+            .then(() => {
+              socket.emit("webrtc:offer", {
+                interviewId: id,
+                offer: pc.localDescription,
+              });
+            })
+            .catch((err) => console.error("Offer error:", err))
+            .finally(() => {
+              makingOffer.current = false;
+            });
+        }
       });
 
       socket.on("room:participant-left", (participant) => {
@@ -265,10 +290,6 @@ export default function InterviewRoomPage() {
   const handleAdmit = async () => {
     try {
       await interviewService.admit(id);
-      socketRef.current?.emit("lobby:admit", {
-        interviewId: id,
-        candidateId: waitingCandidateId,
-      });
       setCandidateWaiting(false);
       toast.dismiss("lobby-waiting");
       toast.success("Candidate admitted!");

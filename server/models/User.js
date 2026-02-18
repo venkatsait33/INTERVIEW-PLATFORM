@@ -55,20 +55,23 @@ const userSchema = new mongoose.Schema(
 // ─────────────────────────────────────────
 // Indexes
 // ─────────────────────────────────────────
-// userSchema.index({ email: 1 });
 userSchema.index({ role: 1 });
 userSchema.index({ isActive: 1 });
 
 // ─────────────────────────────────────────
-// Pre-save middleware: hash password
+// ✅ FIXED Pre-save middleware (Modern Mongoose way)
 // ─────────────────────────────────────────
-userSchema.pre("save", async function (next) {
-  // Only hash if password was modified
-  if (!this.isModified("password")) return next();
+userSchema.pre("save", async function () {
+  // Only hash password if it was modified
+  if (!this.isModified("password")) return;
 
   // Hash password with cost factor 12
   this.password = await bcrypt.hash(this.password, 12);
-  next();
+
+  // Optional: update passwordChangedAt if not new document
+  if (!this.isNew) {
+    this.passwordChangedAt = Date.now() - 1000;
+  }
 });
 
 // ─────────────────────────────────────────
@@ -77,17 +80,13 @@ userSchema.pre("save", async function (next) {
 
 /**
  * Compare provided password with hashed password
- * @param {string} candidatePassword - Plain text password to compare
- * @returns {Promise<boolean>}
  */
 userSchema.methods.comparePassword = async function (candidatePassword) {
-  return bcrypt.compare(candidatePassword, this.password);
+  return await bcrypt.compare(candidatePassword, this.password);
 };
 
 /**
- * Check if password was changed after a JWT was issued
- * @param {number} JWTTimestamp - JWT iat timestamp
- * @returns {boolean}
+ * Check if password was changed after JWT was issued
  */
 userSchema.methods.changedPasswordAfter = function (JWTTimestamp) {
   if (this.passwordChangedAt) {

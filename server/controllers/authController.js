@@ -3,11 +3,12 @@
  * Handles registration, login, and profile
  */
 
-const User = require('../models/User');
-const { generateToken } = require('../utils/jwt');
-const { sendSuccess, sendError } = require('../utils/response');
-const { logActivity, getRequestMeta } = require('../services/activityService');
-const logger = require('../utils/logger');
+const User = require("../models/User");
+const { generateToken } = require("../utils/jwt");
+const { sendSuccess, sendError } = require("../utils/response");
+const { logActivity, getRequestMeta } = require("../services/activityService");
+const logger = require("../utils/logger");
+const bcrypt = require("bcryptjs");
 
 /**
  * POST /api/auth/register
@@ -15,24 +16,24 @@ const logger = require('../utils/logger');
  */
 const register = async (req, res) => {
   try {
-    const { name, email, password, role = 'candidate' } = req.body;
+    const { name, email, password, role = "candidate" } = req.body;
 
     // Check if user already exists
     const existingUser = await User.findOne({ email });
     if (existingUser) {
-      return sendError(res, 409, 'User with this email already exists');
+      return sendError(res, 409, "User with this email already exists");
     }
 
     // Prevent non-admin creating admin accounts
-    if (role === 'admin') {
-      return sendError(res, 403, 'Cannot register as admin');
+    if (role === "admin") {
+      return sendError(res, 403, "Cannot register as admin");
     }
 
     const user = await User.create({ name, email, password, role });
 
     await logActivity({
       userId: user._id,
-      action: 'REGISTER',
+      action: "REGISTER",
       ...getRequestMeta(req),
     });
 
@@ -40,7 +41,7 @@ const register = async (req, res) => {
 
     logger.info(`New user registered: ${email} [${role}]`);
 
-    return sendSuccess(res, 201, 'Registration successful', {
+    return sendSuccess(res, 201, "Registration successful", {
       token,
       user: {
         id: user._id,
@@ -50,8 +51,8 @@ const register = async (req, res) => {
       },
     });
   } catch (error) {
-    logger.error('Register error:', error);
-    return sendError(res, 500, 'Registration failed');
+    logger.error("Register error:", error);
+    return sendError(res, 500, "Registration failed");
   }
 };
 
@@ -62,30 +63,42 @@ const login = async (req, res) => {
   try {
     const { email, password } = req.body;
 
-    // Find user with password (select: false on schema)
-    const user = await User.findOne({ email }).select('+password');
+    // 1️⃣ Find user and include password
+    const user = await User.findOne({ email }).select("+password");
 
-    if (!user || !(await user.comparePassword(password))) {
-      return sendError(res, 401, 'Invalid email or password');
+    if (!user) {
+      return sendError(res, 401, "Invalid email or password");
     }
 
+    // 2️⃣ Compare password (IMPORTANT: await)
+    const isMatch = await bcrypt.compare(password, user.password);
+
+    if (!isMatch) {
+      return sendError(res, 401, "Invalid email or password");
+    }
+
+    // 3️⃣ Check if account is active
     if (!user.isActive) {
-      return sendError(res, 401, 'Your account has been deactivated');
+      return sendError(res, 403, "Your account has been deactivated");
     }
 
-    // Update last login
-    user.lastLogin = new Date();
-    await user.save({ validateBeforeSave: false });
+    // 4️⃣ Update last login (better way — avoids save middleware)
+    await User.updateOne(
+      { _id: user._id },
+      { $set: { lastLogin: new Date() } },
+    );
 
+    // 5️⃣ Log activity
     await logActivity({
       userId: user._id,
-      action: 'LOGIN',
+      action: "LOGIN",
       ...getRequestMeta(req),
     });
 
+    // 6️⃣ Generate JWT
     const token = generateToken(user._id, user.role);
 
-    return sendSuccess(res, 200, 'Login successful', {
+    return sendSuccess(res, 200, "Login successful", {
       token,
       user: {
         id: user._id,
@@ -95,10 +108,11 @@ const login = async (req, res) => {
       },
     });
   } catch (error) {
-    logger.error('Login error:', error);
-    return sendError(res, 500, 'Login failed');
+    logger.error("Login error:", error);
+    return sendError(res, 500, "Login failed");
   }
 };
+
 
 /**
  * GET /api/auth/me
@@ -107,9 +121,9 @@ const login = async (req, res) => {
 const getMe = async (req, res) => {
   try {
     const user = await User.findById(req.user._id);
-    return sendSuccess(res, 200, 'User profile retrieved', { user });
+    return sendSuccess(res, 200, "User profile retrieved", { user });
   } catch (error) {
-    return sendError(res, 500, 'Failed to retrieve profile');
+    return sendError(res, 500, "Failed to retrieve profile");
   }
 };
 
