@@ -1,0 +1,841 @@
+{"level":"info","message":"Socket.io server initialized","service":"interview-platform","timestamp":"2026-02-18 13:39:42"}
+{"level":"info","message":"🚀 Server running in undefined mode on port 5000","service":"interview-platform","timestamp":"2026-02-18 13:39:42"}
+{"level":"info","message":"📡 Socket.io initialized","service":"interview-platform","timestamp":"2026-02-18 13:39:42"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:39:42"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:39:47"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:39:52"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:39:57"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:40:02"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:40:07"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:40:12"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:40:17"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:40:22"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:40:27"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:40:32"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:40:37"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:40:42"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:40:47"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:40:52"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:40:57"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:41:02"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:41:07"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:41:12"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:41:17"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:41:22"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:41:27"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:41:32"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:41:37"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:41:42"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:41:47"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:41:52"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:41:57"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:42:02"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:42:07"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:42:12"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:42:17"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:42:22"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:42:27"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:42:32"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:42:37"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:42:42"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:42:47"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:42:52"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:42:57"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:43:02"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:43:07"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:43:12"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:43:17"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:43:22"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:43:27"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:43:32"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:43:37"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:43:42"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:43:47"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:43:52"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:43:57"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:44:02"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:44:07"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:44:12"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:44:17"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:44:22"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:44:27"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:44:32"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:44:37"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:44:42"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:44:47"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:44:52"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:44:57"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:45:02"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:45:07"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:45:12"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:45:17"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:45:22"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:45:27"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:45:32"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:45:37"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:45:42"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:45:47"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:45:52"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:45:57"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:46:02"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:46:07"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:46:12"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:46:17"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:46:22"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:46:27"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:46:32"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:46:37"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:46:42"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:46:47"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:46:52"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:46:57"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:47:02"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:47:07"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:47:12"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:47:17"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:47:22"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:47:27"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:47:33"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:47:38"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:47:43"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:47:48"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:47:53"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:47:58"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:48:03"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:48:08"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:48:13"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:48:18"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:48:23"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:48:28"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:48:33"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:48:38"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:48:43"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:48:48"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:48:53"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:48:58"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:49:03"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:49:08"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:49:13"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:49:18"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:49:23"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:49:28"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:49:33"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:49:38"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:49:43"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:49:48"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:49:53"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:49:58"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:50:03"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:50:08"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:50:13"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:50:18"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:50:23"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:50:28"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:50:33"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:50:38"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:50:43"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:50:48"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:50:53"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:50:58"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:51:03"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:51:08"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:51:13"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:51:18"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:51:23"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:51:28"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:51:33"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:51:38"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:51:43"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:51:48"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:51:53"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:51:58"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:52:03"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:52:08"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:52:13"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:52:18"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:52:23"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:52:28"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:52:33"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:52:38"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:52:43"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:52:48"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:52:53"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:52:58"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:53:03"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:53:08"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:53:13"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:53:18"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:53:23"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:53:28"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:53:33"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:53:38"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:53:43"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:53:48"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:53:53"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:53:58"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:54:03"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:54:08"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:54:13"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:54:18"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:54:23"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:54:28"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:54:33"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:54:38"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:54:43"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:54:48"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:54:53"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:54:58"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:55:03"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:55:08"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:55:13"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:55:18"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:55:23"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:55:28"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:55:33"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:55:38"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:55:43"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:55:48"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:55:53"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:55:58"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:56:03"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:56:08"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:56:13"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:56:18"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:56:23"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:56:28"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:56:33"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:56:38"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:56:43"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:56:48"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:56:54"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:56:59"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:57:04"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:57:09"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:57:14"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:57:19"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:57:24"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:57:29"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:57:34"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:57:39"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:57:44"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:57:49"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:57:54"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:57:59"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:58:05"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:58:10"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:58:15"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:58:20"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:58:25"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:58:30"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:58:35"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:58:40"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:58:45"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:58:50"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:58:55"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:59:00"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:59:05"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:59:10"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:59:15"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:59:20"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:59:25"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:59:30"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:59:35"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:59:41"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:59:46"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:59:51"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 13:59:56"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 14:00:01"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 14:00:06"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 14:00:11"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 14:00:16"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 14:00:21"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 14:00:26"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 14:00:31"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 14:00:36"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 14:00:41"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 14:00:46"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 14:00:51"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 14:00:56"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 14:01:01"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 14:01:06"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 14:01:11"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 14:01:16"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 14:01:21"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 14:01:26"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 14:01:31"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 14:01:36"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 14:01:41"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 14:01:46"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 14:01:51"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 14:01:56"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 14:02:01"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 14:02:06"}
+{"level":"info","message":"Socket.io server initialized","service":"interview-platform","timestamp":"2026-02-18 14:02:27"}
+{"level":"info","message":"🚀 Server running in undefined mode on port 5000","service":"interview-platform","timestamp":"2026-02-18 14:02:27"}
+{"level":"info","message":"📡 Socket.io initialized","service":"interview-platform","timestamp":"2026-02-18 14:02:27"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 14:02:27"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 14:02:32"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 14:02:37"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 14:02:42"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 14:02:47"}
+{"level":"info","message":"Socket.io server initialized","service":"interview-platform","timestamp":"2026-02-18 14:03:02"}
+{"level":"info","message":"🚀 Server running in undefined mode on port 5000","service":"interview-platform","timestamp":"2026-02-18 14:03:02"}
+{"level":"info","message":"📡 Socket.io initialized","service":"interview-platform","timestamp":"2026-02-18 14:03:02"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 14:03:02"}
+{"level":"info","message":"Socket.io server initialized","service":"interview-platform","timestamp":"2026-02-18 14:04:03"}
+{"level":"info","message":"🚀 Server running in development mode on port 5000","service":"interview-platform","timestamp":"2026-02-18 14:04:03"}
+{"level":"info","message":"📡 Socket.io initialized","service":"interview-platform","timestamp":"2026-02-18 14:04:03"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 14:04:03"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 14:04:08"}
+{"level":"info","message":"Socket.io server initialized","service":"interview-platform","timestamp":"2026-02-18 14:06:20"}
+{"level":"info","message":"🚀 Server running in development mode on port 5000","service":"interview-platform","timestamp":"2026-02-18 14:06:20"}
+{"level":"info","message":"📡 Socket.io initialized","service":"interview-platform","timestamp":"2026-02-18 14:06:20"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 14:06:20"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 14:06:25"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 14:06:30"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 14:06:35"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 14:06:40"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 14:06:46"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 14:06:51"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 14:06:56"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 14:07:01"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 14:07:07"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 14:07:12"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 14:07:17"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 14:07:22"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 14:07:28"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 14:07:33"}
+{"level":"info","message":"Socket.io server initialized","service":"interview-platform","timestamp":"2026-02-18 14:08:10"}
+{"level":"info","message":"🚀 Server running in development mode on port 5000","service":"interview-platform","timestamp":"2026-02-18 14:08:10"}
+{"level":"info","message":"📡 Socket.io initialized","service":"interview-platform","timestamp":"2026-02-18 14:08:10"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 14:08:10"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 14:08:16"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 14:08:21"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 14:08:26"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 14:08:31"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 14:08:36"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 14:08:41"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 14:08:47"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 14:08:52"}
+{"level":"info","message":"Socket.io server initialized","service":"interview-platform","timestamp":"2026-02-18 14:11:42"}
+{"level":"info","message":"🚀 Server running in development mode on port 5000","service":"interview-platform","timestamp":"2026-02-18 14:11:42"}
+{"level":"info","message":"📡 Socket.io initialized","service":"interview-platform","timestamp":"2026-02-18 14:11:42"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 14:11:42"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 14:11:48"}
+{"level":"error","message":"MongoDB connection failed:","service":"interview-platform","timestamp":"2026-02-18 14:11:53"}
+{"level":"info","message":"Socket.io server initialized","service":"interview-platform","timestamp":"2026-02-18 14:27:26"}
+{"level":"info","message":"🚀 Server running in development mode on port 5000","service":"interview-platform","timestamp":"2026-02-18 14:27:26"}
+{"level":"info","message":"📡 Socket.io initialized","service":"interview-platform","timestamp":"2026-02-18 14:27:26"}
+{"level":"info","message":"✅ MongoDB Connected: ac-julz5np-shard-00-00.ywnfkxr.mongodb.net","service":"interview-platform","timestamp":"2026-02-18 14:27:26"}
+{"level":"info","message":"Socket.io server initialized","service":"interview-platform","timestamp":"2026-02-18 14:29:56"}
+{"level":"info","message":"🚀 Server running in development mode on port 5000","service":"interview-platform","timestamp":"2026-02-18 14:29:56"}
+{"level":"info","message":"📡 Socket.io initialized","service":"interview-platform","timestamp":"2026-02-18 14:29:56"}
+{"level":"info","message":"✅ MongoDB Connected: ac-julz5np-shard-00-00.ywnfkxr.mongodb.net","service":"interview-platform","timestamp":"2026-02-18 14:29:57"}
+{"level":"info","message":"Socket.io server initialized","service":"interview-platform","timestamp":"2026-02-18 14:31:03"}
+{"level":"info","message":"🚀 Server running in development mode on port 5000","service":"interview-platform","timestamp":"2026-02-18 14:31:03"}
+{"level":"info","message":"📡 Socket.io initialized","service":"interview-platform","timestamp":"2026-02-18 14:31:03"}
+{"level":"info","message":"✅ MongoDB Connected: ac-julz5np-shard-00-00.ywnfkxr.mongodb.net","service":"interview-platform","timestamp":"2026-02-18 14:31:03"}
+{"level":"info","message":"Socket.io server initialized","service":"interview-platform","timestamp":"2026-02-18 14:32:20"}
+{"level":"info","message":"🚀 Server running in development mode on port 5000","service":"interview-platform","timestamp":"2026-02-18 14:32:20"}
+{"level":"info","message":"📡 Socket.io initialized","service":"interview-platform","timestamp":"2026-02-18 14:32:20"}
+{"level":"info","message":"✅ MongoDB Connected: ac-julz5np-shard-00-00.ywnfkxr.mongodb.net","service":"interview-platform","timestamp":"2026-02-18 14:32:21"}
+{"level":"info","message":"Socket.io server initialized","service":"interview-platform","timestamp":"2026-02-18 14:33:02"}
+{"level":"info","message":"🚀 Server running in development mode on port 5000","service":"interview-platform","timestamp":"2026-02-18 14:33:02"}
+{"level":"info","message":"📡 Socket.io initialized","service":"interview-platform","timestamp":"2026-02-18 14:33:02"}
+{"level":"info","message":"✅ MongoDB Connected: ac-julz5np-shard-00-02.ywnfkxr.mongodb.net","service":"interview-platform","timestamp":"2026-02-18 14:33:02"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:03:36 +0000] \"POST /api/auth/login HTTP/1.1\" 401 55 \"http://localhost:3000/login\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:33:36"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:10:29 +0000] \"POST /api/auth/login HTTP/1.1\" 401 55 \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:40:29"}
+{"level":"info","message":"New user registered: user1@g.com [candidate]","service":"interview-platform","timestamp":"2026-02-18 14:41:04"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:11:04 +0000] \"POST /api/auth/register HTTP/1.1\" 201 365 \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:41:04"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:11:04 +0000] \"GET /api/interviews HTTP/1.1\" 200 123 \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:41:04"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:11:04 +0000] \"GET /api/interviews HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:41:04"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:11:12 +0000] \"GET /api/interviews?status=&page=1&limit=12 HTTP/1.1\" 200 123 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:41:12"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:11:12 +0000] \"GET /api/interviews?status=&page=1&limit=12 HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:41:12"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:11:13 +0000] \"GET /api/interviews HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:41:13"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:11:13 +0000] \"GET /api/interviews HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:41:13"}
+{"level":"info","message":"New user registered: hr1@g.com [hr]","service":"interview-platform","timestamp":"2026-02-18 14:42:22"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:12:22 +0000] \"POST /api/auth/register HTTP/1.1\" 201 345 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:42:22"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:12:22 +0000] \"GET /api/interviews?limit=50 HTTP/1.1\" 200 123 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:42:22"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:12:22 +0000] \"GET /api/interviews?limit=50 HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:42:22"}
+{"level":"info","message":"New user registered: interviewer1@g.com [interviewer]","service":"interview-platform","timestamp":"2026-02-18 14:43:11"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:13:11 +0000] \"POST /api/auth/register HTTP/1.1\" 201 384 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:43:11"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:13:11 +0000] \"GET /api/interviews HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:43:11"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:13:11 +0000] \"GET /api/interviews HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:43:11"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:13:32 +0000] \"POST /api/auth/login HTTP/1.1\" 200 338 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:43:32"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:13:32 +0000] \"GET /api/interviews?limit=50 HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:43:32"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:13:32 +0000] \"GET /api/interviews?limit=50 HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:43:32"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:13:36 +0000] \"GET /api/users/list/interviewers HTTP/1.1\" 200 163 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:43:36"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:13:36 +0000] \"GET /api/users/list/candidates HTTP/1.1\" 200 145 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:43:36"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:13:36 +0000] \"GET /api/users/list/interviewers HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:43:36"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:13:36 +0000] \"GET /api/users/list/candidates HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:43:36"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:13:52 +0000] \"POST /api/interviews HTTP/1.1\" 400 139 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:43:52"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:14:13 +0000] \"POST /api/interviews HTTP/1.1\" 400 139 \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:44:13"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:16:45 +0000] \"POST /api/interviews HTTP/1.1\" 400 139 \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:46:45"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:17:19 +0000] \"POST /api/interviews HTTP/1.1\" 201 825 \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:47:19"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:17:19 +0000] \"GET /api/interviews?status=&page=1&limit=12 HTTP/1.1\" 200 688 \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:47:19"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:17:19 +0000] \"GET /api/interviews?status=&page=1&limit=12 HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:47:19"}
+{"level":"error","message":"Email failed to interviewer1@g.com [SCHEDULE]:","service":"interview-platform","timestamp":"2026-02-18 14:47:21"}
+{"level":"error","message":"Email failed to user1@g.com [SCHEDULE]:","service":"interview-platform","timestamp":"2026-02-18 14:47:21"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:17:26 +0000] \"GET /api/interviews/6995839f74fd0045f7a9b8ac HTTP/1.1\" 200 812 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:47:26"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:17:26 +0000] \"GET /api/interviews/6995839f74fd0045f7a9b8ac HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:47:26"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:17:56 +0000] \"POST /api/auth/login HTTP/1.1\" 200 377 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:47:56"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:17:56 +0000] \"GET /api/interviews HTTP/1.1\" 200 688 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:47:56"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:17:56 +0000] \"GET /api/interviews HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:47:56"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:18:09 +0000] \"POST /api/auth/login HTTP/1.1\" 200 358 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:48:09"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:18:16 +0000] \"GET /api/auth/me HTTP/1.1\" 200 331 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:48:16"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:18:16 +0000] \"GET /api/auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:48:16"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:19:18 +0000] \"GET /api/auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:49:18"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:19:18 +0000] \"GET /api/auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:49:18"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:19:34 +0000] \"POST /api/auth/login HTTP/1.1\" 200 358 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:49:34"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:19:34 +0000] \"GET /api/interviews HTTP/1.1\" 200 688 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:49:34"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:19:34 +0000] \"GET /api/interviews HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:49:34"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:19:37 +0000] \"GET /api/interviews/6995839f74fd0045f7a9b8ac HTTP/1.1\" 200 812 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:49:37"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:19:37 +0000] \"GET /api/interviews/6995839f74fd0045f7a9b8ac HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:49:37"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:19:40 +0000] \"GET /api/interviews HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:49:40"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:19:40 +0000] \"GET /api/interviews HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:49:40"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:19:41 +0000] \"GET /api/interviews?status=&page=1&limit=12 HTTP/1.1\" 200 688 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:49:41"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:19:41 +0000] \"GET /api/interviews?status=&page=1&limit=12 HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:49:41"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:19:43 +0000] \"GET /api/interviews/6995839f74fd0045f7a9b8ac HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:49:43"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:19:43 +0000] \"GET /api/interviews/6995839f74fd0045f7a9b8ac HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:49:43"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:19:54 +0000] \"POST /api/interviews/6995839f74fd0045f7a9b8ac/start HTTP/1.1\" 200 423 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:49:54"}
+{"level":"info","message":"Socket connected: eJmv8JBMK9nKCHNbAAAC [interviewer] interviewer1","service":"interview-platform","timestamp":"2026-02-18 14:49:54"}
+{"level":"info","message":"Socket connected: odZ_1haKVzibLxBnAAAD [interviewer] interviewer1","service":"interview-platform","timestamp":"2026-02-18 14:49:54"}
+{"level":"error","message":"Email failed to user1@g.com [START]:","service":"interview-platform","timestamp":"2026-02-18 14:49:55"}
+{"level":"info","message":"interviewer1 joined room 6995839f74fd0045f7a9b8ac","service":"interview-platform","timestamp":"2026-02-18 14:50:00"}
+{"level":"info","message":"interviewer1 joined room 6995839f74fd0045f7a9b8ac","service":"interview-platform","timestamp":"2026-02-18 14:50:00"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:20:03 +0000] \"GET /api/interviews?status=&page=1&limit=12 HTTP/1.1\" 200 729 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:50:03"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:20:03 +0000] \"GET /api/interviews?status=&page=1&limit=12 HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:50:03"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:20:06 +0000] \"GET /api/interviews/6995839f74fd0045f7a9b8ac HTTP/1.1\" 200 853 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:50:06"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:20:06 +0000] \"GET /api/interviews/6995839f74fd0045f7a9b8ac HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:50:06"}
+{"level":"info","message":"Socket connected: aJsahnu16Kv_qNeVAAAF [candidate] user1","service":"interview-platform","timestamp":"2026-02-18 14:50:08"}
+{"level":"info","message":"Socket connected: Y88Y74VYYE803OcpAAAH [candidate] user1","service":"interview-platform","timestamp":"2026-02-18 14:50:08"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:20:14 +0000] \"POST /api/interviews/6995839f74fd0045f7a9b8ac/admit HTTP/1.1\" 400 68 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:50:14"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:20:23 +0000] \"POST /api/interviews/6995839f74fd0045f7a9b8ac/admit HTTP/1.1\" 400 68 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:50:23"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:20:32 +0000] \"POST /api/interviews/6995839f74fd0045f7a9b8ac/admit HTTP/1.1\" 400 68 \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:50:32"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:20:51 +0000] \"GET /api/interviews/6995839f74fd0045f7a9b8ac/admit HTTP/1.1\" 401 81 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:50:51"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:20:52 +0000] \"GET /favicon.ico HTTP/1.1\" 404 58 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:50:52"}
+{"level":"info","message":"Socket disconnected: eJmv8JBMK9nKCHNbAAAC [interviewer1]","service":"interview-platform","timestamp":"2026-02-18 14:51:08"}
+{"level":"info","message":"Socket disconnected: odZ_1haKVzibLxBnAAAD [interviewer1]","service":"interview-platform","timestamp":"2026-02-18 14:51:08"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:21:09 +0000] \"GET /api/auth/me HTTP/1.1\" 200 347 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:51:09"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:21:09 +0000] \"GET /api/auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:51:09"}
+{"level":"info","message":"Socket connected: axUY140fDVMGxkUuAAAL [interviewer] interviewer1","service":"interview-platform","timestamp":"2026-02-18 14:51:09"}
+{"level":"info","message":"Socket connected: cQw3iwG7Ry5zomwFAAAK [interviewer] interviewer1","service":"interview-platform","timestamp":"2026-02-18 14:51:09"}
+{"level":"info","message":"interviewer1 joined room 6995839f74fd0045f7a9b8ac","service":"interview-platform","timestamp":"2026-02-18 14:51:10"}
+{"level":"info","message":"interviewer1 joined room 6995839f74fd0045f7a9b8ac","service":"interview-platform","timestamp":"2026-02-18 14:51:11"}
+{"level":"info","message":"Socket disconnected: aJsahnu16Kv_qNeVAAAF [user1]","service":"interview-platform","timestamp":"2026-02-18 14:51:18"}
+{"level":"info","message":"Socket disconnected: Y88Y74VYYE803OcpAAAH [user1]","service":"interview-platform","timestamp":"2026-02-18 14:51:18"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:21:19 +0000] \"GET /api/auth/me HTTP/1.1\" 200 331 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:51:19"}
+{"level":"info","message":"Socket connected: xeozlJTEfBAtt7OBAAAN [candidate] user1","service":"interview-platform","timestamp":"2026-02-18 14:51:19"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:21:19 +0000] \"GET /api/auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:51:19"}
+{"level":"info","message":"Socket connected: iZPNtsDamkMI3Of6AAAP [candidate] user1","service":"interview-platform","timestamp":"2026-02-18 14:51:19"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:21:21 +0000] \"GET /api/interviews/6995839f74fd0045f7a9b8ac HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:51:21"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:21:21 +0000] \"GET /api/interviews/6995839f74fd0045f7a9b8ac HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:51:21"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:21:33 +0000] \"POST /api/interviews/6995839f74fd0045f7a9b8ac/admit HTTP/1.1\" 400 68 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:51:33"}
+{"level":"info","message":"Socket disconnected: axUY140fDVMGxkUuAAAL [interviewer1]","service":"interview-platform","timestamp":"2026-02-18 14:51:51"}
+{"level":"info","message":"Socket disconnected: cQw3iwG7Ry5zomwFAAAK [interviewer1]","service":"interview-platform","timestamp":"2026-02-18 14:51:51"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:21:52 +0000] \"GET /api/auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:51:52"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:21:52 +0000] \"GET /api/auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:51:52"}
+{"level":"info","message":"Socket connected: WEJLv_rwRHu2IO5oAAAR [interviewer] interviewer1","service":"interview-platform","timestamp":"2026-02-18 14:51:53"}
+{"level":"info","message":"Socket connected: kGJgA-HhQHYWRaaEAAAT [interviewer] interviewer1","service":"interview-platform","timestamp":"2026-02-18 14:51:53"}
+{"level":"info","message":"interviewer1 joined room 6995839f74fd0045f7a9b8ac","service":"interview-platform","timestamp":"2026-02-18 14:51:55"}
+{"level":"info","message":"interviewer1 joined room 6995839f74fd0045f7a9b8ac","service":"interview-platform","timestamp":"2026-02-18 14:51:55"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:22:18 +0000] \"GET /api/interviews/6995839f74fd0045f7a9b8ac HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:52:18"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:22:18 +0000] \"GET /api/interviews/6995839f74fd0045f7a9b8ac HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:52:18"}
+{"level":"info","message":"Socket disconnected: iZPNtsDamkMI3Of6AAAP [user1]","service":"interview-platform","timestamp":"2026-02-18 14:52:20"}
+{"level":"info","message":"Socket disconnected: xeozlJTEfBAtt7OBAAAN [user1]","service":"interview-platform","timestamp":"2026-02-18 14:52:20"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:22:20 +0000] \"GET /api/auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:52:20"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:22:20 +0000] \"GET /api/auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:52:20"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:22:20 +0000] \"GET /api/interviews/6995839f74fd0045f7a9b8ac HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:52:20"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:22:20 +0000] \"GET /api/interviews/6995839f74fd0045f7a9b8ac HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:52:20"}
+{"level":"info","message":"Socket connected: pShhMD7LuvJgY0iJAAAV [candidate] user1","service":"interview-platform","timestamp":"2026-02-18 14:52:22"}
+{"level":"info","message":"Socket connected: 9OElS5CVTNXYGR1eAAAX [candidate] user1","service":"interview-platform","timestamp":"2026-02-18 14:52:22"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:22:27 +0000] \"POST /api/interviews/6995839f74fd0045f7a9b8ac/admit HTTP/1.1\" 400 68 \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:52:27"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:22:54 +0000] \"POST /api/interviews/6995839f74fd0045f7a9b8ac/admit HTTP/1.1\" 400 68 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:52:54"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:24:24 +0000] \"POST /api/interviews/6995839f74fd0045f7a9b8ac/admit HTTP/1.1\" 400 68 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:54:24"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:24:31 +0000] \"GET /api/interviews/6995839f74fd0045f7a9b8ac HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:54:31"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:24:31 +0000] \"GET /api/interviews/6995839f74fd0045f7a9b8ac HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:54:31"}
+{"level":"info","message":"Socket disconnected: 9OElS5CVTNXYGR1eAAAX [user1]","service":"interview-platform","timestamp":"2026-02-18 14:54:32"}
+{"level":"info","message":"Socket disconnected: pShhMD7LuvJgY0iJAAAV [user1]","service":"interview-platform","timestamp":"2026-02-18 14:54:32"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:24:33 +0000] \"GET /api/auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:54:33"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:24:33 +0000] \"GET /api/auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:54:33"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:24:33 +0000] \"GET /api/interviews/6995839f74fd0045f7a9b8ac HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:54:33"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:24:33 +0000] \"GET /api/interviews/6995839f74fd0045f7a9b8ac HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:54:33"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:24:49 +0000] \"POST /api/auth/login HTTP/1.1\" 200 358 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:54:49"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:24:49 +0000] \"GET /api/interviews HTTP/1.1\" 200 729 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:54:49"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:24:49 +0000] \"GET /api/interviews HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:54:49"}
+{"level":"info","message":"Socket connected: wJBgvRNyrsQs2F00AAAZ [candidate] user1","service":"interview-platform","timestamp":"2026-02-18 14:54:51"}
+{"level":"info","message":"Socket connected: lN6RY0jCjfLslDx1AAAb [candidate] user1","service":"interview-platform","timestamp":"2026-02-18 14:54:51"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:24:56 +0000] \"POST /api/interviews/6995839f74fd0045f7a9b8ac/admit HTTP/1.1\" 400 68 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:54:56"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:25:12 +0000] \"POST /api/interviews/6995839f74fd0045f7a9b8ac/admit HTTP/1.1\" 400 68 \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:55:12"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:26:38 +0000] \"GET /api/interviews HTTP/1.1\" 200 729 \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:56:38"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:26:38 +0000] \"GET /api/interviews HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:56:38"}
+{"level":"info","message":"Socket disconnected: WEJLv_rwRHu2IO5oAAAR [interviewer1]","service":"interview-platform","timestamp":"2026-02-18 14:56:39"}
+{"level":"info","message":"Socket disconnected: kGJgA-HhQHYWRaaEAAAT [interviewer1]","service":"interview-platform","timestamp":"2026-02-18 14:56:40"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:26:42 +0000] \"GET /api/auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:56:42"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:26:42 +0000] \"GET /api/auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:56:42"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:26:42 +0000] \"GET /api/interviews HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:56:42"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:26:42 +0000] \"GET /api/interviews HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:56:42"}
+{"level":"info","message":"Socket connected: mhLKXcfh9zvwTcwzAAAe [interviewer] interviewer1","service":"interview-platform","timestamp":"2026-02-18 14:58:36"}
+{"level":"info","message":"Socket connected: CFf7i-gBq5hM25uFAAAf [interviewer] interviewer1","service":"interview-platform","timestamp":"2026-02-18 14:58:36"}
+{"level":"info","message":"interviewer1 joined room 6995839f74fd0045f7a9b8ac","service":"interview-platform","timestamp":"2026-02-18 14:58:38"}
+{"level":"info","message":"interviewer1 joined room 6995839f74fd0045f7a9b8ac","service":"interview-platform","timestamp":"2026-02-18 14:58:38"}
+{"level":"info","message":"Socket disconnected: lN6RY0jCjfLslDx1AAAb [user1]","service":"interview-platform","timestamp":"2026-02-18 14:58:50"}
+{"level":"info","message":"Socket disconnected: wJBgvRNyrsQs2F00AAAZ [user1]","service":"interview-platform","timestamp":"2026-02-18 14:58:50"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:28:51 +0000] \"GET /api/auth/me HTTP/1.1\" 200 331 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:58:51"}
+{"level":"info","message":"Socket connected: Ie-l6tvvw2Ir3jOcAAAh [candidate] user1","service":"interview-platform","timestamp":"2026-02-18 14:58:51"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:28:51 +0000] \"GET /api/auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:58:51"}
+{"level":"info","message":"Socket connected: MiN99icch3GGEKAeAAAj [candidate] user1","service":"interview-platform","timestamp":"2026-02-18 14:58:51"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:28:57 +0000] \"POST /api/interviews/6995839f74fd0045f7a9b8ac/admit HTTP/1.1\" 400 68 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 14:58:57"}
+{"level":"info","message":"Socket connected: S_pnA3GXBhBzf6uzAAAl [candidate] user1","service":"interview-platform","timestamp":"2026-02-18 15:01:25"}
+{"level":"info","message":"Socket disconnected: S_pnA3GXBhBzf6uzAAAl [user1]","service":"interview-platform","timestamp":"2026-02-18 15:01:25"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:31:29 +0000] \"GET /api/auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 15:01:29"}
+{"level":"info","message":"Socket connected: 6qS1kL8n9hjB4dcXAAAn [candidate] user1","service":"interview-platform","timestamp":"2026-02-18 15:01:29"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:31:29 +0000] \"GET /api/auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 15:01:29"}
+{"level":"info","message":"Socket connected: 7w30aU7LGcZchjbTAAAp [candidate] user1","service":"interview-platform","timestamp":"2026-02-18 15:01:29"}
+{"level":"info","message":"Socket disconnected: mhLKXcfh9zvwTcwzAAAe [interviewer1]","service":"interview-platform","timestamp":"2026-02-18 15:01:51"}
+{"level":"info","message":"Socket disconnected: CFf7i-gBq5hM25uFAAAf [interviewer1]","service":"interview-platform","timestamp":"2026-02-18 15:01:51"}
+{"level":"info","message":"Socket disconnected: Ie-l6tvvw2Ir3jOcAAAh [user1]","service":"interview-platform","timestamp":"2026-02-18 15:02:06"}
+{"level":"info","message":"Socket disconnected: MiN99icch3GGEKAeAAAj [user1]","service":"interview-platform","timestamp":"2026-02-18 15:02:06"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:34:41 +0000] \"GET /api/interviews HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 15:04:41"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:34:41 +0000] \"GET /api/interviews HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 15:04:41"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:34:43 +0000] \"GET /api/interviews HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 15:04:43"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:34:43 +0000] \"GET /api/interviews HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 15:04:43"}
+{"level":"info","message":"Socket disconnected: 6qS1kL8n9hjB4dcXAAAn [user1]","service":"interview-platform","timestamp":"2026-02-18 15:04:44"}
+{"level":"info","message":"Socket disconnected: 7w30aU7LGcZchjbTAAAp [user1]","service":"interview-platform","timestamp":"2026-02-18 15:04:44"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:34:44 +0000] \"GET /api/auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 15:04:44"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:34:44 +0000] \"GET /api/auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 15:04:44"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:34:44 +0000] \"GET /api/interviews HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 15:04:44"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:34:45 +0000] \"GET /api/interviews HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 15:04:45"}
+{"level":"info","message":"Socket connected: 7_0XxBrBZJMh-JeLAAAr [candidate] user1","service":"interview-platform","timestamp":"2026-02-18 15:04:47"}
+{"level":"info","message":"Socket connected: vpBbcGMguRDmdDeVAAAt [candidate] user1","service":"interview-platform","timestamp":"2026-02-18 15:04:47"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:35:15 +0000] \"POST /api/auth/login HTTP/1.1\" 200 377 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 15:05:15"}
+{"level":"info","message":"Socket connected: jSXFxdsNVCB9npxwAAAw [interviewer] interviewer1","service":"interview-platform","timestamp":"2026-02-18 15:05:15"}
+{"level":"info","message":"Socket connected: gEM8-3Mk_rsjsfedAAAx [interviewer] interviewer1","service":"interview-platform","timestamp":"2026-02-18 15:05:15"}
+{"level":"info","message":"interviewer1 joined room 6995839f74fd0045f7a9b8ac","service":"interview-platform","timestamp":"2026-02-18 15:05:18"}
+{"level":"info","message":"interviewer1 joined room 6995839f74fd0045f7a9b8ac","service":"interview-platform","timestamp":"2026-02-18 15:05:18"}
+{"level":"info","message":"Socket disconnected: jSXFxdsNVCB9npxwAAAw [interviewer1]","service":"interview-platform","timestamp":"2026-02-18 15:05:24"}
+{"level":"info","message":"Socket disconnected: gEM8-3Mk_rsjsfedAAAx [interviewer1]","service":"interview-platform","timestamp":"2026-02-18 15:05:24"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:35:25 +0000] \"GET /api/auth/me HTTP/1.1\" 200 347 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 15:05:25"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:35:25 +0000] \"GET /api/auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 15:05:25"}
+{"level":"info","message":"Socket connected: ic2ZDcXrqly99U-yAAA0 [interviewer] interviewer1","service":"interview-platform","timestamp":"2026-02-18 15:05:25"}
+{"level":"info","message":"Socket connected: IFF4WtNFG4TMxVUvAAA1 [interviewer] interviewer1","service":"interview-platform","timestamp":"2026-02-18 15:05:25"}
+{"level":"info","message":"interviewer1 joined room 6995839f74fd0045f7a9b8ac","service":"interview-platform","timestamp":"2026-02-18 15:05:26"}
+{"level":"info","message":"interviewer1 joined room 6995839f74fd0045f7a9b8ac","service":"interview-platform","timestamp":"2026-02-18 15:05:26"}
+{"level":"info","message":"Socket disconnected: vpBbcGMguRDmdDeVAAAt [user1]","service":"interview-platform","timestamp":"2026-02-18 15:05:31"}
+{"level":"info","message":"Socket disconnected: 7_0XxBrBZJMh-JeLAAAr [user1]","service":"interview-platform","timestamp":"2026-02-18 15:05:31"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:35:31 +0000] \"GET /api/auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 15:05:31"}
+{"level":"info","message":"Socket connected: 2XZt2uXm4uP3-oC9AAA3 [candidate] user1","service":"interview-platform","timestamp":"2026-02-18 15:05:32"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:35:32 +0000] \"GET /api/auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 15:05:32"}
+{"level":"info","message":"Socket connected: VQpZo1ohIj1AIMQ1AAA5 [candidate] user1","service":"interview-platform","timestamp":"2026-02-18 15:05:32"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:35:36 +0000] \"POST /api/interviews/6995839f74fd0045f7a9b8ac/admit HTTP/1.1\" 400 68 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 15:05:36"}
+{"level":"info","message":"Socket.io server initialized","service":"interview-platform","timestamp":"2026-02-18 15:09:38"}
+{"level":"info","message":"🚀 Server running in development mode on port 5000","service":"interview-platform","timestamp":"2026-02-18 15:09:38"}
+{"level":"info","message":"📡 Socket.io initialized","service":"interview-platform","timestamp":"2026-02-18 15:09:38"}
+{"level":"info","message":"✅ MongoDB Connected: ac-julz5np-shard-00-00.ywnfkxr.mongodb.net","service":"interview-platform","timestamp":"2026-02-18 15:09:38"}
+{"level":"info","message":"Socket connected: DMDwHXEfBm1MDWNYAAAB [candidate] user1","service":"interview-platform","timestamp":"2026-02-18 15:09:39"}
+{"level":"info","message":"Socket connected: X0JemVQ1SpcWY58yAAAD [candidate] user1","service":"interview-platform","timestamp":"2026-02-18 15:09:40"}
+{"level":"info","message":"Socket connected: dScpFUz5J6DOFC5MAAAF [interviewer] interviewer1","service":"interview-platform","timestamp":"2026-02-18 15:09:42"}
+{"level":"info","message":"Socket connected: nuouT8y-tX6p5CZnAAAH [interviewer] interviewer1","service":"interview-platform","timestamp":"2026-02-18 15:09:43"}
+{"level":"info","message":"Socket.io server initialized","service":"interview-platform","timestamp":"2026-02-18 15:10:30"}
+{"level":"info","message":"🚀 Server running in development mode on port 5000","service":"interview-platform","timestamp":"2026-02-18 15:10:30"}
+{"level":"info","message":"📡 Socket.io initialized","service":"interview-platform","timestamp":"2026-02-18 15:10:30"}
+{"level":"info","message":"✅ MongoDB Connected: ac-julz5np-shard-00-00.ywnfkxr.mongodb.net","service":"interview-platform","timestamp":"2026-02-18 15:10:31"}
+{"level":"info","message":"Socket connected: Kevi9utFsWgQkod-AAAB [candidate] user1","service":"interview-platform","timestamp":"2026-02-18 15:10:31"}
+{"level":"info","message":"Socket connected: b-CtaaJGUvMvfaLZAAAD [interviewer] interviewer1","service":"interview-platform","timestamp":"2026-02-18 15:10:32"}
+{"level":"info","message":"Socket connected: l3_Is9uJQigSueMIAAAF [interviewer] interviewer1","service":"interview-platform","timestamp":"2026-02-18 15:10:32"}
+{"level":"info","message":"Socket connected: E01x1gFAq_hlLJwkAAAH [candidate] user1","service":"interview-platform","timestamp":"2026-02-18 15:10:32"}
+{"level":"info","message":"interviewer1 joined room 6995839f74fd0045f7a9b8ac","service":"interview-platform","timestamp":"2026-02-18 15:11:10"}
+{"level":"info","message":"interviewer1 joined room 6995839f74fd0045f7a9b8ac","service":"interview-platform","timestamp":"2026-02-18 15:11:10"}
+{"level":"info","message":"Socket.io server initialized","service":"interview-platform","timestamp":"2026-02-18 15:13:19"}
+{"level":"info","message":"🚀 Server running in development mode on port 5000","service":"interview-platform","timestamp":"2026-02-18 15:13:19"}
+{"level":"info","message":"📡 Socket.io initialized","service":"interview-platform","timestamp":"2026-02-18 15:13:19"}
+{"level":"info","message":"✅ MongoDB Connected: ac-julz5np-shard-00-00.ywnfkxr.mongodb.net","service":"interview-platform","timestamp":"2026-02-18 15:13:19"}
+{"level":"info","message":"Socket connected: iemPf6NL4Fp4cyIwAAAB [interviewer] interviewer1","service":"interview-platform","timestamp":"2026-02-18 15:13:22"}
+{"level":"info","message":"Socket connected: qjM81WU_dOX4WvOtAAAD [interviewer] interviewer1","service":"interview-platform","timestamp":"2026-02-18 15:13:23"}
+{"level":"info","message":"Socket connected: LOnt-9yGF6_kQvarAAAF [candidate] user1","service":"interview-platform","timestamp":"2026-02-18 15:13:24"}
+{"level":"info","message":"Socket connected: qydeLmdmxaYk3MTSAAAH [candidate] user1","service":"interview-platform","timestamp":"2026-02-18 15:13:25"}
+{"level":"info","message":"Socket.io server initialized","service":"interview-platform","timestamp":"2026-02-18 15:14:21"}
+{"level":"info","message":"🚀 Server running in development mode on port 5000","service":"interview-platform","timestamp":"2026-02-18 15:14:21"}
+{"level":"info","message":"📡 Socket.io initialized","service":"interview-platform","timestamp":"2026-02-18 15:14:21"}
+{"level":"info","message":"✅ MongoDB Connected: ac-julz5np-shard-00-00.ywnfkxr.mongodb.net","service":"interview-platform","timestamp":"2026-02-18 15:14:22"}
+{"level":"info","message":"Socket connected: XqixU-XHUR0hvDD4AAAB [interviewer] interviewer1","service":"interview-platform","timestamp":"2026-02-18 15:14:22"}
+{"level":"info","message":"Socket connected: hTzQdXRTdPINw9eCAAAF [candidate] user1","service":"interview-platform","timestamp":"2026-02-18 15:14:22"}
+{"level":"info","message":"Socket connected: 8zsEc59spjEv-m7eAAAD [candidate] user1","service":"interview-platform","timestamp":"2026-02-18 15:14:22"}
+{"level":"info","message":"Socket connected: ljKmWPqJnLYphjvZAAAH [interviewer] interviewer1","service":"interview-platform","timestamp":"2026-02-18 15:14:27"}
+{"level":"info","message":"Socket disconnected: ljKmWPqJnLYphjvZAAAH [interviewer1]","service":"interview-platform","timestamp":"2026-02-18 15:18:47"}
+{"level":"info","message":"Socket connected: VRXO5N4OOeqL4RSxAAAJ [interviewer] interviewer1","service":"interview-platform","timestamp":"2026-02-18 15:18:47"}
+{"level":"info","message":"Socket disconnected: VRXO5N4OOeqL4RSxAAAJ [interviewer1]","service":"interview-platform","timestamp":"2026-02-18 15:18:51"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:48:52 +0000] \"GET /api/interviews HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 15:18:52"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:48:52 +0000] \"GET /api/interviews HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 15:18:52"}
+{"level":"info","message":"Socket disconnected: XqixU-XHUR0hvDD4AAAB [interviewer1]","service":"interview-platform","timestamp":"2026-02-18 15:18:53"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:48:54 +0000] \"GET /api/auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 15:18:54"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:48:54 +0000] \"GET /api/auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 15:18:54"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:48:54 +0000] \"GET /api/interviews HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 15:18:54"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:48:54 +0000] \"GET /api/interviews HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 15:18:54"}
+{"level":"info","message":"Socket connected: epWnNmwVVY8R1T-pAAAM [interviewer] interviewer1","service":"interview-platform","timestamp":"2026-02-18 15:18:58"}
+{"level":"info","message":"Socket disconnected: 8zsEc59spjEv-m7eAAAD [user1]","service":"interview-platform","timestamp":"2026-02-18 15:19:07"}
+{"level":"info","message":"Socket disconnected: hTzQdXRTdPINw9eCAAAF [user1]","service":"interview-platform","timestamp":"2026-02-18 15:19:07"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:49:08 +0000] \"GET /api/auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 15:19:08"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:49:08 +0000] \"GET /api/auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 15:19:08"}
+{"level":"info","message":"Socket connected: zLxo4e3qWH53i1oaAAAO [candidate] user1","service":"interview-platform","timestamp":"2026-02-18 15:19:09"}
+{"level":"info","message":"Socket connected: gZI5G_xWrRds5ny3AAAQ [candidate] user1","service":"interview-platform","timestamp":"2026-02-18 15:19:09"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:49:14 +0000] \"POST /api/interviews/6995839f74fd0045f7a9b8ac/admit HTTP/1.1\" 400 68 \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 15:19:14"}
+{"level":"info","message":"::1 - - [18/Feb/2026:09:49:26 +0000] \"POST /api/interviews/6995839f74fd0045f7a9b8ac/admit HTTP/1.1\" 400 68 \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 15:19:26"}
+{"level":"info","message":"Socket.io server initialized","service":"interview-platform","timestamp":"2026-02-18 15:25:17"}
+{"level":"info","message":"🚀 Server running in development mode on port 5000","service":"interview-platform","timestamp":"2026-02-18 15:25:17"}
+{"level":"info","message":"📡 Socket.io initialized","service":"interview-platform","timestamp":"2026-02-18 15:25:17"}
+{"level":"info","message":"✅ MongoDB Connected: ac-julz5np-shard-00-00.ywnfkxr.mongodb.net","service":"interview-platform","timestamp":"2026-02-18 15:25:18"}
+{"level":"info","message":"Socket connected: LulC1fTN-sk6sb34AAAB [interviewer] interviewer1","service":"interview-platform","timestamp":"2026-02-18 15:25:19"}
+{"level":"info","message":"Socket connected: oLFnPBL91oiLWXCpAAAD [candidate] user1","service":"interview-platform","timestamp":"2026-02-18 15:25:19"}
+{"level":"info","message":"Socket connected: oLtbDo2xHaxVPhIVAAAF [candidate] user1","service":"interview-platform","timestamp":"2026-02-18 15:25:22"}
+{"level":"info","message":"Socket.io server initialized","service":"interview-platform","timestamp":"2026-02-18 15:54:36"}
+{"level":"info","message":"🚀 Server running in development mode on port 5000","service":"interview-platform","timestamp":"2026-02-18 15:54:36"}
+{"level":"info","message":"📡 Socket.io initialized","service":"interview-platform","timestamp":"2026-02-18 15:54:36"}
+{"level":"info","message":"✅ MongoDB Connected: ac-julz5np-shard-00-00.ywnfkxr.mongodb.net","service":"interview-platform","timestamp":"2026-02-18 15:54:36"}
+{"level":"info","message":"Socket connected: XfktGuFOCWDanoZcAAAB [candidate] user1","service":"interview-platform","timestamp":"2026-02-18 15:54:37"}
+{"level":"info","message":"Socket connected: Z-GM-l2yOCfbwvWwAAAD [interviewer] interviewer1","service":"interview-platform","timestamp":"2026-02-18 15:54:37"}
+{"level":"info","message":"Socket connected: rw1_6iwmABMW8uYJAAAF [candidate] user1","service":"interview-platform","timestamp":"2026-02-18 15:54:38"}
+{"level":"info","message":"Socket.io server initialized","service":"interview-platform","timestamp":"2026-02-18 15:54:58"}
+{"level":"info","message":"🚀 Server running in development mode on port 5000","service":"interview-platform","timestamp":"2026-02-18 15:54:58"}
+{"level":"info","message":"📡 Socket.io initialized","service":"interview-platform","timestamp":"2026-02-18 15:54:58"}
+{"level":"info","message":"✅ MongoDB Connected: ac-julz5np-shard-00-02.ywnfkxr.mongodb.net","service":"interview-platform","timestamp":"2026-02-18 15:54:58"}
+{"level":"info","message":"Socket connected: Nh6Osdl4tGO_2xnGAAAB [interviewer] interviewer1","service":"interview-platform","timestamp":"2026-02-18 15:54:59"}
+{"level":"info","message":"Socket connected: xwgHvDDxUKo2FhxxAAAD [candidate] user1","service":"interview-platform","timestamp":"2026-02-18 15:55:01"}
+{"level":"info","message":"Socket connected: bPi0eqRpidzmiQbOAAAF [candidate] user1","service":"interview-platform","timestamp":"2026-02-18 15:55:02"}
+{"level":"info","message":"Socket.io server initialized","service":"interview-platform","timestamp":"2026-02-18 15:56:11"}
+{"level":"info","message":"🚀 Server running in development mode on port 5000","service":"interview-platform","timestamp":"2026-02-18 15:56:11"}
+{"level":"info","message":"📡 Socket.io initialized","service":"interview-platform","timestamp":"2026-02-18 15:56:11"}
+{"level":"info","message":"✅ MongoDB Connected: ac-julz5np-shard-00-00.ywnfkxr.mongodb.net","service":"interview-platform","timestamp":"2026-02-18 15:56:11"}
+{"level":"info","message":"Socket connected: 97XgR3EGvzeRCgVrAAAB [interviewer] interviewer1","service":"interview-platform","timestamp":"2026-02-18 15:56:14"}
+{"level":"info","message":"Socket connected: 7vxjoRbb9o24tmhxAAAD [candidate] user1","service":"interview-platform","timestamp":"2026-02-18 15:56:15"}
+{"level":"info","message":"Socket connected: rk4QtResedaJkyu_AAAF [candidate] user1","service":"interview-platform","timestamp":"2026-02-18 15:56:16"}
+{"level":"info","message":"::1 - - [18/Feb/2026:10:26:28 +0000] \"POST /api/interviews/6995839f74fd0045f7a9b8ac/admit HTTP/1.1\" 400 68 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 15:56:28"}
+{"level":"info","message":"::1 - - [18/Feb/2026:10:26:37 +0000] \"POST /api/interviews/6995839f74fd0045f7a9b8ac/admit HTTP/1.1\" 400 68 \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 15:56:37"}
+{"level":"info","message":"Socket disconnected: 7vxjoRbb9o24tmhxAAAD [user1]","service":"interview-platform","timestamp":"2026-02-18 15:56:48"}
+{"level":"info","message":"Socket disconnected: rk4QtResedaJkyu_AAAF [user1]","service":"interview-platform","timestamp":"2026-02-18 15:56:49"}
+{"level":"info","message":"::1 - - [18/Feb/2026:10:26:50 +0000] \"GET /api/auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 15:56:50"}
+{"level":"info","message":"::1 - - [18/Feb/2026:10:26:50 +0000] \"GET /api/auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 15:56:50"}
+{"level":"info","message":"Socket connected: M8BEXJWoYjK8vzR3AAAH [candidate] user1","service":"interview-platform","timestamp":"2026-02-18 15:56:50"}
+{"level":"info","message":"Socket connected: gQZVKoSyUROLVEvNAAAJ [candidate] user1","service":"interview-platform","timestamp":"2026-02-18 15:56:50"}
+{"level":"info","message":"::1 - - [18/Feb/2026:10:27:13 +0000] \"POST /api/interviews/6995839f74fd0045f7a9b8ac/admit HTTP/1.1\" 400 68 \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 15:57:13"}
+{"level":"info","message":"::1 - - [18/Feb/2026:10:32:39 +0000] \"GET /api/interviews HTTP/1.1\" 200 800 \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:02:39"}
+{"level":"info","message":"::1 - - [18/Feb/2026:10:32:39 +0000] \"GET /api/interviews HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:02:39"}
+{"level":"info","message":"Socket disconnected: 97XgR3EGvzeRCgVrAAAB [interviewer1]","service":"interview-platform","timestamp":"2026-02-18 16:02:41"}
+{"level":"info","message":"::1 - - [18/Feb/2026:10:32:41 +0000] \"GET /api/interviews HTTP/1.1\" 200 800 \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:02:41"}
+{"level":"info","message":"::1 - - [18/Feb/2026:10:32:41 +0000] \"GET /api/interviews HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:02:41"}
+{"level":"info","message":"Socket.io server initialized","service":"interview-platform","timestamp":"2026-02-18 16:03:30"}
+{"level":"info","message":"🚀 Server running in development mode on port 5000","service":"interview-platform","timestamp":"2026-02-18 16:03:30"}
+{"level":"info","message":"📡 Socket.io initialized","service":"interview-platform","timestamp":"2026-02-18 16:03:30"}
+{"level":"info","message":"✅ MongoDB Connected: ac-julz5np-shard-00-00.ywnfkxr.mongodb.net","service":"interview-platform","timestamp":"2026-02-18 16:03:30"}
+{"level":"info","message":"Socket connected: l8RLOuqWEnXi4INZAAAB [candidate] user1","service":"interview-platform","timestamp":"2026-02-18 16:03:31"}
+{"level":"info","message":"Socket connected: 6huNds0GG_KtH6JuAAAD [candidate] user1","service":"interview-platform","timestamp":"2026-02-18 16:03:31"}
+{"level":"info","message":"Socket.io server initialized","service":"interview-platform","timestamp":"2026-02-18 16:06:03"}
+{"level":"info","message":"🚀 Server running in development mode on port 5000","service":"interview-platform","timestamp":"2026-02-18 16:06:03"}
+{"level":"info","message":"📡 Socket.io initialized","service":"interview-platform","timestamp":"2026-02-18 16:06:04"}
+{"level":"info","message":"✅ MongoDB Connected: ac-julz5np-shard-00-00.ywnfkxr.mongodb.net","service":"interview-platform","timestamp":"2026-02-18 16:06:04"}
+{"level":"info","message":"Socket connected: oORY7Lu0YY35lxysAAAB [candidate] user1","service":"interview-platform","timestamp":"2026-02-18 16:06:07"}
+{"level":"info","message":"Socket connected: KN07m8mMzheU69h5AAAD [candidate] user1","service":"interview-platform","timestamp":"2026-02-18 16:06:09"}
+{"level":"info","message":"Socket connected: JZH4S9q-BIyDntCCAAAG [interviewer] interviewer1","service":"interview-platform","timestamp":"2026-02-18 16:06:47"}
+{"level":"info","message":"Socket disconnected: JZH4S9q-BIyDntCCAAAG [interviewer1]","service":"interview-platform","timestamp":"2026-02-18 16:06:49"}
+{"level":"info","message":"::1 - - [18/Feb/2026:10:36:49 +0000] \"GET /api/interviews HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:06:49"}
+{"level":"info","message":"::1 - - [18/Feb/2026:10:36:50 +0000] \"GET /api/interviews HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:06:50"}
+{"level":"info","message":"Socket connected: Zf6QrUA_eNqf03Z7AAAJ [interviewer] interviewer1","service":"interview-platform","timestamp":"2026-02-18 16:06:54"}
+{"level":"info","message":"::1 - - [18/Feb/2026:10:37:08 +0000] \"POST /api/interviews/6995839f74fd0045f7a9b8ac/admit HTTP/1.1\" 200 65 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:07:08"}
+{"level":"info","message":"Candidate 6995822774fd0045f7a9b867 admitted to interview 6995839f74fd0045f7a9b8ac","service":"interview-platform","timestamp":"2026-02-18 16:07:08"}
+{"level":"info","message":"Socket disconnected: KN07m8mMzheU69h5AAAD [user1]","service":"interview-platform","timestamp":"2026-02-18 16:07:09"}
+{"level":"info","message":"Socket connected: tjjQqC83FjzTrcSTAAAL [candidate] user1","service":"interview-platform","timestamp":"2026-02-18 16:07:09"}
+{"level":"info","message":"Socket disconnected: oORY7Lu0YY35lxysAAAB [user1]","service":"interview-platform","timestamp":"2026-02-18 16:07:23"}
+{"level":"info","message":"Socket disconnected: tjjQqC83FjzTrcSTAAAL [user1]","service":"interview-platform","timestamp":"2026-02-18 16:07:23"}
+{"level":"info","message":"::1 - - [18/Feb/2026:10:37:25 +0000] \"GET /api/auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:07:25"}
+{"level":"info","message":"::1 - - [18/Feb/2026:10:37:25 +0000] \"GET /api/auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:07:25"}
+{"level":"info","message":"Socket connected: Nm345xP82cWiVfJvAAAO [candidate] user1","service":"interview-platform","timestamp":"2026-02-18 16:07:26"}
+{"level":"info","message":"Socket disconnected: Nm345xP82cWiVfJvAAAO [user1]","service":"interview-platform","timestamp":"2026-02-18 16:08:25"}
+{"level":"info","message":"::1 - - [18/Feb/2026:10:38:27 +0000] \"GET /api/auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:08:27"}
+{"level":"info","message":"::1 - - [18/Feb/2026:10:38:27 +0000] \"GET /api/auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:08:27"}
+{"level":"info","message":"Socket connected: RZcsD18NKugP3CJSAAAR [candidate] user1","service":"interview-platform","timestamp":"2026-02-18 16:08:27"}
+{"level":"info","message":"Socket disconnected: RZcsD18NKugP3CJSAAAR [user1]","service":"interview-platform","timestamp":"2026-02-18 16:08:40"}
+{"level":"info","message":"::1 - - [18/Feb/2026:10:38:41 +0000] \"GET /api/auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:08:41"}
+{"level":"info","message":"::1 - - [18/Feb/2026:10:38:42 +0000] \"GET /api/auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:08:42"}
+{"level":"info","message":"Socket connected: kRlYqv0hEKYSOCDiAAAU [candidate] user1","service":"interview-platform","timestamp":"2026-02-18 16:08:43"}
+{"level":"info","message":"Socket disconnected: Zf6QrUA_eNqf03Z7AAAJ [interviewer1]","service":"interview-platform","timestamp":"2026-02-18 16:10:03"}
+{"level":"info","message":"::1 - - [18/Feb/2026:10:40:05 +0000] \"GET /api/auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:10:05"}
+{"level":"info","message":"::1 - - [18/Feb/2026:10:40:05 +0000] \"GET /api/auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:10:05"}
+{"level":"info","message":"Socket connected: z65JT1Yz9mdZ5l2kAAAX [interviewer] interviewer1","service":"interview-platform","timestamp":"2026-02-18 16:10:06"}
+{"level":"info","message":"Socket disconnected: kRlYqv0hEKYSOCDiAAAU [user1]","service":"interview-platform","timestamp":"2026-02-18 16:10:24"}
+{"level":"info","message":"::1 - - [18/Feb/2026:10:40:25 +0000] \"GET /api/auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:10:25"}
+{"level":"info","message":"::1 - - [18/Feb/2026:10:40:25 +0000] \"GET /api/auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:10:25"}
+{"level":"info","message":"Socket connected: v5fUNzx2QpXA2PkqAAAa [candidate] user1","service":"interview-platform","timestamp":"2026-02-18 16:10:26"}
+{"level":"info","message":"Socket disconnected: v5fUNzx2QpXA2PkqAAAa [user1]","service":"interview-platform","timestamp":"2026-02-18 16:18:56"}
+{"level":"info","message":"::1 - - [18/Feb/2026:10:48:56 +0000] \"GET /api/interviews HTTP/1.1\" 200 800 \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:18:56"}
+{"level":"info","message":"::1 - - [18/Feb/2026:10:48:57 +0000] \"GET /api/interviews HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:18:57"}
+{"level":"info","message":"Socket disconnected: z65JT1Yz9mdZ5l2kAAAX [interviewer1]","service":"interview-platform","timestamp":"2026-02-18 16:19:07"}
+{"level":"info","message":"::1 - - [18/Feb/2026:10:49:07 +0000] \"GET /api/interviews HTTP/1.1\" 200 800 \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:19:07"}
+{"level":"info","message":"::1 - - [18/Feb/2026:10:49:08 +0000] \"GET /api/interviews HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:19:08"}
+{"level":"info","message":"Socket.io server initialized","service":"interview-platform","timestamp":"2026-02-18 16:20:13"}
+{"level":"info","message":"🚀 Server running in development mode on port 5000","service":"interview-platform","timestamp":"2026-02-18 16:20:13"}
+{"level":"info","message":"📡 Socket.io initialized","service":"interview-platform","timestamp":"2026-02-18 16:20:13"}
+{"level":"info","message":"✅ MongoDB Connected: ac-julz5np-shard-00-00.ywnfkxr.mongodb.net","service":"interview-platform","timestamp":"2026-02-18 16:20:14"}
+{"level":"info","message":"Socket.io server initialized","service":"interview-platform","timestamp":"2026-02-18 16:21:43"}
+{"level":"info","message":"🚀 Server running in development mode on port 5000","service":"interview-platform","timestamp":"2026-02-18 16:21:43"}
+{"level":"info","message":"📡 Socket.io initialized","service":"interview-platform","timestamp":"2026-02-18 16:21:43"}
+{"level":"info","message":"✅ MongoDB Connected: ac-julz5np-shard-00-00.ywnfkxr.mongodb.net","service":"interview-platform","timestamp":"2026-02-18 16:21:46"}
+{"level":"info","message":"::1 - - [18/Feb/2026:10:56:22 +0000] \"GET /api/auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:26:22"}
+{"level":"info","message":"::1 - - [18/Feb/2026:10:56:22 +0000] \"GET /api/auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:26:22"}
+{"level":"info","message":"::1 - - [18/Feb/2026:10:56:23 +0000] \"GET /api/interviews HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:26:23"}
+{"level":"info","message":"::1 - - [18/Feb/2026:10:56:23 +0000] \"GET /api/interviews HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:26:23"}
+{"level":"info","message":"::1 - - [18/Feb/2026:10:56:51 +0000] \"POST /api/auth/login HTTP/1.1\" 200 358 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36\"","service":"interview-platform","timestamp":"2026-02-18 16:26:51"}
+{"level":"info","message":"::1 - - [18/Feb/2026:10:56:55 +0000] \"GET /api/interviews?status=&page=1&limit=12 HTTP/1.1\" 200 800 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36\"","service":"interview-platform","timestamp":"2026-02-18 16:26:55"}
+{"level":"info","message":"::1 - - [18/Feb/2026:10:56:55 +0000] \"GET /api/interviews?status=&page=1&limit=12 HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36\"","service":"interview-platform","timestamp":"2026-02-18 16:26:55"}
+{"level":"info","message":"::1 - - [18/Feb/2026:10:56:57 +0000] \"GET /api/interviews HTTP/1.1\" 200 800 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36\"","service":"interview-platform","timestamp":"2026-02-18 16:26:57"}
+{"level":"info","message":"::1 - - [18/Feb/2026:10:56:57 +0000] \"GET /api/interviews HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36\"","service":"interview-platform","timestamp":"2026-02-18 16:26:57"}
+{"level":"info","message":"Socket connected: wdXDYupBTKZZyNHkAAAB [candidate] user1","service":"interview-platform","timestamp":"2026-02-18 16:27:01"}
+{"level":"info","message":"Socket connected: -Kbnkwghy5jbcwFlAAAD [candidate] user1","service":"interview-platform","timestamp":"2026-02-18 16:27:01"}
+{"level":"error","message":"lobby:enter error: req is not defined","service":"interview-platform","stack":"ReferenceError: req is not defined\n    at Socket.<anonymous> (C:\\Users\\ADMIN\\Desktop\\interview-platform\\interview-platform\\server\\socket\\index.js:157:20)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2026-02-18 16:27:01"}
+{"level":"error","message":"lobby:enter error: req is not defined","service":"interview-platform","stack":"ReferenceError: req is not defined\n    at Socket.<anonymous> (C:\\Users\\ADMIN\\Desktop\\interview-platform\\interview-platform\\server\\socket\\index.js:157:20)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2026-02-18 16:27:01"}
+{"level":"info","message":"Socket connected: -tI5nHbVaPPyL8X0AAAG [interviewer] interviewer1","service":"interview-platform","timestamp":"2026-02-18 16:27:07"}
+{"level":"info","message":"Socket disconnected: -tI5nHbVaPPyL8X0AAAG [interviewer1]","service":"interview-platform","timestamp":"2026-02-18 16:27:17"}
+{"level":"info","message":"::1 - - [18/Feb/2026:10:57:18 +0000] \"GET /api/auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:27:18"}
+{"level":"info","message":"::1 - - [18/Feb/2026:10:57:18 +0000] \"GET /api/auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:27:18"}
+{"level":"info","message":"Socket connected: toN7Pnrb8i1z9RfVAAAJ [interviewer] interviewer1","service":"interview-platform","timestamp":"2026-02-18 16:27:18"}
+{"level":"info","message":"Socket disconnected: -Kbnkwghy5jbcwFlAAAD [user1]","service":"interview-platform","timestamp":"2026-02-18 16:27:21"}
+{"level":"info","message":"Socket disconnected: wdXDYupBTKZZyNHkAAAB [user1]","service":"interview-platform","timestamp":"2026-02-18 16:27:21"}
+{"level":"info","message":"::1 - - [18/Feb/2026:10:57:21 +0000] \"GET /api/auth/me HTTP/1.1\" 200 331 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36\"","service":"interview-platform","timestamp":"2026-02-18 16:27:21"}
+{"level":"info","message":"::1 - - [18/Feb/2026:10:57:21 +0000] \"GET /api/auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36\"","service":"interview-platform","timestamp":"2026-02-18 16:27:21"}
+{"level":"info","message":"Socket connected: DOLzQL4hGo6NIjh-AAAL [candidate] user1","service":"interview-platform","timestamp":"2026-02-18 16:27:21"}
+{"level":"info","message":"Socket connected: u9JV0Y9rWIOW6shbAAAN [candidate] user1","service":"interview-platform","timestamp":"2026-02-18 16:27:22"}
+{"level":"error","message":"lobby:enter error: req is not defined","service":"interview-platform","stack":"ReferenceError: req is not defined\n    at Socket.<anonymous> (C:\\Users\\ADMIN\\Desktop\\interview-platform\\interview-platform\\server\\socket\\index.js:157:20)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2026-02-18 16:27:22"}
+{"level":"error","message":"lobby:enter error: req is not defined","service":"interview-platform","stack":"ReferenceError: req is not defined\n    at Socket.<anonymous> (C:\\Users\\ADMIN\\Desktop\\interview-platform\\interview-platform\\server\\socket\\index.js:157:20)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2026-02-18 16:27:22"}
+{"level":"info","message":"Socket disconnected: u9JV0Y9rWIOW6shbAAAN [user1]","service":"interview-platform","timestamp":"2026-02-18 16:27:46"}
+{"level":"info","message":"Socket disconnected: DOLzQL4hGo6NIjh-AAAL [user1]","service":"interview-platform","timestamp":"2026-02-18 16:27:47"}
+{"level":"info","message":"::1 - - [18/Feb/2026:10:57:48 +0000] \"GET /api/auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36\"","service":"interview-platform","timestamp":"2026-02-18 16:27:48"}
+{"level":"info","message":"::1 - - [18/Feb/2026:10:57:48 +0000] \"GET /api/auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36\"","service":"interview-platform","timestamp":"2026-02-18 16:27:48"}
+{"level":"info","message":"Socket connected: 2A-aHOL5ysCQ9s01AAAP [candidate] user1","service":"interview-platform","timestamp":"2026-02-18 16:27:48"}
+{"level":"info","message":"Socket connected: 83408m67T7CC19JRAAAR [candidate] user1","service":"interview-platform","timestamp":"2026-02-18 16:27:48"}
+{"level":"error","message":"lobby:enter error: req is not defined","service":"interview-platform","stack":"ReferenceError: req is not defined\n    at Socket.<anonymous> (C:\\Users\\ADMIN\\Desktop\\interview-platform\\interview-platform\\server\\socket\\index.js:157:20)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2026-02-18 16:27:48"}
+{"level":"error","message":"lobby:enter error: req is not defined","service":"interview-platform","stack":"ReferenceError: req is not defined\n    at Socket.<anonymous> (C:\\Users\\ADMIN\\Desktop\\interview-platform\\interview-platform\\server\\socket\\index.js:157:20)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2026-02-18 16:27:48"}
+{"level":"info","message":"Socket disconnected: toN7Pnrb8i1z9RfVAAAJ [interviewer1]","service":"interview-platform","timestamp":"2026-02-18 16:27:52"}
+{"level":"info","message":"::1 - - [18/Feb/2026:10:57:52 +0000] \"GET /api/interviews HTTP/1.1\" 200 799 \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:27:52"}
+{"level":"info","message":"::1 - - [18/Feb/2026:10:57:53 +0000] \"GET /api/interviews HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:27:53"}
+{"level":"info","message":"::1 - - [18/Feb/2026:10:58:02 +0000] \"GET /api/interviews HTTP/1.1\" 200 799 \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36\"","service":"interview-platform","timestamp":"2026-02-18 16:28:02"}
+{"level":"info","message":"::1 - - [18/Feb/2026:10:58:02 +0000] \"GET /api/interviews HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36\"","service":"interview-platform","timestamp":"2026-02-18 16:28:02"}
+{"level":"info","message":"Socket disconnected: 2A-aHOL5ysCQ9s01AAAP [user1]","service":"interview-platform","timestamp":"2026-02-18 16:28:03"}
+{"level":"info","message":"Socket disconnected: 83408m67T7CC19JRAAAR [user1]","service":"interview-platform","timestamp":"2026-02-18 16:28:03"}
+{"level":"info","message":"::1 - - [18/Feb/2026:10:58:04 +0000] \"GET /api/auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36\"","service":"interview-platform","timestamp":"2026-02-18 16:28:04"}
+{"level":"info","message":"::1 - - [18/Feb/2026:10:58:05 +0000] \"GET /api/auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36\"","service":"interview-platform","timestamp":"2026-02-18 16:28:05"}
+{"level":"info","message":"::1 - - [18/Feb/2026:10:58:05 +0000] \"GET /api/interviews HTTP/1.1\" 200 800 \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36\"","service":"interview-platform","timestamp":"2026-02-18 16:28:05"}
+{"level":"info","message":"::1 - - [18/Feb/2026:10:58:05 +0000] \"GET /api/interviews HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36\"","service":"interview-platform","timestamp":"2026-02-18 16:28:05"}
+{"level":"info","message":"New user registered: admin@g.com [interviewer]","service":"interview-platform","timestamp":"2026-02-18 16:28:27"}
+{"level":"info","message":"::1 - - [18/Feb/2026:10:58:27 +0000] \"POST /api/auth/register HTTP/1.1\" 201 370 \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36\"","service":"interview-platform","timestamp":"2026-02-18 16:28:27"}
+{"level":"info","message":"::1 - - [18/Feb/2026:10:58:27 +0000] \"GET /api/interviews HTTP/1.1\" 200 123 \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36\"","service":"interview-platform","timestamp":"2026-02-18 16:28:27"}
+{"level":"info","message":"::1 - - [18/Feb/2026:10:58:27 +0000] \"GET /api/interviews HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36\"","service":"interview-platform","timestamp":"2026-02-18 16:28:27"}
+{"level":"info","message":"New user registered: user2@g.com [candidate]","service":"interview-platform","timestamp":"2026-02-18 16:28:52"}
+{"level":"info","message":"::1 - - [18/Feb/2026:10:58:52 +0000] \"POST /api/auth/register HTTP/1.1\" 201 365 \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:28:52"}
+{"level":"info","message":"::1 - - [18/Feb/2026:10:58:52 +0000] \"GET /api/interviews HTTP/1.1\" 200 123 \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:28:52"}
+{"level":"info","message":"::1 - - [18/Feb/2026:10:58:52 +0000] \"GET /api/interviews HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:28:52"}
+{"level":"info","message":"New user registered: interviewer2@g.com [interviewer]","service":"interview-platform","timestamp":"2026-02-18 16:29:26"}
+{"level":"info","message":"::1 - - [18/Feb/2026:10:59:26 +0000] \"POST /api/auth/register HTTP/1.1\" 201 384 \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36\"","service":"interview-platform","timestamp":"2026-02-18 16:29:26"}
+{"level":"info","message":"::1 - - [18/Feb/2026:10:59:26 +0000] \"GET /api/interviews HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36\"","service":"interview-platform","timestamp":"2026-02-18 16:29:26"}
+{"level":"info","message":"::1 - - [18/Feb/2026:10:59:26 +0000] \"GET /api/interviews HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36\"","service":"interview-platform","timestamp":"2026-02-18 16:29:26"}
+{"level":"info","message":"::1 - - [18/Feb/2026:11:00:15 +0000] \"GET /api/auth/me HTTP/1.1\" 200 292 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:30:15"}
+{"level":"info","message":"::1 - - [18/Feb/2026:11:00:15 +0000] \"GET /api/auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:30:15"}
+{"level":"info","message":"::1 - - [18/Feb/2026:11:00:40 +0000] \"POST /api/auth/login HTTP/1.1\" 200 349 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:30:40"}
+{"level":"info","message":"::1 - - [18/Feb/2026:11:00:42 +0000] \"GET /api/interviews?status=&page=1&limit=12 HTTP/1.1\" 200 800 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:30:42"}
+{"level":"info","message":"::1 - - [18/Feb/2026:11:00:43 +0000] \"GET /api/interviews?status=&page=1&limit=12 HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:30:43"}
+{"level":"info","message":"::1 - - [18/Feb/2026:11:00:44 +0000] \"GET /api/admin/stats HTTP/1.1\" 200 7022 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:30:44"}
+{"level":"info","message":"::1 - - [18/Feb/2026:11:00:44 +0000] \"GET /api/admin/stats HTTP/1.1\" 200 7022 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:30:44"}
+{"level":"info","message":"::1 - - [18/Feb/2026:11:00:59 +0000] \"GET /api/interviews?status=&page=1&limit=12 HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:30:59"}
+{"level":"info","message":"::1 - - [18/Feb/2026:11:00:59 +0000] \"GET /api/interviews?status=&page=1&limit=12 HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:30:59"}
+{"level":"info","message":"::1 - - [18/Feb/2026:11:01:00 +0000] \"GET /api/users?search=&role= HTTP/1.1\" 200 1443 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:31:00"}
+{"level":"info","message":"::1 - - [18/Feb/2026:11:01:00 +0000] \"GET /api/users?search=&role= HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:31:00"}
+{"level":"info","message":"::1 - - [18/Feb/2026:11:01:07 +0000] \"GET /api/interviews?status=&page=1&limit=12 HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:31:07"}
+{"level":"info","message":"::1 - - [18/Feb/2026:11:01:07 +0000] \"GET /api/interviews?status=&page=1&limit=12 HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:31:07"}
+{"level":"info","message":"::1 - - [18/Feb/2026:11:01:09 +0000] \"GET /api/interviews/6995839f74fd0045f7a9b8ac HTTP/1.1\" 200 924 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:31:09"}
+{"level":"info","message":"::1 - - [18/Feb/2026:11:01:09 +0000] \"GET /api/interviews/6995839f74fd0045f7a9b8ac HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:31:09"}
+{"level":"info","message":"::1 - - [18/Feb/2026:11:01:19 +0000] \"PATCH /api/interviews/6995839f74fd0045f7a9b8ac/cancel HTTP/1.1\" 200 48 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:31:19"}
+{"level":"info","message":"::1 - - [18/Feb/2026:11:01:21 +0000] \"GET /api/admin/stats HTTP/1.1\" 200 7471 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:31:21"}
+{"level":"info","message":"::1 - - [18/Feb/2026:11:01:21 +0000] \"GET /api/admin/stats HTTP/1.1\" 200 7471 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:31:21"}
+{"level":"info","message":"Email sent successfully to user1@g.com [CANCELLATION]","service":"interview-platform","timestamp":"2026-02-18 16:31:22"}
+{"level":"info","message":"Email sent successfully to interviewer1@g.com [CANCELLATION]","service":"interview-platform","timestamp":"2026-02-18 16:31:22"}
+{"level":"info","message":"::1 - - [18/Feb/2026:11:01:22 +0000] \"GET /api/interviews?status=&page=1&limit=12 HTTP/1.1\" 200 798 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:31:22"}
+{"level":"info","message":"::1 - - [18/Feb/2026:11:01:23 +0000] \"GET /api/interviews?status=&page=1&limit=12 HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:31:23"}
+{"level":"info","message":"::1 - - [18/Feb/2026:11:01:24 +0000] \"GET /api/auth/me HTTP/1.1\" 200 327 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:31:24"}
+{"level":"info","message":"::1 - - [18/Feb/2026:11:01:24 +0000] \"GET /api/auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:31:24"}
+{"level":"info","message":"::1 - - [18/Feb/2026:11:01:24 +0000] \"GET /api/interviews?status=&page=1&limit=12 HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:31:24"}
+{"level":"info","message":"::1 - - [18/Feb/2026:11:01:25 +0000] \"GET /api/interviews?status=&page=1&limit=12 HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:31:25"}
+{"level":"info","message":"::1 - - [18/Feb/2026:11:01:26 +0000] \"GET /api/admin/stats HTTP/1.1\" 200 7471 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:31:26"}
+{"level":"info","message":"::1 - - [18/Feb/2026:11:01:26 +0000] \"GET /api/admin/stats HTTP/1.1\" 200 7471 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:31:26"}
+{"level":"info","message":"::1 - - [18/Feb/2026:11:02:17 +0000] \"POST /api/auth/login HTTP/1.1\" 200 338 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:32:17"}
+{"level":"info","message":"::1 - - [18/Feb/2026:11:02:17 +0000] \"GET /api/interviews?limit=50 HTTP/1.1\" 200 798 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:32:17"}
+{"level":"info","message":"::1 - - [18/Feb/2026:11:02:17 +0000] \"GET /api/interviews?limit=50 HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:32:17"}
+{"level":"info","message":"::1 - - [18/Feb/2026:11:02:20 +0000] \"GET /api/interviews?status=&page=1&limit=12 HTTP/1.1\" 200 798 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:32:20"}
+{"level":"info","message":"::1 - - [18/Feb/2026:11:02:20 +0000] \"GET /api/interviews?status=&page=1&limit=12 HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:32:20"}
+{"level":"info","message":"::1 - - [18/Feb/2026:11:02:22 +0000] \"GET /api/interviews?limit=50 HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:32:22"}
+{"level":"info","message":"::1 - - [18/Feb/2026:11:02:22 +0000] \"GET /api/interviews?limit=50 HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:32:22"}
+{"level":"info","message":"::1 - - [18/Feb/2026:11:02:23 +0000] \"GET /api/users/list/candidates HTTP/1.1\" 200 217 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:32:23"}
+{"level":"info","message":"::1 - - [18/Feb/2026:11:02:23 +0000] \"GET /api/users/list/interviewers HTTP/1.1\" 200 249 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:32:23"}
+{"level":"info","message":"::1 - - [18/Feb/2026:11:02:23 +0000] \"GET /api/users/list/candidates HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:32:23"}
+{"level":"info","message":"::1 - - [18/Feb/2026:11:02:23 +0000] \"GET /api/users/list/interviewers HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:32:23"}
+{"level":"info","message":"::1 - - [18/Feb/2026:11:02:45 +0000] \"POST /api/interviews HTTP/1.1\" 201 842 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:32:45"}
+{"level":"info","message":"::1 - - [18/Feb/2026:11:02:45 +0000] \"GET /api/interviews?status=&page=1&limit=12 HTTP/1.1\" 200 1381 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:32:45"}
+{"level":"info","message":"::1 - - [18/Feb/2026:11:02:45 +0000] \"GET /api/interviews?status=&page=1&limit=12 HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:32:45"}
+{"level":"info","message":"Email sent successfully to interviewer2@g.com [SCHEDULE]","service":"interview-platform","timestamp":"2026-02-18 16:32:48"}
+{"level":"info","message":"Email sent successfully to user2@g.com [SCHEDULE]","service":"interview-platform","timestamp":"2026-02-18 16:32:48"}
+{"level":"info","message":"::1 - - [18/Feb/2026:11:02:48 +0000] \"GET /api/interviews/69959c540f27bdbbbb94ccb7 HTTP/1.1\" 200 829 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:32:48"}
+{"level":"info","message":"::1 - - [18/Feb/2026:11:02:48 +0000] \"GET /api/interviews/69959c540f27bdbbbb94ccb7 HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 16:32:48"}
+{"level":"info","message":"::1 - - [18/Feb/2026:11:06:41 +0000] \"GET /api/interviews?status=&page=1&limit=12 HTTP/1.1\" 200 705 \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36\"","service":"interview-platform","timestamp":"2026-02-18 16:36:41"}
+{"level":"info","message":"::1 - - [18/Feb/2026:11:06:41 +0000] \"GET /api/interviews?status=&page=1&limit=12 HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36\"","service":"interview-platform","timestamp":"2026-02-18 16:36:41"}
+{"level":"info","message":"::1 - - [18/Feb/2026:11:06:42 +0000] \"GET /api/interviews/69959c540f27bdbbbb94ccb7 HTTP/1.1\" 200 829 \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36\"","service":"interview-platform","timestamp":"2026-02-18 16:36:42"}
+{"level":"info","message":"::1 - - [18/Feb/2026:11:06:43 +0000] \"GET /api/interviews/69959c540f27bdbbbb94ccb7 HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36\"","service":"interview-platform","timestamp":"2026-02-18 16:36:43"}
+{"level":"info","message":"::1 - - [18/Feb/2026:11:06:45 +0000] \"POST /api/interviews/69959c540f27bdbbbb94ccb7/start HTTP/1.1\" 200 423 \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36\"","service":"interview-platform","timestamp":"2026-02-18 16:36:45"}
+{"level":"info","message":"Socket connected: 0iJxUupTUWACzIrKAAAU [interviewer] interviewer2","service":"interview-platform","timestamp":"2026-02-18 16:36:45"}
+{"level":"info","message":"Email sent successfully to user2@g.com [START]","service":"interview-platform","timestamp":"2026-02-18 16:36:48"}
+{"level":"info","message":"::1 - - [18/Feb/2026:11:33:07 +0000] \"POST /api/auth/login HTTP/1.1\" 200 358 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 17:03:07"}
+{"level":"info","message":"::1 - - [18/Feb/2026:11:33:07 +0000] \"GET /api/interviews HTTP/1.1\" 200 746 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 17:03:07"}
+{"level":"info","message":"::1 - - [18/Feb/2026:11:33:08 +0000] \"GET /api/interviews HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\"","service":"interview-platform","timestamp":"2026-02-18 17:03:08"}
+{"level":"info","message":"Socket connected: T4VFZZhwaMWdl9I3AAAX [candidate] user2","service":"interview-platform","timestamp":"2026-02-18 17:03:13"}
+{"level":"info","message":"Socket connected: tPhGssWk9gvNDIuiAAAY [candidate] user2","service":"interview-platform","timestamp":"2026-02-18 17:03:13"}
+{"level":"error","message":"lobby:enter error: req is not defined","service":"interview-platform","stack":"ReferenceError: req is not defined\n    at Socket.<anonymous> (C:\\Users\\ADMIN\\Desktop\\interview-platform\\interview-platform\\server\\socket\\index.js:157:20)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2026-02-18 17:03:13"}
+{"level":"error","message":"lobby:enter error: req is not defined","service":"interview-platform","stack":"ReferenceError: req is not defined\n    at Socket.<anonymous> (C:\\Users\\ADMIN\\Desktop\\interview-platform\\interview-platform\\server\\socket\\index.js:157:20)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2026-02-18 17:03:13"}
+{"level":"info","message":"Socket disconnected: 0iJxUupTUWACzIrKAAAU [interviewer2]","service":"interview-platform","timestamp":"2026-02-18 17:03:19"}
+{"level":"info","message":"::1 - - [18/Feb/2026:11:33:21 +0000] \"GET /api/auth/me HTTP/1.1\" 200 308 \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36\"","service":"interview-platform","timestamp":"2026-02-18 17:03:21"}
+{"level":"info","message":"::1 - - [18/Feb/2026:11:33:21 +0000] \"GET /api/auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36\"","service":"interview-platform","timestamp":"2026-02-18 17:03:21"}
+{"level":"info","message":"Socket.io server initialized","service":"interview-platform","timestamp":"2026-02-18 17:04:54"}
+{"level":"info","message":"🚀 Server running in development mode on port 5000","service":"interview-platform","timestamp":"2026-02-18 17:04:54"}
+{"level":"info","message":"📡 Socket.io initialized","service":"interview-platform","timestamp":"2026-02-18 17:04:54"}
+{"level":"info","message":"✅ MongoDB Connected: ac-julz5np-shard-00-00.ywnfkxr.mongodb.net","service":"interview-platform","timestamp":"2026-02-18 17:04:55"}
+{"level":"info","message":"Socket connected: 78rtORtu64I-mYbKAAAB [candidate] user2","service":"interview-platform","timestamp":"2026-02-18 17:04:55"}
+{"level":"info","message":"Socket connected: gLYbv9B3ueQK144sAAAD [candidate] user2","service":"interview-platform","timestamp":"2026-02-18 17:04:57"}
+{"level":"info","message":"Socket.io server initialized","service":"interview-platform","timestamp":"2026-02-18 17:05:33"}
+{"level":"info","message":"🚀 Server running in development mode on port 5000","service":"interview-platform","timestamp":"2026-02-18 17:05:33"}
+{"level":"info","message":"📡 Socket.io initialized","service":"interview-platform","timestamp":"2026-02-18 17:05:33"}
+{"level":"info","message":"✅ MongoDB Connected: ac-julz5np-shard-00-02.ywnfkxr.mongodb.net","service":"interview-platform","timestamp":"2026-02-18 17:05:33"}
+{"level":"info","message":"Socket connected: iaHCAWECIDZd4mXTAAAB [candidate] user2","service":"interview-platform","timestamp":"2026-02-18 17:05:34"}
+{"level":"info","message":"Socket connected: xqfMvhvM5jkmSyw0AAAD [candidate] user2","service":"interview-platform","timestamp":"2026-02-18 17:05:35"}
+{"level":"info","message":"::1 - - [18/Feb/2026:11:35:39 +0000] \"GET /api/auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36\"","service":"interview-platform","timestamp":"2026-02-18 17:05:39"}
+{"level":"info","message":"::1 - - [18/Feb/2026:11:35:39 +0000] \"GET /api/auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36\"","service":"interview-platform","timestamp":"2026-02-18 17:05:39"}
+{"level":"info","message":"::1 - - [18/Feb/2026:11:35:43 +0000] \"GET /api/interviews HTTP/1.1\" 200 787 \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36\"","service":"interview-platform","timestamp":"2026-02-18 17:05:43"}
+{"level":"info","message":"::1 - - [18/Feb/2026:11:35:43 +0000] \"GET /api/interviews HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36\"","service":"interview-platform","timestamp":"2026-02-18 17:05:43"}
+{"level":"info","message":"Socket connected: spx6r1l3HUlsZTZBAAAJ [interviewer] interviewer2","service":"interview-platform","timestamp":"2026-02-18 17:05:45"}
+{"level":"info","message":"Socket disconnected: spx6r1l3HUlsZTZBAAAJ [interviewer2]","service":"interview-platform","timestamp":"2026-02-18 17:09:03"}
+{"level":"info","message":"Socket connected: f2x816drwUHmApOHAAAL [interviewer] interviewer2","service":"interview-platform","timestamp":"2026-02-18 17:09:03"}
+{"level":"info","message":"Socket disconnected: f2x816drwUHmApOHAAAL [interviewer2]","service":"interview-platform","timestamp":"2026-02-18 17:09:04"}
+{"level":"info","message":"::1 - - [18/Feb/2026:11:39:05 +0000] \"GET /api/auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36\"","service":"interview-platform","timestamp":"2026-02-18 17:09:05"}
+{"level":"info","message":"::1 - - [18/Feb/2026:11:39:06 +0000] \"GET /api/auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36\"","service":"interview-platform","timestamp":"2026-02-18 17:09:06"}
+{"level":"info","message":"Socket connected: EmznjDQdT6voQnE1AAAO [interviewer] interviewer2","service":"interview-platform","timestamp":"2026-02-18 17:09:06"}
+{"level":"info","message":"Socket.io server initialized","service":"interview-platform","timestamp":"2026-02-18 17:11:16"}
+{"level":"info","message":"🚀 Server running in development mode on port 5000","service":"interview-platform","timestamp":"2026-02-18 17:11:16"}
+{"level":"info","message":"📡 Socket.io initialized","service":"interview-platform","timestamp":"2026-02-18 17:11:16"}
+{"level":"info","message":"✅ MongoDB Connected: ac-julz5np-shard-00-00.ywnfkxr.mongodb.net","service":"interview-platform","timestamp":"2026-02-18 17:11:16"}
+{"level":"info","message":"Socket connected: DMaPG9ufk8juUHmZAAAB [candidate] user2","service":"interview-platform","timestamp":"2026-02-18 17:11:19"}
+{"level":"info","message":"Socket connected: eGtJcnkhHjmLJ1jPAAAD [interviewer] interviewer2","service":"interview-platform","timestamp":"2026-02-18 17:11:20"}
+{"level":"info","message":"Socket connected: -SrHVReURn7ldYE5AAAF [candidate] user2","service":"interview-platform","timestamp":"2026-02-18 17:11:21"}
+{"level":"info","message":"Socket disconnected: eGtJcnkhHjmLJ1jPAAAD [interviewer2]","service":"interview-platform","timestamp":"2026-02-18 17:11:30"}
+{"level":"info","message":"::1 - - [18/Feb/2026:11:41:30 +0000] \"GET /api/auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36\"","service":"interview-platform","timestamp":"2026-02-18 17:11:30"}
+{"level":"info","message":"::1 - - [18/Feb/2026:11:41:31 +0000] \"GET /api/auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36\"","service":"interview-platform","timestamp":"2026-02-18 17:11:31"}
+{"level":"info","message":"Socket connected: s-9AInaTiCLXPqGKAAAI [interviewer] interviewer2","service":"interview-platform","timestamp":"2026-02-18 17:11:31"}
+{"level":"info","message":"Socket disconnected: s-9AInaTiCLXPqGKAAAI [interviewer2]","service":"interview-platform","timestamp":"2026-02-18 17:11:32"}
+{"level":"info","message":"::1 - - [18/Feb/2026:11:41:32 +0000] \"GET /api/auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36\"","service":"interview-platform","timestamp":"2026-02-18 17:11:32"}
+{"level":"info","message":"::1 - - [18/Feb/2026:11:41:32 +0000] \"GET /api/auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36\"","service":"interview-platform","timestamp":"2026-02-18 17:11:32"}
+{"level":"info","message":"Socket connected: 8sKitZcZcTK7fc6fAAAL [interviewer] interviewer2","service":"interview-platform","timestamp":"2026-02-18 17:11:32"}
+{"level":"info","message":"Socket disconnected: DMaPG9ufk8juUHmZAAAB [user2]","service":"interview-platform","timestamp":"2026-02-18 17:15:48"}
+{"level":"info","message":"Socket disconnected: -SrHVReURn7ldYE5AAAF [user2]","service":"interview-platform","timestamp":"2026-02-18 17:15:48"}
