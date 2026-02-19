@@ -1,0 +1,15 @@
+/**
+ * Auth Routes
+ */
+
+import express from "express";
+import { register, login, getMe } from "../controllers/authController.js";
+import { requireAuth } from "../middleware/auth.js";
+import { validate } from "../middleware/validate.js";
+
+const router = express.Router();
+router.post("/register", validate("register"), register);
+router.post("/login", validate("login"), login);
+router.get("/me", requireAuth, getMe);
+
+export default router;

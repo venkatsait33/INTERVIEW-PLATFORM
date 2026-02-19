@@ -3,28 +3,28 @@
  * Tracks all email notifications sent by the system
  */
 
-const mongoose = require('mongoose');
+import mongoose from "mongoose";
 
 const notificationLogSchema = new mongoose.Schema(
   {
     user: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'User',
+      ref: "User",
       required: true,
     },
     interview: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'Interview',
+      ref: "Interview",
     },
     type: {
       type: String,
-      enum: ['SCHEDULE', 'START', 'RESULT', 'CANCELLATION', 'REMINDER'],
+      enum: ["SCHEDULE", "START", "RESULT", "CANCELLATION", "REMINDER"],
       required: true,
     },
     status: {
       type: String,
-      enum: ['SENT', 'FAILED', 'PENDING'],
-      default: 'PENDING',
+      enum: ["SENT", "FAILED", "PENDING"],
+      default: "PENDING",
     },
     recipient: {
       type: String, // Email address
@@ -42,7 +42,7 @@ const notificationLogSchema = new mongoose.Schema(
   },
   {
     timestamps: true,
-  }
+  },
 );
 
 notificationLogSchema.index({ user: 1 });
@@ -50,7 +50,10 @@ notificationLogSchema.index({ interview: 1 });
 notificationLogSchema.index({ status: 1 });
 notificationLogSchema.index({ createdAt: -1 });
 
-const NotificationLog = mongoose.model('NotificationLog', notificationLogSchema);
+export const NotificationLog = mongoose.model(
+  "NotificationLog",
+  notificationLogSchema,
+);
 
 /**
  * ActivityLog Model
@@ -61,31 +64,31 @@ const activityLogSchema = new mongoose.Schema(
   {
     user: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'User',
+      ref: "User",
       required: true,
     },
     action: {
       type: String,
       required: true,
       enum: [
-        'LOGIN',
-        'LOGOUT',
-        'REGISTER',
-        'SCHEDULE_INTERVIEW',
-        'START_INTERVIEW',
-        'COMPLETE_INTERVIEW',
-        'CANCEL_INTERVIEW',
-        'SUBMIT_FEEDBACK',
-        'JOIN_LOBBY',
-        'ADMIT_CANDIDATE',
-        'UPDATE_RESULT',
-        'UPDATE_USER',
-        'DELETE_USER',
+        "LOGIN",
+        "LOGOUT",
+        "REGISTER",
+        "SCHEDULE_INTERVIEW",
+        "START_INTERVIEW",
+        "COMPLETE_INTERVIEW",
+        "CANCEL_INTERVIEW",
+        "SUBMIT_FEEDBACK",
+        "JOIN_LOBBY",
+        "ADMIT_CANDIDATE",
+        "UPDATE_RESULT",
+        "UPDATE_USER",
+        "DELETE_USER",
       ],
     },
     interviewId: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'Interview',
+      ref: "Interview",
     },
     ipAddress: {
       type: String,
@@ -99,7 +102,7 @@ const activityLogSchema = new mongoose.Schema(
   },
   {
     timestamps: true,
-  }
+  },
 );
 
 activityLogSchema.index({ user: 1 });
@@ -107,6 +110,4 @@ activityLogSchema.index({ action: 1 });
 activityLogSchema.index({ interviewId: 1 });
 activityLogSchema.index({ createdAt: -1 });
 
-const ActivityLog = mongoose.model('ActivityLog', activityLogSchema);
-
-module.exports = { NotificationLog, ActivityLog };
+export const ActivityLog = mongoose.model("ActivityLog", activityLogSchema);

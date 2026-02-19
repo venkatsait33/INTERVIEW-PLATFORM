@@ -3,8 +3,8 @@
  * Records audit trail for all significant actions
  */
 
-const { ActivityLog } = require('../models/Logs');
-const logger = require('../utils/logger');
+import { ActivityLog } from "../models/Logs.js";
+import logger from "../utils/logger.js";
 
 /**
  * Log an activity action
@@ -16,7 +16,14 @@ const logger = require('../utils/logger');
  * @param {string} [params.userAgent] - Browser user agent
  * @param {object} [params.details] - Additional context
  */
-const logActivity = async ({ userId, action, interviewId, ipAddress, userAgent, details }) => {
+export const logActivity = async ({
+  userId,
+  action,
+  interviewId,
+  ipAddress,
+  userAgent,
+  details,
+}) => {
   try {
     await ActivityLog.create({
       user: userId,
@@ -28,7 +35,7 @@ const logActivity = async ({ userId, action, interviewId, ipAddress, userAgent, 
     });
   } catch (error) {
     // Logging failure should not break main flow
-    logger.error('Failed to create activity log:', error.message);
+    logger.error("Failed to create activity log:", error.message);
   }
 };
 
@@ -37,9 +44,7 @@ const logActivity = async ({ userId, action, interviewId, ipAddress, userAgent, 
  * @param {object} req - Express request object
  * @returns {{ ipAddress, userAgent }}
  */
-const getRequestMeta = (req) => ({
+export const getRequestMeta = (req) => ({
   ipAddress: req.ip || req.connection?.remoteAddress,
-  userAgent: req.headers['user-agent'],
+  userAgent: req.headers["user-agent"],
 });
-
-module.exports = { logActivity, getRequestMeta };

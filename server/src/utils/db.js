@@ -2,9 +2,10 @@
  * MongoDB Connection Utility
  * Handles connection with retry logic
  */
-require("dotenv").config();
-const mongoose = require("mongoose");
-const logger = require("./logger");
+import dotenv from "dotenv";
+dotenv.config();
+import mongoose from "mongoose";
+import logger from "./logger.js";
 
 const connectDB = async () => {
   try {
@@ -31,4 +32,4 @@ const connectDB = async () => {
   }
 };
 
-module.exports = connectDB;
+export default connectDB;

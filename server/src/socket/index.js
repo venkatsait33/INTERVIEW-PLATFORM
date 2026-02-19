@@ -3,16 +3,16 @@
  * Handles real-time: signaling, lobby, code sync, WebRTC
  */
 
-const { Server } = require("socket.io");
-const { verifyToken, verifyRoomToken } = require("../utils/jwt");
-const User = require("../models/User");
-const Interview = require("../models/Interview");
-const logger = require("../utils/logger");
+import { Server } from "socket.io";
+import { verifyToken, verifyRoomToken } from "../utils/jwt.js";
+import User from "../models/User.js";
+import Interview from "../models/Interview.js";
+import logger from "../utils/logger.js";
 
 // Track active rooms: { interviewId: { interviewerSocketId, candidateSocketId, code } }
 const activeRooms = new Map();
 
-const initializeSocket = (server) => {
+export const initializeSocket = (server) => {
   const io = new Server(server, {
     cors: {
       origin: process.env.CLIENT_URL || "http://localhost:3000",
@@ -286,5 +286,3 @@ const initializeSocket = (server) => {
   logger.info("Socket.io server initialized");
   return io;
 };
-
-module.exports = { initializeSocket };

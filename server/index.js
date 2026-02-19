@@ -3,12 +3,13 @@
  * Main Server Entry Point
  */
 
-require("dotenv").config();
-const http = require("http");
-const app = require("./app");
-const { initializeSocket } = require("./socket");
-const connectDB = require("./utils/db");
-const logger = require("./utils/logger");
+import dotenv from "dotenv";
+dotenv.config();
+import http from "http";
+import app from "./src/app.js";
+import { initializeSocket } from "./src/socket/index.js";
+import connectDB from "./src/utils/db.js";
+import logger from "./src/utils/logger.js";
 
 const PORT = process.env.PORT || 5000;
 

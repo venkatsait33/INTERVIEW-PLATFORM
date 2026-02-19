@@ -11,7 +11,13 @@
  * @param {any} data - Response data
  * @param {object} meta - Pagination or extra metadata
  */
-const sendSuccess = (res, statusCode = 200, message = 'Success', data = null, meta = null) => {
+const sendSuccess = (
+  res,
+  statusCode = 200,
+  message = "Success",
+  data = null,
+  meta = null,
+) => {
   const response = { success: true, message };
   if (data !== null) response.data = data;
   if (meta !== null) response.meta = meta;
@@ -25,7 +31,7 @@ const sendSuccess = (res, statusCode = 200, message = 'Success', data = null, me
  * @param {string} message - Error message
  * @param {any} errors - Validation errors or additional info
  */
-const sendError = (res, statusCode = 500, message = 'Error', errors = null) => {
+const sendError = (res, statusCode = 500, message = "Error", errors = null) => {
   const response = { success: false, message };
   if (errors !== null) response.errors = errors;
   return res.status(statusCode).json(response);
@@ -38,9 +44,9 @@ class AppError extends Error {
   constructor(message, statusCode) {
     super(message);
     this.statusCode = statusCode;
-    this.status = `${statusCode}`.startsWith('4') ? 'fail' : 'error';
+    this.status = `${statusCode}`.startsWith("4") ? "fail" : "error";
     Error.captureStackTrace(this, this.constructor);
   }
 }
 
-module.exports = { sendSuccess, sendError, AppError };
+export { sendSuccess, sendError, AppError };

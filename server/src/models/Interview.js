@@ -3,10 +3,16 @@
  * Core data model for the interview lifecycle
  */
 
-const mongoose = require('mongoose');
+import mongoose from "mongoose";
 
-const INTERVIEW_STATUS = ['SCHEDULED', 'IN_PROGRESS', 'COMPLETED', 'CANCELLED', 'NO_SHOW'];
-const INTERVIEW_RESULT = ['PENDING', 'HIRED', 'REJECTED'];
+export const INTERVIEW_STATUS = [
+  "SCHEDULED",
+  "IN_PROGRESS",
+  "COMPLETED",
+  "CANCELLED",
+  "NO_SHOW",
+];
+export const INTERVIEW_RESULT = ["PENDING", "HIRED", "REJECTED"];
 
 const interviewSchema = new mongoose.Schema(
   {
@@ -121,15 +127,13 @@ interviewSchema.index({ status: 1, scheduledAt: 1 });
 // ─────────────────────────────────────────
 // Virtual: computed duration of actual interview
 // ─────────────────────────────────────────
-interviewSchema.virtual('actualDurationMinutes').get(function () {
+interviewSchema.virtual("actualDurationMinutes").get(function () {
   if (this.startedAt && this.endedAt) {
     return Math.round((this.endedAt - this.startedAt) / 60000);
   }
   return null;
 });
 
-const Interview = mongoose.model('Interview', interviewSchema);
+const Interview = mongoose.model("Interview", interviewSchema);
 
-module.exports = Interview;
-module.exports.INTERVIEW_STATUS = INTERVIEW_STATUS;
-module.exports.INTERVIEW_RESULT = INTERVIEW_RESULT;
+export default Interview;

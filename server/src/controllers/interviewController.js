@@ -3,18 +3,23 @@
  * Manages the full interview lifecycle
  */
 
-const Interview = require("../models/Interview");
-const User = require("../models/User");
-const { generateRoomToken } = require("../utils/jwt");
-const { sendSuccess, sendError } = require("../utils/response");
-const { logActivity, getRequestMeta } = require("../services/activityService");
-const emailService = require("../services/emailService");
-const logger = require("../utils/logger");
+import Interview from "../models/Interview.js";
+import User from "../models/User.js";
+import { generateRoomToken } from "../utils/jwt.js";
+import { sendSuccess, sendError } from "../utils/response.js";
+import { logActivity, getRequestMeta } from "../services/activityService.js";
+import logger from "../utils/logger.js";
+import {
+  sendCancellationNotification,
+  sendResultNotification,
+  sendScheduleNotification,
+  sendSessionStartedNotification,
+} from "../services/emailService.js";
 
 // ─────────────────────────────────────────
 // Helper: Pagination
 // ─────────────────────────────────────────
-const paginate = (query, page = 1, limit = 10) => {
+export const paginate = (query, page = 1, limit = 10) => {
   const skip = (page - 1) * limit;
   return query.skip(skip).limit(limit);
 };
@@ -26,7 +31,7 @@ const paginate = (query, page = 1, limit = 10) => {
 /**
  * POST /api/interviews
  */
-const scheduleInterview = async (req, res) => {
+export const scheduleInterview = async (req, res) => {
   try {
     const {
       title,
@@ -91,9 +96,10 @@ const scheduleInterview = async (req, res) => {
     });
 
     // Send email notifications
-    emailService
-      .sendScheduleNotification(interview, interviewer, candidate)
-      .catch((err) => logger.error("Schedule notification error:", err));
+
+    sendScheduleNotification(interview, interviewer, candidate).catch((err) =>
+      logger.error("Schedule notification error:", err),
+    );
 
     await logActivity({
       userId: req.user._id,
@@ -124,7 +130,7 @@ const scheduleInterview = async (req, res) => {
 /**
  * GET /api/interviews
  */
-const getInterviews = async (req, res) => {
+export const getInterviews = async (req, res) => {
   try {
     const { status, page = 1, limit = 10, search } = req.query;
     const { user } = req;
@@ -179,7 +185,7 @@ const getInterviews = async (req, res) => {
 /**
  * GET /api/interviews/:id
  */
-const getInterview = async (req, res) => {
+export const getInterview = async (req, res) => {
   try {
     const interview = await Interview.findById(req.params.id)
       .populate("interviewer", "name email")
@@ -215,7 +221,7 @@ const getInterview = async (req, res) => {
  * POST /api/interviews/:id/start
  * Generates room token and notifies candidate
  */
-const startSession = async (req, res) => {
+export const startSession = async (req, res) => {
   try {
     const interview = await Interview.findById(req.params.id)
       .populate("candidate", "name email")
@@ -256,9 +262,11 @@ const startSession = async (req, res) => {
     await interview.save();
 
     // Email candidate the secure join link
-    emailService
-      .sendSessionStartedNotification(interview, interview.candidate, roomToken)
-      .catch((err) => logger.error("Session start notification error:", err));
+    sendSessionStartedNotification(
+      interview,
+      interview.candidate,
+      roomToken,
+    ).catch((err) => logger.error("Session start notification error:", err));
 
     await logActivity({
       userId: req.user._id,
@@ -286,7 +294,7 @@ const startSession = async (req, res) => {
  * POST /api/interviews/:id/lobby
  * Candidate signals they are in the waiting lobby
  */
-const joinLobby = async (req, res) => {
+export const joinLobby = async (req, res) => {
   try {
     const { token } = req.body;
     const interview = await Interview.findById(req.params.id);
@@ -338,7 +346,7 @@ const joinLobby = async (req, res) => {
 /**
  * POST /api/interviews/:id/admit
  */
-const admitCandidate = async (req, res) => {
+export const admitCandidate = async (req, res) => {
   try {
     const interview = await Interview.findById(req.params.id);
 
@@ -390,7 +398,7 @@ const admitCandidate = async (req, res) => {
 /**
  * POST /api/interviews/:id/feedback
  */
-const submitFeedback = async (req, res) => {
+export const submitFeedback = async (req, res) => {
   try {
     const { feedback, technicalNotes, rating, result } = req.body;
 
@@ -428,9 +436,9 @@ const submitFeedback = async (req, res) => {
     await interview.save();
 
     // Notify candidate of result
-    emailService
-      .sendResultNotification(interview, interview.candidate)
-      .catch((err) => logger.error("Result notification error:", err));
+    sendResultNotification(interview, interview.candidate).catch((err) =>
+      logger.error("Result notification error:", err),
+    );
 
     await logActivity({
       userId: req.user._id,
@@ -460,7 +468,7 @@ const submitFeedback = async (req, res) => {
 /**
  * PATCH /api/interviews/:id/cancel
  */
-const cancelInterview = async (req, res) => {
+export const cancelInterview = async (req, res) => {
   try {
     const { reason } = req.body;
 
@@ -484,13 +492,11 @@ const cancelInterview = async (req, res) => {
     await interview.save();
 
     // Notify both parties
-    emailService
-      .sendCancellationNotification(
-        interview,
-        [interview.interviewer, interview.candidate],
-        reason,
-      )
-      .catch((err) => logger.error("Cancellation notification error:", err));
+    sendCancellationNotification(
+      interview,
+      [interview.interviewer, interview.candidate],
+      reason,
+    ).catch((err) => logger.error("Cancellation notification error:", err));
 
     await logActivity({
       userId: req.user._id,
@@ -505,15 +511,4 @@ const cancelInterview = async (req, res) => {
     logger.error("cancelInterview error:", error);
     return sendError(res, 500, "Failed to cancel interview");
   }
-};
-
-module.exports = {
-  scheduleInterview,
-  getInterviews,
-  getInterview,
-  startSession,
-  joinLobby,
-  admitCandidate,
-  submitFeedback,
-  cancelInterview,
 };

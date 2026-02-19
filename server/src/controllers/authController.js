@@ -3,18 +3,18 @@
  * Handles registration, login, and profile
  */
 
-const User = require("../models/User");
-const { generateToken } = require("../utils/jwt");
-const { sendSuccess, sendError } = require("../utils/response");
-const { logActivity, getRequestMeta } = require("../services/activityService");
-const logger = require("../utils/logger");
-const bcrypt = require("bcryptjs");
+import User from "../models/User.js";
+import { generateToken } from "../utils/jwt.js";
+import { sendSuccess, sendError } from "../utils/response.js";
+import { logActivity, getRequestMeta } from "../services/activityService.js";
+import logger from "../utils/logger.js";
+import bcrypt from "bcryptjs";
 
 /**
  * POST /api/auth/register
  * Register a new user (admin only creates admin/hr; anyone can register as candidate/interviewer)
  */
-const register = async (req, res) => {
+export const register = async (req, res) => {
   try {
     const { name, email, password, role = "candidate" } = req.body;
 
@@ -59,7 +59,7 @@ const register = async (req, res) => {
 /**
  * POST /api/auth/login
  */
-const login = async (req, res) => {
+export const login = async (req, res) => {
   try {
     const { email, password } = req.body;
 
@@ -113,12 +113,11 @@ const login = async (req, res) => {
   }
 };
 
-
 /**
  * GET /api/auth/me
  * Get current authenticated user
  */
-const getMe = async (req, res) => {
+export const getMe = async (req, res) => {
   try {
     const user = await User.findById(req.user._id);
     return sendSuccess(res, 200, "User profile retrieved", { user });
@@ -126,5 +125,3 @@ const getMe = async (req, res) => {
     return sendError(res, 500, "Failed to retrieve profile");
   }
 };
-
-module.exports = { register, login, getMe };
