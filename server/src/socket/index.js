@@ -83,8 +83,9 @@ export const initializeSocket = (server) => {
     socket.on("room:join", async ({ interviewId }) => {
       try {
         const interview = await Interview.findById(interviewId);
-        if (!interview)
+        if (!interview) {
           return socket.emit("error", { message: "Interview not found" });
+        }
 
         const userId = socket.userId;
         const role = socket.user.role;
@@ -104,6 +105,12 @@ export const initializeSocket = (server) => {
           return socket.emit("error", {
             message: "Not yet admitted to room. Please wait in lobby.",
           });
+        }
+
+        if (isCandidate && interview.candidateAdmitted) {
+          interview.candidateInLobby = false;
+          interview.candidateSocketId = null;
+          await interview.save();
         }
 
         // Join socket room
@@ -150,17 +157,21 @@ export const initializeSocket = (server) => {
 
         if (interview.candidate.toString() !== socket.userId) return;
 
-        // Notify the interviewer's socket
-        socket
-          .to(`interviewer-${interview.interviewer.toString()}`)
-          .emit("lobby:candidate-waiting", {
+        interview.candidateInLobby = true;
+        interview.candidateSocketId = socket.id;
+        await interview.save();
+        // Join personal room (important for admit emit)
+        socket.join(`candidate-${socket.userId}`);
+
+        // Notify interviewer dashboard
+        io.to(`interviewer-${interview.interviewer.toString()}`).emit(
+          "lobby:candidate-waiting",
+          {
             interviewId,
             candidateName: socket.user.name,
             candidateId: socket.userId,
-          });
-
-        interview.candidateSocketId = socket.id;
-        await interview.save();
+          },
+        );
 
         socket.emit("lobby:entered", {
           message: "Waiting for interviewer to admit you...",
@@ -222,31 +233,6 @@ export const initializeSocket = (server) => {
         updatedBy: socket.user.name,
       });
     });
-
-    // ── WebRTC Signaling ──
-    socket.on("webrtc:offer", ({ interviewId, offer, targetId }) => {
-      io.to(interviewId).except(socket.id).emit("webrtc:offer", {
-        offer,
-        fromId: socket.id,
-        fromName: socket.user.name,
-      });
-    });
-
-    socket.on("webrtc:answer", ({ interviewId, answer, targetId }) => {
-      io.to(targetId).emit("webrtc:answer", { answer, fromId: socket.id });
-    });
-
-    socket.on(
-      "webrtc:ice-candidate",
-      ({ interviewId, candidate, targetId }) => {
-        io.to(targetId || interviewId)
-          .except(socket.id)
-          .emit("webrtc:ice-candidate", {
-            candidate,
-            fromId: socket.id,
-          });
-      },
-    );
 
     // ── Chat within room ──
     socket.on("chat:message", ({ interviewId, message }) => {

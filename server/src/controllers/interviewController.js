@@ -362,6 +362,7 @@ export const admitCandidate = async (req, res) => {
       );
     }
 
+    // 🔥 NOW THIS WILL WORK (because lobby sets candidateInLobby)
     if (!interview.candidateInLobby) {
       return sendError(res, 400, "Candidate has not joined the lobby yet");
     }
@@ -371,11 +372,13 @@ export const admitCandidate = async (req, res) => {
 
     const io = req.app.get("io");
 
-    if (interview.candidateSocketId) {
-      io.to(interview.candidateSocketId).emit("lobby:admitted", {
+    // ✅ CORRECT EMIT CHANNEL
+    io.to(`candidate-${interview.candidate.toString()}`).emit(
+      "lobby:admitted",
+      {
         interviewId: interview._id,
-      });
-    }
+      },
+    );
 
     await logActivity({
       userId: req.user._id,

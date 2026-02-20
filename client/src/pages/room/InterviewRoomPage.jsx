@@ -26,6 +26,7 @@ import {
 import { InterviewVideoLayout } from "./VideoStream";
 import toast from "react-hot-toast";
 import { DEFAULT_CODE, LANGUAGES } from "../../utils/editor";
+import { Panel, Group, Separator } from "react-resizable-panels";
 
 export default function InterviewRoomPage() {
   const { id } = useParams();
@@ -195,17 +196,8 @@ export default function InterviewRoomPage() {
   useEffect(() => {
     if (!call) return;
 
-    const onParticipantLeft = async () => {
+    const onParticipantLeft = () => {
       toast("Other participant left the interview", { icon: "👋" });
-      const remaining = call.state.session?.participants || [];
-      if (remaining.length <= 1) {
-        await call.leave();
-      }
-      call.on("call.session_participant_left", onParticipantLeft);
-
-      return () => {
-        call.off("call.session_participant_left", onParticipantLeft);
-      };
     };
 
     const onCallEnded = () => {
@@ -213,9 +205,11 @@ export default function InterviewRoomPage() {
       navigate("/dashboard");
     };
 
+    call.on("call.session_participant_left", onParticipantLeft);
     call.on("call.ended", onCallEnded);
 
     return () => {
+      call.off("call.session_participant_left", onParticipantLeft);
       call.off("call.ended", onCallEnded);
     };
   }, [call, navigate]);
@@ -313,7 +307,8 @@ export default function InterviewRoomPage() {
     hasLeft.current = true;
 
     try {
-      await call?.leave(); // 🔥 Direct leave is cleaner
+      // 🔥 Proper cleanup (fixes ghost video + stuck feed)
+      await disconnectStreamClient();
       disconnectSocket();
     } catch (error) {
       console.error("Error leaving call:", error);
@@ -406,116 +401,134 @@ export default function InterviewRoomPage() {
         </button>
       </div>
 
+      {/* <Group>
+        <Panel>
+          <p>hello world</p>
+        </Panel>
+        <Separator />
+        <Panel>
+          <p>hello world</p>
+        </Panel>
+      </Group> */}
       {/* ── Main Content ── */}
-      <div className="flex flex-1 overflow-hidden">
-        {/* LEFT: Code Editor + Terminal */}
-        <div className="flex flex-col flex-1 overflow-hidden">
-          <div className="flex-1 overflow-hidden">
-            <Editor
-              height="100%"
-              language={language}
-              value={code}
-              onChange={handleCodeChange}
-              theme="vs-dark"
-              options={{
-                fontSize: 14,
-                minimap: { enabled: false },
-                wordWrap: "on",
-                automaticLayout: true,
-                scrollBeyondLastLine: false,
-                tabSize: 2,
-                renderLineHighlight: "all",
-              }}
-            />
-          </div>
+      <div>
+        <div className="w-full h-full">
+          {/* LEFT: Code Editor + Terminal */}
+          <Group>
+            <Panel minSize={500} maxSize={1000}>
+              <div className="flex flex-col justify-between h-full">
+                <div className="flex flex-col justify-between h-full ">
+                  <Editor
+                    height="100%"
+                    language={language}
+                    value={code}
+                    onChange={handleCodeChange}
+                    theme="vs-dark"
+                    options={{
+                      fontSize: 14,
+                      minimap: { enabled: false },
+                      wordWrap: "on",
+                      automaticLayout: true,
+                      scrollBeyondLastLine: false,
+                      tabSize: 2,
+                      renderLineHighlight: "all",
+                    }}
+                  />
+                </div>
 
-          {/* Terminal output */}
-          <div className="p-3 overflow-auto font-mono text-xs text-green-400 bg-black border-t border-gray-800 h-36 shrink-0">
-            <p className="mb-1 text-gray-600">─── Terminal ───</p>
-            {running ? (
-              <span className="animate-pulse">Running...</span>
-            ) : output ? (
-              <pre className="whitespace-pre-wrap">{output}</pre>
-            ) : (
-              <span className="text-gray-700">
-                Output will appear here after running code
-              </span>
-            )}
-          </div>
-        </div>
-
-        {/* RIGHT: Video + Chat */}
-        <div className="flex flex-col bg-gray-900 border-l border-gray-800 w-80 shrink-0">
-          {/* Video */}
-          <div className="p-3 border-b border-gray-800">
-            {videoClient && call ? (
-              <StreamVideo client={videoClient}>
-                <StreamCall call={call}>
-                  <StreamTheme>
-                    {/* Pass localRole so labels are correct for both sides */}
-                    <InterviewVideoLayout localRole={user?.role} />
-                    <div className="mt-2">
-                      <CallControls />
-                    </div>
-                  </StreamTheme>
-                </StreamCall>
-              </StreamVideo>
-            ) : (
-              <div className="flex flex-col items-center justify-center gap-2 text-gray-500 bg-gray-800 aspect-video rounded-xl">
-                <div className="w-6 h-6 border-2 border-gray-600 rounded-full border-t-indigo-400 animate-spin" />
-                <span className="text-xs">Connecting video...</span>
+                {/* Terminal output */}
+                <div className="p-3 overflow-auto font-mono text-xs text-green-400 bg-black border-t border-gray-800 h-36 shrink-0">
+                  <p className="mb-1 text-gray-600">─── Terminal ───</p>
+                  {running ? (
+                    <span className="animate-pulse">Running...</span>
+                  ) : output ? (
+                    <pre className="whitespace-pre-wrap">{output}</pre>
+                  ) : (
+                    <span className="text-gray-700">
+                      Output will appear here after running code
+                    </span>
+                  )}
+                </div>
               </div>
-            )}
-          </div>
+            </Panel>
+            <Separator className="border-2 " />
+            <Panel>
+              <div className="flex flex-col justify-between w-full h-full ">
+                {/* Video */}
+                <div className="flex-col items-center justify-center gap-2 text-gray-500 bg-gray-800 lex aspect-video rounded-xl">
+                  {videoClient && call ? (
+                    <StreamVideo client={videoClient}>
+                      <StreamCall call={call}>
+                        <StreamTheme>
+                          {/* Pass localRole so labels are correct for both sides */}
+                          <InterviewVideoLayout localRole={user?.role} />
+                          <div className="mt-2">
+                            <CallControls />
+                          </div>
+                        </StreamTheme>
+                      </StreamCall>
+                    </StreamVideo>
+                  ) : (
+                    <div className="flex flex-col items-center justify-center gap-2 text-gray-500 bg-gray-800 aspect-video rounded-xl">
+                      <div className="w-6 h-6 border-2 border-gray-600 rounded-full border-t-indigo-400 animate-spin" />
+                      <span className="text-xs">Connecting video...</span>
+                    </div>
+                  )}
+                </div>
 
-          {/* Chat */}
-          <div className="flex flex-col flex-1 overflow-hidden">
-            <div className="px-3 py-2 text-xs font-semibold border-b border-gray-800 text-gray-40o">
-              💬 Chat
-            </div>
-
-            <div className="flex-1 px-3 py-2 space-y-2 overflow-y-auto">
-              {messages.length === 0 ? (
-                <p className="pt-6 text-xs text-center text-gray-600">
-                  No messages yet
-                </p>
-              ) : (
-                messages.map((msg, i) => (
-                  <div
-                    key={i}
-                    className={`text-xs ${
-                      msg.from === user?.name ? "text-right" : ""
-                    }`}
-                  >
-                    <span className="text-gray-500">{msg.from}: </span>
-                    <span className="text-gray-200">{msg.message}</span>
-                    <p className="text-gray-700 text-xs mt-0.5">
-                      {new Date(msg.timestamp).toLocaleTimeString()}
-                    </p>
+                {/* Chat */}
+                <div className="flex flex-col mt-2 overflow-hidden">
+                  <div className="px-3 py-2 text-xs font-semibold border-b border-gray-800 text-gray-40o">
+                    💬 Chat
                   </div>
-                ))
-              )}
-            </div>
 
-            <form
-              onSubmit={sendChat}
-              className="flex gap-2 p-3 border-t border-gray-800"
-            >
-              <input
-                value={chatInput}
-                onChange={(e) => setChatInput(e.target.value)}
-                placeholder="Type a message..."
-                className="flex-1 px-3 py-2 text-xs text-white bg-gray-800 rounded-lg focus:outline-none focus:ring-1 focus:ring-indigo-500"
-                maxLength={500}
-              />
-              <button
-                type="submit"
-                className="px-3 py-2 text-xs text-white bg-indigo-600 rounded-lg hover:bg-indigo-500"
-              >
-                →
-              </button>
-            </form>
-          </div>
+                  <div className="w-full overflow-y-auto h-30 ">
+                    {messages.length === 0 ? (
+                      <p className="h-10 pt-6 text-xs text-center text-gray-600">
+                        No messages yet
+                      </p>
+                    ) : (
+                      messages.map((msg, i) => (
+                        <div
+                          key={i}
+                          className={`text-xs ${
+                            msg.from === user?.name ? "text-right" : ""
+                          } h-full`}
+                        >
+                          <span className="text-gray-500">{msg.from}: </span>
+                          <span className="text-gray-200">{msg.message}</span>
+                          <p className="text-gray-700 text-xs mt-0.5">
+                            {new Date(msg.timestamp).toLocaleTimeString()}
+                          </p>
+                        </div>
+                      ))
+                    )}
+                  </div>
+
+                  <form
+                    onSubmit={sendChat}
+                    className="flex gap-2 p-3 border-t border-gray-800"
+                  >
+                    <input
+                      value={chatInput}
+                      onChange={(e) => setChatInput(e.target.value)}
+                      placeholder="Type a message..."
+                      className="flex-1 px-3 py-2 text-xs text-white bg-gray-800 rounded-lg focus:outline-none focus:ring-1 focus:ring-indigo-500"
+                      maxLength={500}
+                    />
+                    <button
+                      type="submit"
+                      className="px-3 py-2 text-xs text-white bg-indigo-600 rounded-lg hover:bg-indigo-500"
+                    >
+                      →
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </Panel>
+
+            {/* RIGHT: Video + Chat */}
+          </Group>
         </div>
       </div>
 

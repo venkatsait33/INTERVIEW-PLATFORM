@@ -38,6 +38,8 @@ const buildClient = async () => {
 // ─────────────────────────────────────────
 
 export const initStreamClientAsHost = async (interviewId) => {
+  const client = await buildClient();
+
   // Return existing if already on same interview
   if (videoClient && activeCall && activeInterviewId === interviewId) {
     return { client: videoClient, call: activeCall };
@@ -49,7 +51,6 @@ export const initStreamClientAsHost = async (interviewId) => {
     activeCall = null;
   }
 
-  const client = await buildClient();
   const call = client.call("default", interviewId);
 
   // Interviewer always creates the call
@@ -67,6 +68,8 @@ export const initStreamClientAsHost = async (interviewId) => {
 // ─────────────────────────────────────────
 
 export const initStreamClientAsGuest = async (interviewId) => {
+  const client = await buildClient();
+
   // Return existing if already on same interview
   if (videoClient && activeCall && activeInterviewId === interviewId) {
     return { client: videoClient, call: activeCall };
@@ -78,7 +81,6 @@ export const initStreamClientAsGuest = async (interviewId) => {
     activeCall = null;
   }
 
-  const client = await buildClient();
   const call = client.call("default", interviewId);
 
   // Candidate never creates — joins only after interviewer has created
