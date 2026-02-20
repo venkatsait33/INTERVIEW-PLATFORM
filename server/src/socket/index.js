@@ -21,6 +21,7 @@ export const initializeSocket = (server) => {
     },
     // For multi-instance scaling, add Redis adapter here:
     // adapter: createAdapter(pubClient, subClient)
+    transports: ["polling", "websocket"],
   });
 
   // ─────────────────────────────────────────

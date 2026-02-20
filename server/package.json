@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "description": "Enterprise Interview Management Platform - Backend",
   "main": "index.js",
-  "type":"module",
+  "type": "module",
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
     "test": "jest"
   },
   "dependencies": {
+    "@stream-io/node-sdk": "^0.7.42",
     "bcryptjs": "^3.0.3",
     "cors": "^2.8.6",
     "dotenv": "^17.3.1",
