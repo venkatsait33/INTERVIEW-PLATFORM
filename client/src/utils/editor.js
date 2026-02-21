@@ -1,11 +1,4 @@
-export const LANGUAGES = [
-  "javascript",
-  "python",
-  "java",
-  "cpp",
-  "typescript",
-  "go",
-];
+export const LANGUAGES = ["javascript", "python", "java"];
 
 export const DEFAULT_CODE = {
   javascript:

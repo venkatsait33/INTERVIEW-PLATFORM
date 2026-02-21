@@ -16,6 +16,7 @@ import userRoutes from "./routes/users.js";
 import interviewRoutes from "./routes/interviews.js";
 import adminRoutes from "./routes/admin.js";
 import videoRoutes from "./routes/video.js";
+import codeRoutes from "./routes/code.js";
 
 const app = express();
 
@@ -80,6 +81,7 @@ app.use("/api/users", userRoutes);
 app.use("/api/interviews", interviewRoutes);
 app.use("/api/admin", adminRoutes);
 app.use("/api/video", videoRoutes);
+app.use("/api/code", codeRoutes);
 
 // Health check endpoint
 app.get("/api/health", (req, res) => {

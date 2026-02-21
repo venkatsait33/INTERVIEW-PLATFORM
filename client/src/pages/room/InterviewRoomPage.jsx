@@ -5,15 +5,6 @@
 
 import { useEffect, useRef, useState, useCallback } from "react";
 import { useParams, useNavigate, useSearchParams } from "react-router-dom";
-import Editor from "@monaco-editor/react";
-import {
-  CallControls,
-  StreamCall,
-  StreamTheme,
-  StreamVideo,
-} from "@stream-io/video-react-sdk";
-import "@stream-io/video-react-sdk/dist/css/styles.css";
-
 import { getSocket, disconnectSocket } from "../../services/socket";
 import { interviewService } from "../../services/interviews";
 import { useAuth } from "../../context/AuthContext";
@@ -23,10 +14,13 @@ import {
   initStreamClientAsGuest,
   disconnectStreamClient,
 } from "../../services/streamVideo";
-import { InterviewVideoLayout } from "./VideoStream";
 import toast from "react-hot-toast";
-import { DEFAULT_CODE, LANGUAGES } from "../../utils/editor";
+import { DEFAULT_CODE } from "../../utils/editor";
 import { Panel, Group, Separator } from "react-resizable-panels";
+import RoomNavBar from "./RoomNavBar";
+import CodeEditor from "./CodeEditor";
+import { executeCode } from "../../services/piston";
+import StreamLayoutWithChat from "./StreamLayoutWithChat";
 
 export default function InterviewRoomPage() {
   const { id } = useParams();
@@ -141,10 +135,6 @@ export default function InterviewRoomPage() {
   // 2. Stream Video setup
   //    Interviewer → initStreamClientAsHost  (create: true)
   //    Candidate   → initStreamClientAsGuest (create: false)
-  //
-  //    This is the fix for:
-  //      - False "user left" event on admission
-  //      - Wrong video feed showing
   // ─────────────────────────────────────────
 
   useEffect(() => {
@@ -287,13 +277,9 @@ export default function InterviewRoomPage() {
     try {
       setRunning(true);
       setOutput("");
-      const res = await fetch("/api/code/run", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ language, code }),
-      });
-      const data = await res.json();
-      setOutput(data.output || data.error || "No output");
+      const result = await executeCode(language, code);
+      setOutput(result);
+      setRunning(false);
     } catch {
       setOutput("Execution failed. Please try again.");
     } finally {
@@ -324,210 +310,46 @@ export default function InterviewRoomPage() {
   return (
     <div className="flex flex-col h-screen overflow-hidden text-white bg-gray-950">
       {/* ── Top Bar ── */}
-      <div className="flex items-center gap-4 px-4 bg-gray-900 border-b border-gray-800 h-14 shrink-0">
-        {/* Logo */}
-        <div className="flex items-center gap-2">
-          <div className="flex items-center justify-center text-sm rounded-lg w-7 h-7 bg-gradient-to-br from-indigo-500 to-purple-600">
-            🎯
-          </div>
-          <span className="hidden text-sm font-semibold sm:inline">
-            Interview Room
-          </span>
-        </div>
+      <RoomNavBar
+        participants={participants}
+        language={language}
+        handleLanguageChange={handleLanguageChange}
+        handleLeaveCall={handleLeaveCall}
+        handleAdmit={handleAdmit}
+        runCode={runCode}
+        running={running}
+        isInterviewer={isInterviewer}
+        candidateWaiting={candidateWaiting}
+        setFeedbackModal={setFeedbackModal}
+      />
 
-        {/* Participants */}
-        <div className="flex items-center gap-1 ml-2">
-          {participants.map((p) => (
-            <div
-              key={p.socketId}
-              className="flex items-center gap-1 px-2 py-1 text-xs bg-gray-800 rounded-full"
-            >
-              <div className="w-1.5 h-1.5 bg-green-400 rounded-full" />
-              <span className="hidden sm:inline">{p.name}</span>
-            </div>
-          ))}
-        </div>
-
-        <div className="flex-1" />
-
-        {/* Language selector */}
-        <select
-          value={language}
-          onChange={(e) => handleLanguageChange(e.target.value)}
-          className="bg-gray-800 text-white text-xs px-3 py-1.5 rounded-lg border border-gray-700 focus:outline-none"
-        >
-          {LANGUAGES.map((l) => (
-            <option key={l} value={l}>
-              {l}
-            </option>
-          ))}
-        </select>
-
-        {/* Run code */}
-        <button
-          onClick={runCode}
-          disabled={running}
-          className="bg-green-600 hover:bg-green-500 disabled:opacity-50 text-white text-xs px-3 py-1.5 rounded-lg"
-        >
-          {running ? "Running..." : "▶ Run"}
-        </button>
-
-        {/* Admit candidate (interviewer only, shown when candidate is waiting) */}
-        {isInterviewer && candidateWaiting && (
-          <button
-            onClick={handleAdmit}
-            className="bg-yellow-500 hover:bg-yellow-400 text-white text-xs px-3 py-1.5 rounded-lg animate-pulse font-medium"
-          >
-            🚪 Admit Candidate
-          </button>
-        )}
-
-        {/* Submit feedback (interviewer only) */}
-        {isInterviewer && (
-          <button
-            onClick={() => setFeedbackModal(true)}
-            className="bg-indigo-600 hover:bg-indigo-500 text-white text-xs px-3 py-1.5 rounded-lg"
-          >
-            📝 Feedback
-          </button>
-        )}
-
-        {/* Leave */}
-        <button
-          onClick={handleLeaveCall}
-          className="bg-red-600/80 hover:bg-red-600 text-white text-xs px-3 py-1.5 rounded-lg"
-        >
-          Leave
-        </button>
-      </div>
-
-      {/* <Group>
-        <Panel>
-          <p>hello world</p>
-        </Panel>
-        <Separator />
-        <Panel>
-          <p>hello world</p>
-        </Panel>
-      </Group> */}
       {/* ── Main Content ── */}
       <div>
         <div className="w-full h-full">
           {/* LEFT: Code Editor + Terminal */}
           <Group>
             <Panel minSize={500} maxSize={1000}>
-              <div className="flex flex-col justify-between h-full">
-                <div className="flex flex-col justify-between h-full ">
-                  <Editor
-                    height="100%"
-                    language={language}
-                    value={code}
-                    onChange={handleCodeChange}
-                    theme="vs-dark"
-                    options={{
-                      fontSize: 14,
-                      minimap: { enabled: false },
-                      wordWrap: "on",
-                      automaticLayout: true,
-                      scrollBeyondLastLine: false,
-                      tabSize: 2,
-                      renderLineHighlight: "all",
-                    }}
-                  />
-                </div>
-
-                {/* Terminal output */}
-                <div className="p-3 overflow-auto font-mono text-xs text-green-400 bg-black border-t border-gray-800 h-36 shrink-0">
-                  <p className="mb-1 text-gray-600">─── Terminal ───</p>
-                  {running ? (
-                    <span className="animate-pulse">Running...</span>
-                  ) : output ? (
-                    <pre className="whitespace-pre-wrap">{output}</pre>
-                  ) : (
-                    <span className="text-gray-700">
-                      Output will appear here after running code
-                    </span>
-                  )}
-                </div>
-              </div>
+              <CodeEditor
+                language={language}
+                code={code}
+                running={running}
+                handleCodeChange={handleCodeChange}
+                output={output}
+              />
             </Panel>
             <Separator className="border-2 " />
-            <Panel>
-              <div className="flex flex-col justify-between w-full h-full ">
-                {/* Video */}
-                <div className="flex-col items-center justify-center gap-2 text-gray-500 bg-gray-800 lex aspect-video rounded-xl">
-                  {videoClient && call ? (
-                    <StreamVideo client={videoClient}>
-                      <StreamCall call={call}>
-                        <StreamTheme>
-                          {/* Pass localRole so labels are correct for both sides */}
-                          <InterviewVideoLayout localRole={user?.role} />
-                          <div className="mt-2">
-                            <CallControls />
-                          </div>
-                        </StreamTheme>
-                      </StreamCall>
-                    </StreamVideo>
-                  ) : (
-                    <div className="flex flex-col items-center justify-center gap-2 text-gray-500 bg-gray-800 aspect-video rounded-xl">
-                      <div className="w-6 h-6 border-2 border-gray-600 rounded-full border-t-indigo-400 animate-spin" />
-                      <span className="text-xs">Connecting video...</span>
-                    </div>
-                  )}
-                </div>
-
-                {/* Chat */}
-                <div className="flex flex-col mt-2 overflow-hidden">
-                  <div className="px-3 py-2 text-xs font-semibold border-b border-gray-800 text-gray-40o">
-                    💬 Chat
-                  </div>
-
-                  <div className="w-full overflow-y-auto h-30 ">
-                    {messages.length === 0 ? (
-                      <p className="h-10 pt-6 text-xs text-center text-gray-600">
-                        No messages yet
-                      </p>
-                    ) : (
-                      messages.map((msg, i) => (
-                        <div
-                          key={i}
-                          className={`text-xs ${
-                            msg.from === user?.name ? "text-right" : ""
-                          } h-full`}
-                        >
-                          <span className="text-gray-500">{msg.from}: </span>
-                          <span className="text-gray-200">{msg.message}</span>
-                          <p className="text-gray-700 text-xs mt-0.5">
-                            {new Date(msg.timestamp).toLocaleTimeString()}
-                          </p>
-                        </div>
-                      ))
-                    )}
-                  </div>
-
-                  <form
-                    onSubmit={sendChat}
-                    className="flex gap-2 p-3 border-t border-gray-800"
-                  >
-                    <input
-                      value={chatInput}
-                      onChange={(e) => setChatInput(e.target.value)}
-                      placeholder="Type a message..."
-                      className="flex-1 px-3 py-2 text-xs text-white bg-gray-800 rounded-lg focus:outline-none focus:ring-1 focus:ring-indigo-500"
-                      maxLength={500}
-                    />
-                    <button
-                      type="submit"
-                      className="px-3 py-2 text-xs text-white bg-indigo-600 rounded-lg hover:bg-indigo-500"
-                    >
-                      →
-                    </button>
-                  </form>
-                </div>
-              </div>
-            </Panel>
-
             {/* RIGHT: Video + Chat */}
+            <Panel>
+              <StreamLayoutWithChat
+                user={user}
+                videoClient={videoClient}
+                call={call}
+                messages={messages}
+                sendChat={sendChat}
+                chatInput={chatInput}
+                setChatInput={setChatInput}
+              />
+            </Panel>
           </Group>
         </div>
       </div>
