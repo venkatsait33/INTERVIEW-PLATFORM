@@ -1,0 +1,47 @@
+
+# create a docker-compose.yml file and add this in it 
+
+services:
+  piston:
+    image: ghcr.io/engineer-man/piston
+    container_name: piston
+    ports:
+      - "2000:2000"
+    volumes:
+      - piston_packages:/piston/packages    # ← persists installed languages
+    tmpfs:
+      - /piston/jobs
+    privileged: true
+    restart: unless-stopped
+
+volumes:
+  piston_packages:                          # ← declare the volume
+
+
+
+  steps to run piston
+
+   1st => docker compose down, if the docker file is already running.
+
+   2nd => docker compose up -d
+
+   3rd check packages available in the build 
+        Invoke-RestMethod -Uri "http://localhost:2000/api/v2/packages" | Format-Table language, language_version
+
+   4th => check the available language packages available in build.
+   5th => install tha package needed and it should available in it.
+  # JavaScript
+Invoke-RestMethod -Method Post -Uri "http://localhost:2000/api/v2/packages" -ContentType "application/json" -Body '{"language": "node", "version": "18.15.0"}'
+
+# Python
+Invoke-RestMethod -Method Post -Uri "http://localhost:2000/api/v2/packages" -ContentType "application/json" -Body '{"language": "python", "version": "3.10.0"}'
+
+# Java
+Invoke-RestMethod -Method Post -Uri "http://localhost:2000/api/v2/packages" -ContentType "application/json" -Body '{"language": "java", "version": "15.0.2"}'
+
+# TypeScript
+Invoke-RestMethod -Method Post -Uri "http://localhost:2000/api/v2/packages" -ContentType "application/json" -Body '{"language": "typescript", "version": "5.0.3"}'
+
+    last step if the packages are installed successfully then we can run the code.
+
+    Invoke-RestMethod -Uri "http://localhost:2000/api/v2/runtimes" | Format-Table language, version

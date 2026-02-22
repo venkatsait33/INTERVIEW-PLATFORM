@@ -48,7 +48,7 @@ const StreamLayoutWithChat = ({
             💬 Chat
           </div>
 
-          <div className="w-full overflow-y-auto h-30 ">
+          <div className="w-full overflow-y-auto h-46 ">
             {messages.length === 0 ? (
               <p className="h-10 pt-6 text-xs text-center text-gray-600">
                 No messages yet

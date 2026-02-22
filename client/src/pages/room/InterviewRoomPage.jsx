@@ -21,6 +21,9 @@ import RoomNavBar from "./RoomNavBar";
 import CodeEditor from "./CodeEditor";
 import { executeCode } from "../../services/piston";
 import StreamLayoutWithChat from "./StreamLayoutWithChat";
+import axios from "axios";
+
+const NO_SHOW_THRESHOLD_MINUTES = 60;
 
 export default function InterviewRoomPage() {
   const { id } = useParams();
@@ -36,6 +39,7 @@ export default function InterviewRoomPage() {
   const debounceTimer = useRef(null);
   const streamInitializedRef = useRef(false);
   const hasLeft = useRef(false); // Prevents double leave
+  const waitTimerRef = useRef(null);
 
   // ── Stream state ──
   const [videoClient, setVideoClient] = useState(null);
@@ -66,6 +70,14 @@ export default function InterviewRoomPage() {
   // ── Code runner state ──
   const [output, setOutput] = useState("");
   const [running, setRunning] = useState(false);
+
+  // No-show tracking
+  const [waitedMinutes, setWaitedMinutes] = useState(0);
+  const [otherPartyJoined, setOtherPartyJoined] = useState(false);
+  const [reportingNoShow, setReportingNoShow] = useState(false);
+
+  const canReportNoShow =
+    waitedMinutes >= NO_SHOW_THRESHOLD_MINUTES && !otherPartyJoined;
 
   // ─────────────────────────────────────────
   // 1. Socket setup
@@ -277,8 +289,15 @@ export default function InterviewRoomPage() {
     try {
       setRunning(true);
       setOutput("");
-      const result = await executeCode(language, code);
-      setOutput(result);
+      const result = await axios.post(
+        `${import.meta.env.VITE_BACKEND_URL}/api/code/run`,
+        { language, code },
+        {
+          withCredentials: true,
+        },
+      );
+      console.log(result.data);
+      setOutput(result.data);
       setRunning(false);
     } catch {
       setOutput("Execution failed. Please try again.");

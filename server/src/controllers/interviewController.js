@@ -40,6 +40,8 @@ export const scheduleInterview = async (req, res) => {
       candidateId,
       scheduledAt,
       duration,
+      notes,
+      tags,
     } = req.body;
 
     // Validate interviewer exists and has correct role
@@ -93,6 +95,8 @@ export const scheduleInterview = async (req, res) => {
       createdBy: req.user._id,
       scheduledAt,
       duration,
+      notes,
+      tags,
     });
 
     // Send email notifications
