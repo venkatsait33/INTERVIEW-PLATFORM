@@ -2331,3 +2331,12 @@
 {"level":"info","message":"🚀 Server running in development mode on port 5000","service":"interview-platform","timestamp":"2026-02-22 19:38:13"}
 {"level":"info","message":"📡 Socket.io initialized","service":"interview-platform","timestamp":"2026-02-22 19:38:13"}
 {"level":"info","message":"✅ MongoDB Connected: ac-julz5np-shard-00-00.ywnfkxr.mongodb.net","service":"interview-platform","timestamp":"2026-02-22 19:38:14"}
+{"level":"info","message":"Socket.io server initialized","service":"interview-platform","timestamp":"2026-02-22 19:39:25"}
+{"level":"info","message":"🚀 Server running in development mode on port 5000","service":"interview-platform","timestamp":"2026-02-22 19:39:25"}
+{"level":"info","message":"📡 Socket.io initialized","service":"interview-platform","timestamp":"2026-02-22 19:39:25"}
+{"level":"info","message":"✅ MongoDB Connected: ac-julz5np-shard-00-00.ywnfkxr.mongodb.net","service":"interview-platform","timestamp":"2026-02-22 19:39:25"}
+{"level":"info","message":"MongoDB reconnected","service":"interview-platform","timestamp":"2026-02-22 20:05:24"}
+{"level":"info","message":"MongoDB reconnected","service":"interview-platform","timestamp":"2026-02-22 20:32:00"}
+{"level":"info","message":"MongoDB reconnected","service":"interview-platform","timestamp":"2026-02-22 20:32:00"}
+{"level":"warn","message":"MongoDB disconnected. Attempting to reconnect...","service":"interview-platform","timestamp":"2026-02-22 20:32:10"}
+{"level":"info","message":"MongoDB reconnected","service":"interview-platform","timestamp":"2026-02-22 20:32:11"}
