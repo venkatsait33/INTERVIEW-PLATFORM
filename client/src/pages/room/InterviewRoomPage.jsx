@@ -40,6 +40,7 @@ export default function InterviewRoomPage() {
   const streamInitializedRef = useRef(false);
   const hasLeft = useRef(false); // Prevents double leave
   const waitTimerRef = useRef(null);
+  const chatBottomRef = useRef(null);
 
   // ── Stream state ──
   const [videoClient, setVideoClient] = useState(null);
@@ -74,10 +75,13 @@ export default function InterviewRoomPage() {
   // No-show tracking
   const [waitedMinutes, setWaitedMinutes] = useState(0);
   const [otherPartyJoined, setOtherPartyJoined] = useState(false);
-  const [reportingNoShow, setReportingNoShow] = useState(false);
+  // const [reportingNoShow, setReportingNoShow] = useState(false);
 
-  const canReportNoShow =
-    waitedMinutes >= NO_SHOW_THRESHOLD_MINUTES && !otherPartyJoined;
+  // const canReportNoShow =
+  //   waitedMinutes >= NO_SHOW_THRESHOLD_MINUTES && !otherPartyJoined;
+
+  const [leftRoom, setLeftRoom] = useState(false);
+  const [noShowConfirmOpen, setNoShowConfirmOpen] = useState(false);
 
   // ─────────────────────────────────────────
   // 1. Socket setup
@@ -86,6 +90,12 @@ export default function InterviewRoomPage() {
   useEffect(() => {
     const socket = getSocket(roomToken);
     socketRef.current = socket;
+
+    socket.on("connect", () => {
+      socket.emit("subscribe:personal");
+      socket.emit("room:join", { interviewId: id });
+      startWaitTimer();
+    });
 
     socket.emit("room:join", { interviewId: id });
 
@@ -96,6 +106,8 @@ export default function InterviewRoomPage() {
     socket.on("room:joined", ({ code: initialCode }) => {
       setCode(initialCode || DEFAULT_CODE.javascript);
       setConnected(true);
+      setOtherPartyJoined(true);
+      stopWaitTimer();
     });
 
     socket.on("room:update-participants", ({ participants }) => {
@@ -127,6 +139,12 @@ export default function InterviewRoomPage() {
       setMessages((prev) => [...prev, msg]);
     });
 
+    // ── Auto-cancel from server ───────────────────────────
+    socket.on("interview:auto-cancelled", ({ message }) => {
+      toast.error(message);
+      setTimeout(() => navigate("/"), 3000);
+    });
+
     socket.on("error", ({ message }) => {
       toast.error(message);
     });
@@ -142,6 +160,24 @@ export default function InterviewRoomPage() {
       disconnectSocket();
     };
   }, [id, roomToken, isInterviewer]);
+
+  const startWaitTimer = () => {
+    if (waitTimerRef.current) return; // already running
+    waitTimerRef.current = setInterval(() => {
+      setWaitedMinutes((prev) => prev + 1);
+    }, 60_000);
+  };
+
+  const stopWaitTimer = () => {
+    if (waitTimerRef.current) {
+      clearInterval(waitTimerRef.current);
+      waitTimerRef.current = null;
+    }
+  };
+
+  useEffect(() => {
+    return () => stopWaitTimer();
+  }, []);
 
   // ─────────────────────────────────────────
   // 2. Stream Video setup
@@ -269,6 +305,11 @@ export default function InterviewRoomPage() {
     setChatInput("");
   };
 
+  // Auto-scroll chat
+  useEffect(() => {
+    chatBottomRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages]);
+
   // Submit feedback + end interview
   const handleSubmitFeedback = async () => {
     setSubmitting(true);
@@ -315,6 +356,8 @@ export default function InterviewRoomPage() {
       // 🔥 Proper cleanup (fixes ghost video + stuck feed)
       await disconnectStreamClient();
       disconnectSocket();
+      setLeftRoom(true);
+      stopWaitTimer();
     } catch (error) {
       console.error("Error leaving call:", error);
     } finally {
@@ -322,6 +365,26 @@ export default function InterviewRoomPage() {
     }
   };
 
+  // ── No-show report ────────────────────────────────────
+  const reportNoShow = async () => {
+    try {
+      await interviewService.reportNotShow(id, waitedMinutes);
+      toast.success("No-show reported. Interview cancelled.");
+      leaveRoom();
+    } catch {
+      toast.error("Failed to report no-show");
+    }
+  };
+
+  // if (!interview)
+  //   return (
+  //     <div className="flex items-center justify-center min-h-screen bg-gray-900">
+  //       <div className="w-12 h-12 border-b-2 border-indigo-400 rounded-full animate-spin" />
+  //     </div>
+  //   );
+
+  const showNoShowButton =
+    waitedMinutes >= NO_SHOW_THRESHOLD_MINUTES && !otherPartyJoined;
   // ─────────────────────────────────────────
   // 5. Render
   // ─────────────────────────────────────────
@@ -331,16 +394,26 @@ export default function InterviewRoomPage() {
       {/* ── Top Bar ── */}
       <RoomNavBar
         participants={participants}
-        language={language}
-        handleLanguageChange={handleLanguageChange}
         handleLeaveCall={handleLeaveCall}
         handleAdmit={handleAdmit}
-        runCode={runCode}
-        running={running}
         isInterviewer={isInterviewer}
         candidateWaiting={candidateWaiting}
         setFeedbackModal={setFeedbackModal}
+        showNoShowButton={showNoShowButton}
+        waitedMinutes={waitedMinutes}
+        id={id}
       />
+
+      {/* ── Wait warning banner ───────────────────────────── */}
+      {waitedMinutes > 0 &&
+        !otherPartyJoined &&
+        waitedMinutes < NO_SHOW_THRESHOLD_MINUTES && (
+          <div className="py-1 text-xs text-center border-b bg-amber-900/50 text-amber-300 border-amber-800">
+            Waiting for other participant… {waitedMinutes} min elapsed
+            {waitedMinutes >= 50 &&
+              ` — no-show reporting available in ${NO_SHOW_THRESHOLD_MINUTES - waitedMinutes} min`}
+          </div>
+        )}
 
       {/* ── Main Content ── */}
       <div>
@@ -354,6 +427,8 @@ export default function InterviewRoomPage() {
                 running={running}
                 handleCodeChange={handleCodeChange}
                 output={output}
+                runCode={runCode}
+                handleLanguageChange={handleLanguageChange}
               />
             </Panel>
             <Separator className="border-2 " />
@@ -367,6 +442,7 @@ export default function InterviewRoomPage() {
                 sendChat={sendChat}
                 chatInput={chatInput}
                 setChatInput={setChatInput}
+                chatBottomRef={chatBottomRef}
               />
             </Panel>
           </Group>
@@ -483,6 +559,39 @@ export default function InterviewRoomPage() {
           </div>
         </div>
       </Modal>
+
+      {/* ── No-show Confirm Modal ──────────────────────────── */}
+      {noShowConfirmOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70">
+          <div className="w-full max-w-md p-6 text-gray-900 bg-white rounded-xl">
+            <h3 className="mb-2 text-lg font-semibold text-red-600">
+              🚨 Report No-Show?
+            </h3>
+            <p className="mb-4 text-sm text-gray-600">
+              You have waited <strong>{waitedMinutes} minutes</strong> and the
+              other party has not joined. Reporting a no-show will{" "}
+              <strong>cancel this interview</strong> and notify all parties.
+            </p>
+            <div className="flex gap-3">
+              <button
+                onClick={() => {
+                  setNoShowConfirmOpen(false);
+                  reportNoShow();
+                }}
+                className="flex-1 px-4 py-2 text-sm font-medium text-white bg-red-600 rounded-lg hover:bg-red-700"
+              >
+                Yes, Report No-Show
+              </button>
+              <button
+                onClick={() => setNoShowConfirmOpen(false)}
+                className="px-4 py-2 text-sm text-gray-600 border border-gray-300 rounded-lg hover:bg-gray-50"
+              >
+                Keep Waiting
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

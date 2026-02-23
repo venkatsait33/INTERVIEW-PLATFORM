@@ -16,6 +16,7 @@ const StreamLayoutWithChat = ({
   chatInput,
   setChatInput,
   user,
+  chatBottomRef,
 }) => {
   return (
     <div>
@@ -50,25 +51,45 @@ const StreamLayoutWithChat = ({
 
           <div className="w-full overflow-y-auto h-46 ">
             {messages.length === 0 ? (
-              <p className="h-10 pt-6 text-xs text-center text-gray-600">
-                No messages yet
+              <p className="mt-4 text-xs text-center text-gray-500">
+                No messages yet. Say hi! 👋
               </p>
             ) : (
-              messages.map((msg, i) => (
-                <div
-                  key={i}
-                  className={`text-xs ${
-                    msg.from === user?.name ? "text-right" : ""
-                  } h-full`}
-                >
-                  <span className="text-gray-500">{msg.from}: </span>
-                  <span className="text-gray-200">{msg.message}</span>
-                  <p className="text-gray-700 text-xs mt-0.5">
-                    {new Date(msg.timestamp).toLocaleTimeString()}
-                  </p>
-                </div>
-              ))
+              messages.map((msg, i) => {
+                const isMine =
+                  msg.fromId === user?._id || msg.fromId === user?.id;
+                return (
+                  <div
+                    key={msg.id}
+                    className={`flex ${isMine ? "justify-end" : "justify-start"}`}
+                  >
+                    <div
+                      className={`max-w-[80%] rounded-lg px-3 py-2 text-xs ${
+                        isMine
+                          ? "bg-indigo-600 text-white"
+                          : "bg-gray-700 text-gray-200"
+                      }`}
+                    >
+                      {!isMine && (
+                        <p className="text-gray-400 text-[10px] font-medium mb-0.5">
+                          {msg.from}
+                        </p>
+                      )}
+                      <p className="break-words">{msg.message}</p>
+                      <p
+                        className={`text-[10px] mt-0.5 ${isMine ? "text-indigo-300" : "text-gray-500"}`}
+                      >
+                        {new Date(msg.timestamp).toLocaleTimeString([], {
+                          hour: "2-digit",
+                          minute: "2-digit",
+                        })}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })
             )}
+            <div ref={chatBottomRef} />
           </div>
 
           <form

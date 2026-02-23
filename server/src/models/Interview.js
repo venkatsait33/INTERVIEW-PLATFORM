@@ -12,7 +12,7 @@ export const INTERVIEW_STATUS = [
   "CANCELLED",
   "NO_SHOW",
 ];
-export const INTERVIEW_RESULT = ["PENDING", "HIRED", "REJECTED"];
+export const INTERVIEW_RESULT = ["PENDING", "HIRED", "REJECTED", "NO_SHOW"];
 
 const interviewSchema = new mongoose.Schema(
   {
@@ -58,6 +58,7 @@ const interviewSchema = new mongoose.Schema(
     endedAt: {
       type: Date,
     },
+    cancelledAt: { type: Date },
     status: {
       type: String,
       enum: INTERVIEW_STATUS,
@@ -106,6 +107,30 @@ const interviewSchema = new mongoose.Schema(
     candidateSocketId: {
       type: String,
     },
+
+    // Cancellation
+    cancellationReason: { type: String },
+
+    // ── No-show fields ──────────────────────────────────────────
+    // Set when someone reports the other party didn't show up,
+    // or when the 6-hour auto-cancel timeout fires.
+    noShowReason: {
+      type: String,
+      enum: ["interviewer_absent", "candidate_absent", "auto_timeout", null],
+      default: null,
+    },
+    noShowReportedBy: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+    },
+    noShowWaitedMinutes: { type: Number },
+    // Structured feedback shown on dashboard for no-show interviews
+    noShowFeedback: {
+      reporterRole: String, // 'interviewer' | 'candidate'
+      absentRole: String, // 'interviewer' | 'candidate'
+      waitedMinutes: Number,
+      reportedAt: Date,
+    },
   },
   {
     timestamps: true,
@@ -123,6 +148,14 @@ interviewSchema.index({ candidate: 1 });
 interviewSchema.index({ scheduledAt: 1 });
 interviewSchema.index({ createdBy: 1 });
 interviewSchema.index({ status: 1, scheduledAt: 1 });
+
+// ── Virtual: expected end time based on scheduledAt + duration
+interviewSchema.virtual("scheduledEndAt").get(function () {
+  if (this.scheduledAt && this.duration) {
+    return new Date(this.scheduledAt.getTime() + this.duration * 60 * 1000);
+  }
+  return null;
+});
 
 // ─────────────────────────────────────────
 // Virtual: computed duration of actual interview

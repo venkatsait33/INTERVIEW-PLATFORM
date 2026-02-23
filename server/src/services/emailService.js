@@ -64,6 +64,52 @@ const templates = {
       `<h2>❌ Interview Cancelled</h2><p>Hello <strong>${recipientName}</strong>,</p><p>The following interview has been cancelled:</p><div class="info"><p><strong>Position:</strong> ${interviewTitle}</p><p><strong>Originally Scheduled:</strong> ${date}</p>${reason ? `<p><strong>Reason:</strong> ${reason}</p>` : ""}</div><p>Our HR team will be in touch regarding rescheduling. We apologise for the inconvenience.</p>`,
     );
   },
+  noShow: ({
+    recipientName,
+    interviewTitle,
+    scheduledAt,
+    reporterRole,
+    absentRole,
+    waitedMinutes,
+    isAbsentParty,
+  }) => {
+    const date = new Date(scheduledAt).toLocaleDateString("en-US", {
+      dateStyle: "long",
+    });
+    const absentLabel =
+      absentRole === "interviewer" ? "Interviewer" : "Candidate";
+    const reporterLabel =
+      reporterRole === "interviewer" ? "Interviewer" : "Candidate";
+    return baseTemplate(`
+      <h2>⚠️ No-Show Reported: ${interviewTitle}</h2>
+      <p>Hello <strong>${recipientName}</strong>,</p>
+      ${
+        isAbsentParty
+          ? `
+        <div class="alert">
+          A no-show has been recorded against you for this interview.
+        </div>
+        <p>The ${reporterLabel} waited <strong>${waitedMinutes} minutes</strong> and you did not join the call.</p>
+        <p>Please contact HR if there was an emergency or misunderstanding.</p>
+      `
+          : `
+        <div class="info-card">
+          <p>Your no-show report has been received and confirmed.</p>
+          <p><strong>You waited:</strong> ${waitedMinutes} minutes</p>
+          <p><strong>${absentLabel} did not join.</strong></p>
+        </div>
+        <p>The interview has been cancelled and HR has been notified.</p>
+      `
+      }
+      <div class="info-card">
+        <p><strong>Interview:</strong> ${interviewTitle}</p>
+        <p><strong>Scheduled:</strong> ${date}</p>
+        <p><strong>Reporter:</strong> ${reporterLabel}</p>
+        <p><strong>Absent Party:</strong> ${absentLabel}</p>
+        <p><strong>Wait Time:</strong> ${waitedMinutes} minutes</p>
+      </div>
+    `);
+  },
 };
 
 const sendEmail = async ({
@@ -202,4 +248,62 @@ export const sendCancellationNotification = async (
       }),
     ),
   );
+};
+
+/**
+ * Send no-show notifications to both parties.
+ * @param {object} interview  - populated interview document
+ * @param {object} reporter   - user who reported (was waiting)
+ * @param {object} absentUser - user who didn't show up
+ * @param {number} waitedMinutes
+ */
+export const sendNoShowNotification = async (
+  interview,
+  reporter,
+  absentUser,
+  waitedMinutes,
+) => {
+  const reporterRole =
+    reporter._id.toString() === interview.interviewer._id.toString()
+      ? "interviewer"
+      : "candidate";
+  const absentRole =
+    reporterRole === "interviewer" ? "candidate" : "interviewer";
+
+  return Promise.allSettled([
+    // Email to the person who waited (reporter)
+    sendEmail({
+      to: reporter.email,
+      subject: `No-Show Confirmed: ${interview.title}`,
+      html: templates.noShow({
+        recipientName: reporter.name,
+        interviewTitle: interview.title,
+        scheduledAt: interview.scheduledAt,
+        reporterRole,
+        absentRole,
+        waitedMinutes,
+        isAbsentParty: false,
+      }),
+      userId: reporter._id,
+      interviewId: interview._id,
+      notificationType: "CANCELLATION",
+    }),
+    // Email to the person who didn't show
+    sendEmail({
+      to: absentUser.email,
+      subject: `No-Show Recorded: ${interview.title}`,
+      html: templates.noShow({
+        recipientName: absentUser.name,
+        interviewTitle: interview.title,
+        scheduledAt: interview.scheduledAt,
+        reporterRole,
+        absentRole,
+        waitedMinutes,
+        isAbsentParty: true,
+      }),
+      userId: absentUser._id,
+      interviewId: interview._id,
+      notificationType: "CANCELLATION",
+    }),
+  ]);
 };

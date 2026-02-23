@@ -4,16 +4,16 @@
  * RoleGuard - requires specific role(s)
  */
 
-import React from 'react';
-import { Navigate, useLocation } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext';
+import React from "react";
+import { Link, Navigate, useLocation } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
 // Full-page loading spinner
 const LoadingScreen = () => (
-  <div className="min-h-screen flex items-center justify-center bg-gray-50">
+  <div className="flex items-center justify-center min-h-screen bg-gray-50">
     <div className="text-center">
-      <div className="w-12 h-12 border-4 border-indigo-500 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
-      <p className="text-gray-500 text-sm">Loading...</p>
+      <div className="w-12 h-12 mx-auto mb-4 border-4 border-indigo-500 rounded-full border-t-transparent animate-spin" />
+      <p className="text-sm text-gray-500">Loading...</p>
     </div>
   </div>
 );
@@ -23,10 +23,9 @@ const LoadingScreen = () => (
  */
 export const ProtectedRoute = ({ children }) => {
   const { user, loading } = useAuth();
-  const location = useLocation();
 
   if (loading) return <LoadingScreen />;
-  if (!user) return <Navigate to="/login" state={{ from: location }} replace />;
+  if (!user) return <Link to="/login" state={{ from: location }} replace />;
 
   return children;
 };
@@ -40,9 +39,9 @@ export const RoleGuard = ({ roles, children }) => {
   const location = useLocation();
 
   if (loading) return <LoadingScreen />;
-  if (!user) return <Navigate to="/login" state={{ from: location }} replace />;
+  if (!user) return <Link to="/login" state={{ from: location }} replace />;
   if (!roles.includes(user.role)) {
-    return <Navigate to="/dashboard" replace />;
+    return <Link to="/dashboard" replace />;
   }
 
   return children;

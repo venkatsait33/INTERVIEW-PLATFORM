@@ -1,7 +1,3 @@
-/**
- * Interview Routes
- */
-
 import express from "express";
 import {
   scheduleInterview,
@@ -12,6 +8,7 @@ import {
   admitCandidate,
   submitFeedback,
   cancelInterview,
+  reportNoShow,
 } from "../controllers/interviewController.js";
 import { requireAuth, requireRole } from "../middleware/auth.js";
 import { validate } from "../middleware/validate.js";
@@ -52,5 +49,12 @@ router.post(
 
 // HR cancels interview
 router.patch("/:id/cancel", requireRole("hr", "admin"), cancelInterview);
+
+// No-show report — both interviewer and candidate can call this
+router.post(
+  "/:id/no-show",
+  requireRole("interviewer", "candidate"),
+  reportNoShow,
+);
 
 export default router;

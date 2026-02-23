@@ -1,17 +1,31 @@
+import { useEffect, useState } from "react";
 import { LANGUAGES } from "../../utils/editor";
+import { interviewService } from "../../services/interviews";
 
 const RoomNavBar = ({
   participants,
-  language,
-  handleLanguageChange,
   handleLeaveCall,
   handleAdmit,
-  runCode,
-  running,
   isInterviewer,
   candidateWaiting,
   setFeedbackModal,
+  showNoShowButton,
+  waitedMinutes,
+  id,
 }) => {
+  const [interview, setInterview] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    interviewService
+      .getOne(id)
+      .then((res) => setInterview(res.data.data.interview))
+      .catch(() => {
+        toast.error("Interview not found");
+        navigate(-1);
+      })
+      .finally(() => setLoading(false));
+  }, [id]);
   return (
     <div>
       <div className="flex items-center gap-4 px-4 bg-gray-900 border-b border-gray-800 h-14 shrink-0">
@@ -22,6 +36,15 @@ const RoomNavBar = ({
           </div>
           <span className="hidden text-sm font-semibold sm:inline">
             Interview Room
+          </span>
+        </div>
+
+        <div className="flex items-center gap-3">
+          <span className="max-w-xs text-sm font-medium text-gray-200 truncate">
+            {interview?.title}
+          </span>
+          <span className="text-xs text-green-400 bg-green-900/40 px-2 py-0.5 rounded-full">
+            ● Live
           </span>
         </div>
 
@@ -40,28 +63,15 @@ const RoomNavBar = ({
 
         <div className="flex-1" />
 
-        {/* Language selector */}
-        <select
-          value={language}
-          onChange={(e) => handleLanguageChange(e.target.value)}
-          className="bg-gray-800 text-white text-xs px-3 py-1.5 rounded-lg border border-gray-700 focus:outline-none"
-        >
-          {LANGUAGES.map((l) => (
-            <option key={l} value={l}>
-              {l}
-            </option>
-          ))}
-        </select>
-
-        {/* Run code */}
-        <button
-          onClick={runCode}
-          disabled={running}
-          className="bg-green-600 hover:bg-green-500 disabled:opacity-50 text-white text-xs px-3 py-1.5 rounded-lg"
-        >
-          {running ? "Running..." : "▶ Run"}
-        </button>
-
+        {/* No-show button */}
+        {showNoShowButton && (
+          <button
+            onClick={() => setNoShowConfirmOpen(true)}
+            className="flex items-center gap-1 px-3 py-1 text-sm font-medium text-white rounded-lg bg-amber-500 hover:bg-amber-600 animate-pulse"
+          >
+            🚨 Report No-Show ({waitedMinutes}m)
+          </button>
+        )}
         {/* Admit candidate (interviewer only, shown when candidate is waiting) */}
         {isInterviewer && candidateWaiting && (
           <button

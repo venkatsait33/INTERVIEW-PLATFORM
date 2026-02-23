@@ -78,7 +78,14 @@ export const initializeSocket = (server) => {
     logger.info(
       `Socket connected: ${socket.id} [${socket.user.role}] ${socket.user.name}`,
     );
-
+    // ── Subscribe to personal room (candidate / interviewer notifications) ──
+    socket.on("subscribe:personal", () => {
+      const personalRoom = `user-${socket.userId}`;
+      socket.join(personalRoom);
+      logger.debug(
+        `${socket.user.name} subscribed to personal room ${personalRoom}`,
+      );
+    });
     // ── Join Interview Room ──
     socket.on("room:join", async ({ interviewId }) => {
       try {
@@ -122,6 +129,7 @@ export const initializeSocket = (server) => {
           activeRooms.set(interviewId, {
             code: "// Start coding here...\n",
             participants: {},
+            messages: [],
           });
         }
 
@@ -133,6 +141,7 @@ export const initializeSocket = (server) => {
           interviewId,
           code: room.code,
           participants: Object.values(room.participants),
+          messages: room.messages.slice(-50), // last 50 chat messages
         });
 
         // Notify others in room
@@ -237,14 +246,29 @@ export const initializeSocket = (server) => {
     // ── Chat within room ──
     socket.on("chat:message", ({ interviewId, message }) => {
       if (!socket.currentRoom || socket.currentRoom !== interviewId) return;
-      if (message.length > 500) return; // Prevent abuse
+      if (!message || typeof message !== "string") return;
 
-      io.to(interviewId).emit("chat:message", {
+      const trimmed = message.trim();
+      if (!trimmed || trimmed.length > 1000) return; // basic abuse prevention
+
+      const chatMsg = {
+        id: `${Date.now()}-${socket.id}`,
         from: socket.user.name,
+        fromId: socket.userId,
         role: socket.user.role,
-        message,
+        message: trimmed,
         timestamp: new Date().toISOString(),
-      });
+      };
+
+      // Persist in-memory (last 200 messages per room)
+      const room = activeRooms.get(interviewId);
+      if (room) {
+        room.messages.push(chatMsg);
+        if (room.messages.length > 200) room.messages.shift();
+      }
+
+      // Broadcast to everyone in the room including sender
+      io.to(interviewId).emit("chat:message", chatMsg);
     });
 
     // ── Disconnect ──
@@ -255,9 +279,14 @@ export const initializeSocket = (server) => {
         const room = activeRooms.get(socket.currentRoom);
         if (room) {
           delete room.participants[socket.id];
-          // Clean up empty rooms
           if (Object.keys(room.participants).length === 0) {
-            activeRooms.delete(socket.currentRoom);
+            // Keep the room alive briefly in case of reconnect
+            setTimeout(() => {
+              const r = activeRooms.get(socket.currentRoom);
+              if (r && Object.keys(r.participants).length === 0) {
+                activeRooms.delete(socket.currentRoom);
+              }
+            }, 30000);
           }
         }
 

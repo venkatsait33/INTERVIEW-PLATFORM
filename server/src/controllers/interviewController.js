@@ -11,6 +11,7 @@ import { logActivity, getRequestMeta } from "../services/activityService.js";
 import logger from "../utils/logger.js";
 import {
   sendCancellationNotification,
+  sendNoShowNotification,
   sendResultNotification,
   sendScheduleNotification,
   sendSessionStartedNotification,
@@ -22,6 +23,84 @@ import {
 export const paginate = (query, page = 1, limit = 10) => {
   const skip = (page - 1) * limit;
   return query.skip(skip).limit(limit);
+};
+
+// ─────────────────────────────────────────────────────────────
+// In-memory auto-cancel timers
+// key: interviewId string → value: NodeJS.Timeout
+// When an interview is completed/cancelled the timer is cleared.
+// ─────────────────────────────────────────────────────────────
+const autoCancelTimers = new Map();
+const AUTO_CANCEL_MS = 6 * 60 * 60 * 1000; // 6 hours
+
+export const scheduleAutoCancel = (interviewId, io) => {
+  // Clear any previous timer for this interview (safety)
+  if (autoCancelTimers.has(interviewId)) {
+    clearTimeout(autoCancelTimers.get(interviewId));
+  }
+
+  const timer = setTimeout(async () => {
+    autoCancelTimers.delete(interviewId);
+    try {
+      const interview = await Interview.findById(interviewId)
+        .populate("interviewer", "name email")
+        .populate("candidate", "name email");
+
+      if (!interview) return;
+
+      // Only cancel if it's still active
+      if (!["SCHEDULED", "IN_PROGRESS"].includes(interview.status)) return;
+
+      await Interview.findByIdAndUpdate(interviewId, {
+        status: "CANCELLED",
+        result: "NO_SHOW",
+        cancelledAt: new Date(),
+        noShowReason: "auto_timeout",
+        cancellationReason:
+          "Auto-cancelled: interview not completed within 6 hours of schedule time.",
+        noShowFeedback: {
+          reporterRole: "system",
+          absentRole: "unknown",
+          waitedMinutes: 360,
+          reportedAt: new Date(),
+        },
+      });
+
+      logger.info(`Interview ${interviewId} auto-cancelled after 6h timeout`);
+
+      // Notify room via socket if anyone is still connected
+      if (io) {
+        io.to(interviewId).emit("interview:auto-cancelled", {
+          message:
+            "This interview has been automatically cancelled after 6 hours.",
+        });
+      }
+
+      // Email both parties
+      emailService
+        .sendCancellationNotification(
+          interview,
+          [interview.interviewer, interview.candidate],
+          "Auto-cancelled: the interview was not completed within 6 hours of the scheduled time.",
+        )
+        .catch((err) => logger.error("Auto-cancel email error:", err));
+    } catch (err) {
+      logger.error("Auto-cancel job error:", err);
+    }
+  }, AUTO_CANCEL_MS);
+
+  autoCancelTimers.set(interviewId, timer);
+  logger.info(`Auto-cancel scheduled for interview ${interviewId} in 6h`);
+};
+
+/**
+ * Cancel the auto-cancel timer when an interview is completed or manually cancelled.
+ */
+export const clearAutoCancel = (interviewId) => {
+  if (autoCancelTimers.has(interviewId)) {
+    clearTimeout(autoCancelTimers.get(interviewId));
+    autoCancelTimers.delete(interviewId);
+  }
 };
 
 // ─────────────────────────────────────────
@@ -40,8 +119,6 @@ export const scheduleInterview = async (req, res) => {
       candidateId,
       scheduledAt,
       duration,
-      notes,
-      tags,
     } = req.body;
 
     // Validate interviewer exists and has correct role
@@ -95,9 +172,12 @@ export const scheduleInterview = async (req, res) => {
       createdBy: req.user._id,
       scheduledAt,
       duration,
-      notes,
-      tags,
     });
+
+    // ── Schedule 6-hour auto-cancel ──────────────────────────
+    // Get io from app (set during socket init)
+    const io = req.app.get("io");
+    scheduleAutoCancel(interview._id.toString(), io);
 
     // Send email notifications
 
@@ -442,6 +522,9 @@ export const submitFeedback = async (req, res) => {
     interview.endedAt = new Date();
     await interview.save();
 
+    // Clear the auto-cancel timer — interview is done
+    clearAutoCancel(req.params.id);
+
     // Notify candidate of result
     sendResultNotification(interview, interview.candidate).catch((err) =>
       logger.error("Result notification error:", err),
@@ -496,7 +579,12 @@ export const cancelInterview = async (req, res) => {
     }
 
     interview.status = "CANCELLED";
+    interview.cancelledAt = new Date();
+    interview.cancellationReason = reason || "Cancelled by HR";
     await interview.save();
+
+    // Clear the auto-cancel timer
+    clearAutoCancel(req.params.id);
 
     // Notify both parties
     sendCancellationNotification(
@@ -517,5 +605,108 @@ export const cancelInterview = async (req, res) => {
   } catch (error) {
     logger.error("cancelInterview error:", error);
     return sendError(res, 500, "Failed to cancel interview");
+  }
+};
+
+// ─────────────────────────────────────────────────────────────
+// POST /api/interviews/:id/no-show  (Interviewer or Candidate)
+//
+// Called when one party has waited 60+ minutes and the other
+// has not joined. Marks the interview cancelled + NO_SHOW result,
+// stores structured noShowFeedback, emails all parties.
+// ─────────────────────────────────────────────────────────────
+
+export const reportNoShow = async (req, res) => {
+  try {
+    const { waitedMinutes } = req.body;
+    const reportedBy = req.user._id;
+    const reporterRole = req.user.role; // 'interviewer' | 'candidate'
+
+    if (!waitedMinutes || waitedMinutes < 60) {
+      return sendError(
+        res,
+        400,
+        "You must wait at least 60 minutes before reporting a no-show",
+      );
+    }
+
+    const interview = await Interview.findById(req.params.id)
+      .populate("interviewer", "name email")
+      .populate("candidate", "name email");
+
+    if (!interview) return sendError(res, 404, "Interview not found");
+
+    if (!["SCHEDULED", "IN_PROGRESS"].includes(interview.status)) {
+      return sendError(
+        res,
+        400,
+        `Cannot report no-show on interview with status: ${interview.status}`,
+      );
+    }
+
+    // Ensure reporter is part of this interview
+    const isInterviewer =
+      interview.interviewer._id.toString() === reportedBy.toString();
+    const isCandidate =
+      interview.candidate._id.toString() === reportedBy.toString();
+    if (!isInterviewer && !isCandidate) {
+      return sendError(res, 403, "You are not part of this interview");
+    }
+
+    const absentRole =
+      reporterRole === "interviewer" ? "candidate" : "interviewer";
+    const absentParty =
+      reporterRole === "interviewer"
+        ? interview.candidate
+        : interview.interviewer;
+
+    // Update interview
+    interview.status = "CANCELLED";
+    interview.result = "NO_SHOW";
+    interview.cancelledAt = new Date();
+    interview.noShowReason = `${absentRole}_absent`;
+    interview.noShowReportedBy = reportedBy;
+    interview.noShowWaitedMinutes = waitedMinutes;
+    interview.cancellationReason = `No-show: ${reporterRole} waited ${waitedMinutes} minutes, ${absentRole} did not join.`;
+    interview.noShowFeedback = {
+      reporterRole,
+      absentRole,
+      waitedMinutes,
+      reportedAt: new Date(),
+    };
+    await interview.save();
+
+    // Clear auto-cancel timer
+    clearAutoCancel(req.params.id);
+
+    // Notify both parties by email
+    const reporter =
+      reporterRole === "interviewer"
+        ? interview.interviewer
+        : interview.candidate;
+
+    sendNoShowNotification(
+      interview,
+      reporter,
+      absentParty,
+      waitedMinutes,
+    ).catch((err) => logger.error("No-show email error:", err));
+
+    await logActivity({
+      userId: reportedBy,
+      action: "CANCEL_INTERVIEW",
+      interviewId: interview._id,
+      ...getRequestMeta(req),
+      details: { noShow: true, waitedMinutes, absentRole },
+    });
+
+    return sendSuccess(
+      res,
+      200,
+      "No-show reported. All parties have been notified.",
+    );
+  } catch (error) {
+    logger.error("reportNoShow error:", error);
+    return sendError(res, 500, "Failed to report no-show");
   }
 };
