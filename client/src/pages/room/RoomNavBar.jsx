@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { LANGUAGES } from "../../utils/editor";
 import { interviewService } from "../../services/interviews";
 
 const RoomNavBar = ({

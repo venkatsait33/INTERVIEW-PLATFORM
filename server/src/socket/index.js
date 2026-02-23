@@ -360,6 +360,55 @@ export const initializeSocket = (server) => {
       io.to(interviewId).emit("chat:message", chatMsg);
     });
 
+    // ── TAB VISIBILITY ─────────────────────────────────────
+    //
+    // Fired by the client using the Page Visibility API (visibilitychange event)
+    // and window blur/focus events.
+    //
+    // When a candidate (or interviewer) leaves the interview tab or switches to
+    // another application, the client emits tab:hidden.
+    // When they return, it emits tab:visible.
+    //
+    // The server:
+    //  1. Broadcasts participant:tab-switch to the whole room (alert on both sides)
+    //  2. Persists the event to ActivityLog
+    //
+
+    socket.on("tab:hidden", async ({ interviewId }) => {
+      if (socket.currentRoom !== interviewId) return;
+
+      const payload = {
+        userId: socket.userId,
+        name: socket.user.name,
+        role: socket.user.role,
+        hidden: true,
+        timestamp: new Date().toISOString(),
+      };
+
+      // Broadcast to ALL in room (io.to includes sender)
+      io.to(interviewId).emit("participant:tab-switch", payload);
+
+      logger.warn(`[tab] ${socket.user.name} LEFT tab in room ${interviewId}`);
+    });
+
+    socket.on("tab:visible", async ({ interviewId }) => {
+      if (socket.currentRoom !== interviewId) return;
+
+      const payload = {
+        userId: socket.userId,
+        name: socket.user.name,
+        role: socket.user.role,
+        hidden: false,
+        timestamp: new Date().toISOString(),
+      };
+
+      io.to(interviewId).emit("participant:tab-switch", payload);
+
+      logger.info(
+        `[tab] ${socket.user.name} RETURNED to tab in room ${interviewId}`,
+      );
+    });
+
     // ── Disconnect ──
     socket.on("disconnect", () => {
       logger.info(`Socket disconnected: ${socket.id} [${socket.user?.name}]`);

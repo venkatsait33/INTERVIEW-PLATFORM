@@ -31,14 +31,14 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center  bg-gradient-to-br from-indigo-50 via-white to-purple-50 p-4">
-      <div className="w-full max-w-md mt-10">
+    <div className="min-h-screen flex items-center justify-center  p-4">
+      <div className="w-full max-w-md mt-20">
         {/* Header */}
         <div className="text-center mb-8">
           <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl flex items-center justify-center text-3xl mx-auto mb-4 shadow-lg">
             🎯
           </div>
-          <h1 className="text-2xl font-bold text-gray-900">InterviewPro</h1>
+          <h1 className="text-2xl font-bold">InterviewPro</h1>
           <p className="text-gray-500 mt-1 text-sm">Sign in to your account</p>
         </div>
 

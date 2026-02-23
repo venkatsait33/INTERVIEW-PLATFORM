@@ -1,5 +1,5 @@
-@import "tailwindcss";
 @import url("https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap");
+@import "tailwindcss";
 
 :root {
   --color-bg: #04091a;
@@ -116,6 +116,35 @@ body {
 }
 .animate-fade-in {
   animation: fade-in 0.4s ease forwards;
+}
+
+/* Activity log entry entrance */
+@keyframes slide-in-log {
+  from {
+    opacity: 0;
+    transform: translateX(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.log-entry-enter {
+  animation: slide-in-log 0.25s ease forwards;
+}
+
+/* Tab switch alert pulse */
+@keyframes alert-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+.alert-pulse {
+  animation: alert-pulse 2s ease infinite;
 }
 
 @layer components {

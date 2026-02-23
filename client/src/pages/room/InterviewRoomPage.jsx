@@ -15,15 +15,17 @@ import {
   disconnectStreamClient,
 } from "../../services/streamVideo";
 import toast from "react-hot-toast";
-import { DEFAULT_CODE } from "../../utils/editor";
+import { DEFAULT_CODE, Languages } from "../../utils/editor";
 import { Panel, Group, Separator } from "react-resizable-panels";
 import RoomNavBar from "./RoomNavBar";
 import CodeEditor from "./CodeEditor";
 import { executeCode } from "../../services/piston";
 import StreamLayoutWithChat from "./StreamLayoutWithChat";
 import axios from "axios";
+import { TabSwitchAlert } from "./TabSwitchAlert";
 
 const NO_SHOW_THRESHOLD_MINUTES = 60;
+const isSuccess = (result) => result && result.exitCode === 0 && !result.stderr;
 
 export default function InterviewRoomPage() {
   const { id } = useParams();
@@ -31,8 +33,6 @@ export default function InterviewRoomPage() {
   const { user } = useAuth();
   const navigate = useNavigate();
   const roomToken = searchParams.get("token");
-
-  const isInterviewer = user?.role === "interviewer";
 
   // ── Refs ──
   const socketRef = useRef(null);
@@ -71,23 +71,64 @@ export default function InterviewRoomPage() {
   // ── Code runner state ──
   const [output, setOutput] = useState("");
   const [running, setRunning] = useState(false);
+  const [runningBy, setRunningBy] = useState("");
 
   // No-show tracking
   const [waitedMinutes, setWaitedMinutes] = useState(0);
   const [otherPartyJoined, setOtherPartyJoined] = useState(false);
   // const [reportingNoShow, setReportingNoShow] = useState(false);
 
-  // const canReportNoShow =
-  //   waitedMinutes >= NO_SHOW_THRESHOLD_MINUTES && !otherPartyJoined;
+  const [tabAlerts, setTabAlerts] = useState([]); // ← recent tab switch events
+  const [isTabHidden, setIsTabHidden] = useState(false); // this user's own tab state
 
   const [leftRoom, setLeftRoom] = useState(false);
   const [noShowConfirmOpen, setNoShowConfirmOpen] = useState(false);
+
+  const [interview, setInterview] = useState(null);
+
+  const isInterviewer = user?.role === "interviewer";
+
+  useEffect(() => {
+    const base = interview
+      ? `${interview.title} · ${isInterviewer ? "Interviewer" : "Candidate"}`
+      : "Interview Room";
+    document.title = `🔴 ${base} | InterviewPro`;
+
+    return () => {
+      document.title = "InterviewPro";
+    };
+  }, [interview, isInterviewer]);
+
+  // Update title when there's an alert (tab switch detected)
+  useEffect(() => {
+    if (!interview) return;
+    if (tabAlerts.length > 0 && tabAlerts[tabAlerts.length - 1].hidden) {
+      const alertName = tabAlerts[tabAlerts.length - 1].name;
+      document.title = `⚠️ ALERT: ${alertName} left tab | InterviewPro`;
+    } else {
+      const base = `${interview.title} · ${isInterviewer ? "Interviewer" : "Candidate"}`;
+      document.title = `🔴 ${base} | InterviewPro`;
+    }
+  }, [tabAlerts, interview, isInterviewer]);
+
+  // ── 2. Load interview ─────────────────────────────────
+  useEffect(() => {
+    interviewService
+      .getOne(id)
+      .then((r) => setInterview(r.data.data.interview))
+      .catch(() => {
+        toast.error("Interview not found");
+        navigate("/");
+      });
+  }, [id]);
 
   // ─────────────────────────────────────────
   // 1. Socket setup
   // ─────────────────────────────────────────
 
   useEffect(() => {
+    if (!interview) return;
+
     const socket = getSocket(roomToken);
     socketRef.current = socket;
 
@@ -97,21 +138,46 @@ export default function InterviewRoomPage() {
       startWaitTimer();
     });
 
-    socket.emit("room:join", { interviewId: id });
-
     if (isInterviewer) {
       socket.emit("lobby:subscribe", { interviewId: id });
     }
+    socket.emit("room:join", { interviewId: id });
 
-    socket.on("room:joined", ({ code: initialCode }) => {
-      setCode(initialCode || DEFAULT_CODE.javascript);
-      setConnected(true);
-      setOtherPartyJoined(true);
-      stopWaitTimer();
-    });
+    socket.on(
+      "room:joined",
+      ({
+        code: initialCode,
+        language: l,
+        output: o,
+        participants: ps,
+        messages,
+      }) => {
+        if (initialCode) setCode(initialCode || DEFAULT_CODE.javascript);
+        if (l) setLanguage(l);
+        if (o) setOutput(o);
+        setParticipants(ps || []);
+        setConnected(true);
+        setMessages(messages || []);
+
+        const othersPresent = (ps || []).some(
+          (p) => p.userId !== (user?._id || user?.id),
+        );
+        if (othersPresent) {
+          setOtherPartyJoined(true);
+          stopWaitTimer();
+        }
+      },
+    );
 
     socket.on("room:update-participants", ({ participants }) => {
       setParticipants(participants);
+    });
+
+    socket.on("room:participant-joined", (participant) => {
+      // The other person just joined for the first time.
+      setOtherPartyJoined(true);
+      stopWaitTimer();
+      toast.success(`${participant.name} joined the room`);
     });
 
     socket.on("room:participant-left", (participant) => {
@@ -135,8 +201,58 @@ export default function InterviewRoomPage() {
       });
     });
 
+    socket.on("language:changed", ({ language: l, changedBy }) => {
+      setLanguage(l);
+      toast(`${changedBy} switched to ${Languages[l]?.label || l}`, {
+        icon: "🔄",
+        duration: 2500,
+      });
+    });
+
+    socket.on("code:running", ({ startedBy }) => {
+      setRunning(true);
+      setRunningBy(startedBy);
+    });
+
+    socket.on("code:run-result", (result) => {
+      setRunning(false);
+      setRunningBy("");
+      setOutput(result);
+    });
+
     socket.on("chat:message", (msg) => {
       setMessages((prev) => [...prev, msg]);
+    });
+
+    // ── TAB SWITCH ALERTS ────────────────────────────────
+    // Fired when ANY participant switches tab or app
+    socket.on("participant:tab-switch", (payload) => {
+      setTabAlerts((prev) => [...prev, payload]);
+
+      // Show toast with severity based on role
+      if (payload.hidden) {
+        const isCandidate = payload.role === "candidate";
+        toast(
+          `⚠️ ${payload.name} (${payload.role}) switched away from the interview tab`,
+          {
+            duration: isCandidate ? 8000 : 4000,
+            style: {
+              background: isCandidate ? "#451a03" : "#1c1917",
+              color: isCandidate ? "#fcd34d" : "#d4d4d8",
+              border: `1px solid ${isCandidate ? "#92400e" : "#3f3f46"}`,
+            },
+          },
+        );
+      } else {
+        toast(`👁 ${payload.name} returned to the interview tab`, {
+          duration: 2500,
+          style: {
+            background: "#042f2e",
+            color: "#5eead4",
+            border: "1px solid #134e4a",
+          },
+        });
+      }
     });
 
     // ── Auto-cancel from server ───────────────────────────
@@ -150,16 +266,23 @@ export default function InterviewRoomPage() {
     });
 
     return () => {
+      socket.off("connect");
       socket.off("room:joined");
       socket.off("room:update-participants");
+      socket.off("room:participant-joined");
       socket.off("room:participant-left");
       socket.off("code:updated");
       socket.off("lobby:candidate-waiting");
+      socket.off("language:changed");
+      socket.off("code:running");
+      socket.off("code:run-result");
       socket.off("chat:message");
+      socket.off("participant:tab-switch");
+      socket.off("interview:auto-cancelled");
       socket.off("error");
       disconnectSocket();
     };
-  }, [id, roomToken, isInterviewer]);
+  }, [id, roomToken, isInterviewer, interview]);
 
   const startWaitTimer = () => {
     if (waitTimerRef.current) return; // already running
@@ -252,8 +375,70 @@ export default function InterviewRoomPage() {
     };
   }, [call, navigate]);
 
+  // ── 4. Page Visibility API + window focus/blur ────────
+  // Detects:
+  //   - Switching browser tabs (visibilitychange: hidden/visible)
+  //   - Switching to another application (window blur/focus)
+  // Only active once the interview has started (interview loaded)
+  useEffect(() => {
+    if (!interview) return;
+
+    let hidden = false;
+
+    const emitHidden = () => {
+      if (hidden) return; // already sent
+      hidden = true;
+      setIsTabHidden(true);
+      socketRef.current?.emit("tab:hidden", { interviewId: id });
+    };
+
+    const emitVisible = () => {
+      if (!hidden) return; // already visible
+      hidden = false;
+      setIsTabHidden(false);
+      socketRef.current?.emit("tab:visible", { interviewId: id });
+    };
+
+    // Page Visibility API — fires when switching tabs
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        emitHidden();
+      } else {
+        emitVisible();
+      }
+    };
+
+    // window blur/focus — fires when switching to another app
+    // Note: browsers fire blur when opening dev tools too, so we debounce
+    let blurTimer = null;
+    const handleBlur = () => {
+      blurTimer = setTimeout(() => {
+        // Only emit if the document is still visible (i.e., app-switch not tab-switch)
+        if (!document.hidden) {
+          emitHidden();
+        }
+      }, 300);
+    };
+    const handleFocus = () => {
+      clearTimeout(blurTimer);
+      if (!document.hidden) {
+        emitVisible();
+      }
+    };
+
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+    window.addEventListener("blur", handleBlur);
+    window.addEventListener("focus", handleFocus);
+
+    return () => {
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+      window.removeEventListener("blur", handleBlur);
+      window.removeEventListener("focus", handleFocus);
+    };
+  }, [interview, id]);
+
   // ─────────────────────────────────────────
-  // 4. Handlers
+  // 5. Handlers
   // ─────────────────────────────────────────
 
   // Code change — debounced 200ms before emitting to socket
@@ -278,6 +463,10 @@ export default function InterviewRoomPage() {
     socketRef.current?.emit("code:update", {
       interviewId: id,
       code: defaultCode,
+    });
+    socketRef.current?.emit("language:change", {
+      interviewId: id,
+      language: lang,
     });
   };
 
@@ -327,9 +516,12 @@ export default function InterviewRoomPage() {
 
   // Run code
   const runCode = async () => {
+    if (running) return;
+    socketRef.current?.emit("code:run-start", { interviewId: id });
+    setOutput("");
     try {
       setRunning(true);
-      setOutput("");
+      const start = Date.now();
       const result = await axios.post(
         `${import.meta.env.VITE_BACKEND_URL}/api/code/run`,
         { language, code },
@@ -337,11 +529,29 @@ export default function InterviewRoomPage() {
           withCredentials: true,
         },
       );
+      const runtime = Date.now() - start;
       console.log(result.data);
-      setOutput(result.data);
+
+      setOutput(result);
       setRunning(false);
-    } catch {
-      setOutput("Execution failed. Please try again.");
+
+      socketRef.current?.emit("code:run-result", {
+        interviewId: id,
+        output: result.data.output || "",
+        stderr: result.run?.stderr || result.compile?.stderr || "",
+        exitCode: result.run?.code ?? 0,
+        language,
+        runtime,
+      });
+    } catch (err) {
+      socketRef.current?.emit("code:run-result", {
+        interviewId: id,
+        output: "",
+        stderr: `Network error: ${err.message}`,
+        exitCode: 1,
+        language,
+        runtime: null,
+      });
     } finally {
       setRunning(false);
     }
@@ -376,12 +586,16 @@ export default function InterviewRoomPage() {
     }
   };
 
-  // if (!interview)
-  //   return (
-  //     <div className="flex items-center justify-center min-h-screen bg-gray-900">
-  //       <div className="w-12 h-12 border-b-2 border-indigo-400 rounded-full animate-spin" />
-  //     </div>
-  //   );
+  if (!interview)
+    return (
+      <div className="flex items-center justify-center min-h-screen bg-gray-900">
+        <div className="w-12 h-12 border-b-2 border-indigo-400 rounded-full animate-spin" />
+      </div>
+    );
+
+  const outputText = output ? output.output || "" : null;
+
+  const dismissAlert = () => setTabAlerts([]);
 
   const showNoShowButton =
     waitedMinutes >= NO_SHOW_THRESHOLD_MINUTES && !otherPartyJoined;
@@ -390,7 +604,10 @@ export default function InterviewRoomPage() {
   // ─────────────────────────────────────────
 
   return (
-    <div className="flex flex-col h-screen overflow-hidden text-white bg-gray-950">
+    <div
+      className="flex flex-col h-screen overflow-hidden text-white bg-gray-950"
+      style={{ fontFamily: "'JetBrains Mono', 'Fira Code', monospace" }}
+    >
       {/* ── Top Bar ── */}
       <RoomNavBar
         participants={participants}
@@ -415,6 +632,8 @@ export default function InterviewRoomPage() {
           </div>
         )}
 
+      <TabSwitchAlert alerts={tabAlerts} onDismiss={dismissAlert} />
+
       {/* ── Main Content ── */}
       <div>
         <div className="w-full h-full">
@@ -429,6 +648,9 @@ export default function InterviewRoomPage() {
                 output={output}
                 runCode={runCode}
                 handleLanguageChange={handleLanguageChange}
+                runningBy={runningBy}
+                isSuccess={isSuccess}
+                outputText={outputText}
               />
             </Panel>
             <Separator className="border-2 " />
