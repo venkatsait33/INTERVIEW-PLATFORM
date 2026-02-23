@@ -6,10 +6,17 @@ import React from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import { AuthProvider, useAuth } from "./context/AuthContext";
-import { ProtectedRoute, RoleGuard } from "./routes/Guards";
+// import { ProtectedRoute, RoleGuard } from "./routes/Guards";
 
 // Layouts
 import DashboardLayout from "./components/layout/DashboardLayout";
+import PublicLayout from "./components/layout/PublicLayout";
+
+// ── Public pages ──────────────────────────────────────────
+import HomePage from "./pages/HomePage";
+import FeaturesPage from "./pages/FeaturesPage";
+import PricingPage from "./pages/PricingPage";
+import AboutPage from "./pages/AboutPage";
 
 // Auth Pages
 import LoginPage from "./pages/LoginPage";
@@ -31,23 +38,75 @@ import UsersPage from "./pages/admin/UsersPage";
 import InterviewRoomPage from "./pages/room/InterviewRoomPage";
 import LobbyPage from "./pages/room/LobbyPage";
 
+const LoadingSpinner = () => (
+  <div className="min-h-screen flex items-center justify-center bg-[#04091a]">
+    <div className="w-10 h-10 border-2 border-teal-400 border-t-transparent rounded-full animate-spin" />
+  </div>
+);
 // Role-based dashboard redirect
+/** Redirect unauthenticated users to /login */
+const ProtectedRoute = ({ children }) => {
+  const { user, loading } = useAuth();
+  if (loading) return <LoadingSpinner />;
+  if (!user) return <Navigate to="/login" replace />;
+  return children;
+};
+
+/** Only allow specified roles; others are redirected to their dashboard */
+const RoleGuard = ({ roles, children }) => {
+  const { user, loading } = useAuth();
+  if (loading) return <LoadingSpinner />;
+  if (!user) return <Navigate to="/login" replace />;
+  if (!roles.includes(user.role)) return <Navigate to="/dashboard" replace />;
+  return children;
+};
+
+/** Push logged-in users to their role dashboard */
 const DashboardRedirect = () => {
-  const { user } = useAuth();
-  const roleRoutes = {
+  const { user, loading } = useAuth();
+  if (loading) return <LoadingSpinner />;
+  if (!user) return <Navigate to="/login" replace />;
+  const map = {
     admin: "/admin",
     hr: "/hr",
     interviewer: "/interviewer",
     candidate: "/candidate",
   };
-  return <Navigate to={roleRoutes[user?.role] || "/login"} replace />;
+  return <Navigate to={map[user.role] || "/login"} replace />;
 };
 
+/** If already logged in, redirect away from auth pages */
+const GuestRoute = ({ children }) => {
+  const { user, loading } = useAuth();
+  if (loading) return <LoadingSpinner />;
+  if (user) return <DashboardRedirect />;
+  return children;
+};
 const AppRoutes = () => (
   <Routes>
     {/* Public */}
-    <Route path="/login" element={<LoginPage />} />
-    <Route path="/register" element={<RegisterPage />} />
+    <Route element={<PublicLayout />}>
+      <Route index element={<HomePage />} />
+      <Route path="features" element={<FeaturesPage />} />
+      <Route path="pricing" element={<PricingPage />} />
+      <Route path="about" element={<AboutPage />} />
+      <Route
+        path="login"
+        element={
+          <GuestRoute>
+            <LoginPage />
+          </GuestRoute>
+        }
+      />
+      <Route
+        path="register"
+        element={
+          <GuestRoute>
+            <RegisterPage />
+          </GuestRoute>
+        }
+      />
+    </Route>
 
     {/* Dashboard redirect */}
     <Route
@@ -59,15 +118,36 @@ const AppRoutes = () => (
       }
     />
 
-    {/* Authenticated routes with layout */}
+    {/* ── Full-screen room pages (no layout) ───────────── */}
     <Route
-      path="/"
+      path="/room/:id"
+      element={
+        <ProtectedRoute>
+          <InterviewRoomPage />
+        </ProtectedRoute>
+      }
+    />
+    <Route
+      path="/lobby/:id"
+      element={
+        <ProtectedRoute>
+          <LobbyPage />
+        </ProtectedRoute>
+      }
+    />
+
+    {/* ── Authenticated dashboard routes ───────────────── */}
+    <Route
       element={
         <ProtectedRoute>
           <DashboardLayout />
         </ProtectedRoute>
       }
     >
+      {/* Shared */}
+      <Route path="interviews" element={<InterviewsPage />} />
+      <Route path="interviews/:id" element={<InterviewDetailPage />} />
+
       {/* Admin */}
       <Route
         path="admin"
@@ -123,33 +203,9 @@ const AppRoutes = () => (
           </RoleGuard>
         }
       />
-
-      {/* Shared */}
-      <Route path="interviews" element={<InterviewsPage />} />
-      <Route path="interviews/:id" element={<InterviewDetailPage />} />
     </Route>
-
-    {/* Interview Room - no sidebar layout */}
-    <Route
-      path="/room/:id"
-      element={
-        <ProtectedRoute>
-          <InterviewRoomPage />
-        </ProtectedRoute>
-      }
-    />
-    <Route
-      path="/lobby/:id"
-      element={
-        <ProtectedRoute>
-          <LobbyPage />
-        </ProtectedRoute>
-      }
-    />
-
-    {/* Default */}
-    <Route path="/" element={<Navigate to="/dashboard" replace />} />
-    <Route path="*" element={<Navigate to="/dashboard" replace />} />
+    {/* ── Fallback ─────────────────────────────────────── */}
+    <Route path="*" element={<Navigate to="/" replace />} />
   </Routes>
 );
 

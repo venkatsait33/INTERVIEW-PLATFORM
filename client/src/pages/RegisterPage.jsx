@@ -2,15 +2,20 @@
  * Register Page
  */
 
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext';
-import toast from 'react-hot-toast';
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
+import toast from "react-hot-toast";
 
 export default function RegisterPage() {
   const { register } = useAuth();
   const navigate = useNavigate();
-  const [form, setForm] = useState({ name: '', email: '', password: '', role: 'candidate' });
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    password: "",
+    role: "candidate",
+  });
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
@@ -18,10 +23,10 @@ export default function RegisterPage() {
     setLoading(true);
     try {
       await register(form);
-      toast.success('Account created!');
-      navigate('/dashboard');
+      toast.success("Account created!");
+      navigate("/dashboard");
     } catch (err) {
-      toast.error(err.response?.data?.message || 'Registration failed');
+      toast.error(err.response?.data?.message || "Registration failed");
     } finally {
       setLoading(false);
     }
@@ -29,7 +34,7 @@ export default function RegisterPage() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-50 via-white to-purple-50 p-4">
-      <div className="w-full max-w-md">
+      <div className="w-full max-w-md mt-10">
         <div className="text-center mb-8">
           <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl flex items-center justify-center text-3xl mx-auto mb-4 shadow-lg">
             🎯
@@ -41,7 +46,9 @@ export default function RegisterPage() {
         <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
           <form onSubmit={handleSubmit} className="space-y-5">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1.5">Full Name</label>
+              <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                Full Name
+              </label>
               <input
                 type="text"
                 value={form.name}
@@ -53,7 +60,9 @@ export default function RegisterPage() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1.5">Email</label>
+              <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                Email
+              </label>
               <input
                 type="email"
                 value={form.email}
@@ -65,7 +74,9 @@ export default function RegisterPage() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1.5">Password</label>
+              <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                Password
+              </label>
               <input
                 type="password"
                 value={form.password}
@@ -78,7 +89,9 @@ export default function RegisterPage() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1.5">I am a...</label>
+              <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                I am a...
+              </label>
               <select
                 value={form.role}
                 onChange={(e) => setForm({ ...form, role: e.target.value })}
@@ -90,16 +103,27 @@ export default function RegisterPage() {
               </select>
             </div>
 
-            <button type="submit" disabled={loading} className="btn-primary w-full justify-center py-2.5">
+            <button
+              type="submit"
+              disabled={loading}
+              className="btn-primary w-full justify-center py-2.5"
+            >
               {loading ? (
                 <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
-              ) : 'Create Account →'}
+              ) : (
+                "Create Account →"
+              )}
             </button>
           </form>
 
           <p className="text-center text-sm text-gray-500 mt-6">
-            Already have an account?{' '}
-            <Link to="/login" className="text-indigo-600 font-medium hover:underline">Sign in</Link>
+            Already have an account?{" "}
+            <Link
+              to="/login"
+              className="text-indigo-600 font-medium hover:underline"
+            >
+              Sign in
+            </Link>
           </p>
         </div>
       </div>

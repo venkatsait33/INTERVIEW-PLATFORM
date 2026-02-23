@@ -12,7 +12,6 @@ import {
   EmptyState,
 } from "../../components/common";
 import toast from "react-hot-toast";
-import { Group, Panel, Separator } from "react-resizable-panels";
 
 export default function InterviewerDashboard() {
   const navigate = useNavigate();
@@ -110,21 +109,6 @@ export default function InterviewerDashboard() {
           </div>
         </div>
       )}
-
-      {/* <div>
-        <Group>
-          <Panel>
-            <div className="p-2 bg-gray-200 rounded shadow ">
-              {" "}
-              <p>hello world</p>
-            </div>
-          </Panel>
-         
-          <Panel>
-            <p>hello world</p>
-          </Panel>
-        </Group>
-      </div> */}
 
       {/* Upcoming */}
       <div>

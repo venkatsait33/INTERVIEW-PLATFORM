@@ -1,6 +1,19 @@
 /**
- * Socket.io Server
- * Handles real-time: signaling, lobby, code sync, WebRTC
+ * Socket.io Server — InterviewPro
+ *
+ * Events handled:
+ *  subscribe:personal       — join personal notification room
+ *  lobby:subscribe          — interviewer subscribes to lobby alerts
+ *  lobby:enter              — candidate signals they are waiting
+ *  lobby:admit              — interviewer admits candidate
+ *  room:join                — join interview room
+ *  code:update              — live code sync (debounced by client)
+ *  language:change          — language selector sync
+ *  code:run-start           — one user started execution → spinner on both
+ *  code:run-result          — execution done → output shown on BOTH sides ← NEW
+ *  chat:message             — in-room chat
+ *  cursor:move              — optional cursor position broadcast ← NEW
+ *  webrtc:offer/answer/ice  — WebRTC signaling
  */
 
 import { Server } from "socket.io";
@@ -127,7 +140,9 @@ export const initializeSocket = (server) => {
         // Track room state
         if (!activeRooms.has(interviewId)) {
           activeRooms.set(interviewId, {
-            code: "// Start coding here...\n",
+            code: "// Start coding here…\n",
+            language: "javascript",
+            output: null, // last run result
             participants: {},
             messages: [],
           });
@@ -140,8 +155,10 @@ export const initializeSocket = (server) => {
         socket.emit("room:joined", {
           interviewId,
           code: room.code,
+          language: room.language,
+          output: room.output, // sync last run so late-joiner sees it
           participants: Object.values(room.participants),
-          messages: room.messages.slice(-50), // last 50 chat messages
+          messages: room.messages.slice(-50),
         });
 
         // Notify others in room
@@ -151,7 +168,7 @@ export const initializeSocket = (server) => {
           role,
         });
 
-        logger.info(`${socket.user.name} joined room ${interviewId}`);
+        logger.info(`[room] ${socket.user.name} joined room ${interviewId}`);
       } catch (error) {
         logger.error("room:join error:", error);
         socket.emit("error", { message: "Failed to join room" });
@@ -226,7 +243,7 @@ export const initializeSocket = (server) => {
     });
 
     // ── Code Sync (with debounce on client side) ──
-    socket.on("code:update", ({ interviewId, code, cursorPosition }) => {
+    socket.on("code:update", ({ interviewId, code }) => {
       if (!socket.currentRoom || socket.currentRoom !== interviewId) return;
 
       // Update stored code
@@ -238,8 +255,80 @@ export const initializeSocket = (server) => {
       // Broadcast to others in room (not sender)
       socket.to(interviewId).emit("code:updated", {
         code,
-        cursorPosition,
         updatedBy: socket.user.name,
+      });
+    });
+    // ── Language change sync ───────────────────────────────
+    // Both sides share the same language selector.
+    socket.on("language:change", ({ interviewId, language }) => {
+      if (socket.currentRoom !== interviewId) return;
+      const room = activeRooms.get(interviewId);
+      if (room) room.language = language;
+      // Tell the OTHER participant to switch their editor language
+      socket.to(interviewId).emit("language:changed", {
+        language,
+        changedBy: socket.user.name,
+      });
+    });
+
+    // ── Shared code execution ──────────────────────────────
+    //
+    // PROTOCOL:
+    //   Client clicks Run
+    //   → emits  code:run-start          (server fans out to room → spinner on both)
+    //   → calls  Piston API
+    //   → emits  code:run-result         (server fans out to room → output on BOTH)
+    //
+    // The server stores the last result in room state so late-joiners receive
+    // it via room:joined above.
+
+    socket.on("code:run-start", ({ interviewId }) => {
+      if (socket.currentRoom !== interviewId) return;
+      // io.to → broadcast to ALL including sender (both see spinner)
+      io.to(interviewId).emit("code:running", {
+        startedBy: socket.user.name,
+        startedAt: new Date().toISOString(),
+      });
+    });
+
+    socket.on(
+      "code:run-result",
+      ({ interviewId, output, stderr, exitCode, language, runtime }) => {
+        if (socket.currentRoom !== interviewId) return;
+
+        const result = {
+          output: output ?? "",
+          stderr: stderr ?? "",
+          exitCode: exitCode ?? 0,
+          language,
+          runtime: runtime ?? null, // execution time in ms (optional)
+          runBy: socket.user.name,
+          timestamp: new Date().toISOString(),
+        };
+
+        // Persist so new joiners see the last output
+        const room = activeRooms.get(interviewId);
+        if (room) room.output = result;
+
+        // ← KEY: io.to broadcasts to ALL in room (including sender)
+        io.to(interviewId).emit("code:run-result", result);
+
+        logger.info(
+          `[code] run by ${socket.user.name} in ${interviewId} | exit=${exitCode}`,
+        );
+      },
+    );
+
+    // ── Optional: cursor position sync ────────────────────
+    // Gives a ghost cursor so each person can see where the other is typing.
+    socket.on("cursor:move", ({ interviewId, line, column }) => {
+      if (socket.currentRoom !== interviewId) return;
+      socket.to(interviewId).emit("cursor:moved", {
+        userId: socket.userId,
+        name: socket.user.name,
+        role: socket.user.role,
+        line,
+        column,
       });
     });
 
@@ -285,6 +374,7 @@ export const initializeSocket = (server) => {
               const r = activeRooms.get(socket.currentRoom);
               if (r && Object.keys(r.participants).length === 0) {
                 activeRooms.delete(socket.currentRoom);
+                logger.info(`[room] pruned ${socket.currentRoom}`);
               }
             }, 30000);
           }
