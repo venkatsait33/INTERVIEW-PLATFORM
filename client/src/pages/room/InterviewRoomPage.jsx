@@ -380,6 +380,7 @@ export default function InterviewRoomPage() {
   //   - Switching browser tabs (visibilitychange: hidden/visible)
   //   - Switching to another application (window blur/focus)
   // Only active once the interview has started (interview loaded)
+
   useEffect(() => {
     if (!interview) return;
 
@@ -635,10 +636,10 @@ export default function InterviewRoomPage() {
       <TabSwitchAlert alerts={tabAlerts} onDismiss={dismissAlert} />
 
       {/* ── Main Content ── */}
-      <div>
-        <div className="w-full h-full">
+      <>
+        <div className="flex flex-1 min-h-0 overflow-hidden">
           {/* LEFT: Code Editor + Terminal */}
-          <Group>
+          <Group direction="horizontal" className="flex w-full h-full">
             <Panel minSize={500} maxSize={1000}>
               <CodeEditor
                 language={language}
@@ -653,7 +654,7 @@ export default function InterviewRoomPage() {
                 outputText={outputText}
               />
             </Panel>
-            <Separator className="border-2 " />
+            <Separator className="w-1 transition-colors bg-gray-800 hover:bg-indigo-600 cursor-col-resize" />
             {/* RIGHT: Video + Chat */}
             <Panel>
               <StreamLayoutWithChat
@@ -669,7 +670,7 @@ export default function InterviewRoomPage() {
             </Panel>
           </Group>
         </div>
-      </div>
+      </>
 
       {/* ── Feedback Modal (interviewer only) ── */}
       <Modal
