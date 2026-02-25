@@ -20,13 +20,6 @@ export const Languages = {
     ext: "js",
     monacoLang: "javascript",
   },
-  typescript: {
-    label: "TypeScript",
-    version: "5.0.3",
-    pistonLang: "typescript",
-    ext: "ts",
-    monacoLang: "typescript",
-  },
   python: {
     label: "Python",
     version: "3.10.0",
@@ -40,27 +33,6 @@ export const Languages = {
     pistonLang: "java",
     ext: "java",
     monacoLang: "java",
-  },
-  cpp: {
-    label: "C++",
-    version: "10.2.0",
-    pistonLang: "c++",
-    ext: "cpp",
-    monacoLang: "cpp",
-  },
-  go: {
-    label: "Go",
-    version: "1.16.2",
-    pistonLang: "go",
-    ext: "go",
-    monacoLang: "go",
-  },
-  rust: {
-    label: "Rust",
-    version: "1.50.0",
-    pistonLang: "rust",
-    ext: "rs",
-    monacoLang: "rust",
   },
 };
 

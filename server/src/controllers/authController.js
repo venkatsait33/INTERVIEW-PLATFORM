@@ -9,6 +9,7 @@ import { sendSuccess, sendError } from "../utils/response.js";
 import { logActivity, getRequestMeta } from "../services/activityService.js";
 import logger from "../utils/logger.js";
 import bcrypt from "bcryptjs";
+import { sendUserRegisteredNotification } from "../services/emailService.js";
 
 /**
  * POST /api/auth/register
@@ -40,6 +41,8 @@ export const register = async (req, res) => {
     const token = generateToken(user._id, user.role);
 
     logger.info(`New user registered: ${email} [${role}]`);
+
+    sendUserRegisteredNotification(user, password);
 
     return sendSuccess(res, 201, "Registration successful", {
       token,

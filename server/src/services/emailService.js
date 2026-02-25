@@ -64,6 +64,54 @@ const templates = {
       `<h2>❌ Interview Cancelled</h2><p>Hello <strong>${recipientName}</strong>,</p><p>The following interview has been cancelled:</p><div class="info"><p><strong>Position:</strong> ${interviewTitle}</p><p><strong>Originally Scheduled:</strong> ${date}</p>${reason ? `<p><strong>Reason:</strong> ${reason}</p>` : ""}</div><p>Our HR team will be in touch regarding rescheduling. We apologise for the inconvenience.</p>`,
     );
   },
+
+  userRegistered: ({ name, email, password, role, loginUrl }) => {
+    const roleLabels = {
+      interviewer: "Interviewer",
+      candidate: "Candidate",
+      hr: "HR Manager",
+      admin: "Administrator",
+    };
+    const roleLabel = roleLabels[role] || role;
+
+    // Each role gets a brief description of what they can do on the platform
+    const roleDescriptions = {
+      interviewer:
+        "You can conduct technical interviews, review candidate code in real time, and submit hiring feedback.",
+      candidate:
+        "You can join scheduled interviews, collaborate on coding challenges, and receive your results via email.",
+      hr: "You can schedule interviews, manage interviewers and candidates, and view all interview results.",
+      admin:
+        "You have full access to the platform — user management, all interviews, and activity logs.",
+    };
+    const roleDescription =
+      roleDescriptions[role] || "You can now log in and access the platform.";
+
+    return base(`
+      <h2>👋 Welcome to Interview Platform</h2>
+      <p>Hello <strong>${name}</strong>,</p>
+      <p>Your account has been created. Here are your login credentials — please keep them safe.</p>
+
+      <div class="info-card">
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Temporary Password:</strong> <span style="font-family:monospace;font-size:15px;color:#667eea;">${password}</span></p>
+        <p><strong>Role:</strong> ${roleLabel}</p>
+      </div>
+
+      <p>${roleDescription}</p>
+
+      <div style="text-align:center; margin:32px 0;">
+        <a href="${loginUrl}" class="btn">🔐 Log In Now</a>
+      </div>
+
+      <div class="warning">
+        🔑 <strong>Security:</strong> Please change your password after your first login. Do not share these credentials with anyone.
+      </div>
+
+      <p>If you did not expect this email, please contact your HR team immediately.</p>
+    `);
+  },
   noShow: ({
     recipientName,
     interviewTitle,
@@ -80,7 +128,7 @@ const templates = {
       absentRole === "interviewer" ? "Interviewer" : "Candidate";
     const reporterLabel =
       reporterRole === "interviewer" ? "Interviewer" : "Candidate";
-    return baseTemplate(`
+    return base(`
       <h2>⚠️ No-Show Reported: ${interviewTitle}</h2>
       <p>Hello <strong>${recipientName}</strong>,</p>
       ${
@@ -306,4 +354,22 @@ export const sendNoShowNotification = async (
       notificationType: "CANCELLATION",
     }),
   ]);
+};
+
+export const sendUserRegisteredNotification = async (user, plainPassword) => {
+  const loginUrl = `${process.env.CLIENT_URL}/login`;
+  return sendEmail({
+    to: user.email,
+    subject: "Your Interview Platform Account is Ready",
+    html: templates.userRegistered({
+      name: user.name,
+      email: user.email,
+      password: plainPassword,
+      role: user.role,
+      loginUrl,
+    }),
+    userId: user._id,
+    interviewId: null, // not tied to a specific interview
+    notificationType: "REGISTRATION",
+  });
 };
