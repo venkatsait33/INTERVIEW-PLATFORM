@@ -17,12 +17,10 @@ import {
 import toast from "react-hot-toast";
 import { DEFAULT_CODE, Languages } from "../../utils/editor";
 import { Panel, Group, Separator } from "react-resizable-panels";
-import RoomNavBar from "./RoomNavBar";
-import CodeEditor from "./CodeEditor";
-import { executeCode } from "../../services/piston";
-import StreamLayoutWithChat from "./StreamLayoutWithChat";
+import RoomNavBar from "./components/RoomNavBar";
+import CodeEditor from "./components/CodeEditor";
 import axios from "axios";
-import { TabSwitchAlert } from "./TabSwitchAlert";
+import { TabSwitchAlert } from "./components/TabSwitchAlert";
 
 const NO_SHOW_THRESHOLD_MINUTES = 60;
 const isSuccess = (result) => result && result.exitCode === 0 && !result.stderr;
@@ -344,9 +342,6 @@ export default function InterviewRoomPage() {
     return () => {
       isMounted = false;
       streamInitializedRef.current = false;
-      // Actual leave is handled by handleLeaveCall or the guard above.
-      // We intentionally do NOT call disconnectStreamClient here to avoid
-      // double-leave when the user clicks "Leave" before unmount fires.
     };
   }, [id, isInterviewer]);
 

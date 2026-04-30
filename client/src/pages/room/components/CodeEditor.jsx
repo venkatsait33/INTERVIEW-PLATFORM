@@ -1,7 +1,7 @@
 import { Editor } from "@monaco-editor/react";
 import { Group, Panel, Separator } from "react-resizable-panels";
-import { Languages } from "../../utils/editor";
-import { useAuth } from "../../context/AuthContext";
+import { Languages } from "../../../utils/editor";
+import { useAuth } from "../../../context/AuthContext";
 
 const CodeEditor = ({
   language,

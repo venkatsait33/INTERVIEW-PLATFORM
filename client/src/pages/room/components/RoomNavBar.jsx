@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { interviewService } from "../../services/interviews";
+import { interviewService } from "../../../services/interviews";
 
 const RoomNavBar = ({
   participants,
