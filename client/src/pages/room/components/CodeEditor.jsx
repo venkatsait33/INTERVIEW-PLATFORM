@@ -52,7 +52,7 @@ const CodeEditor = ({
                   {[0, 1, 2].map((i) => (
                     <span
                       key={i}
-                      className="inline-block w-1 h-3 bg-slate-400 rounded-sm animate-bounce"
+                      className="inline-block w-1 h-3 rounded-sm bg-slate-400 animate-bounce"
                       style={{ animationDelay: `${i * 0.1}s` }}
                     />
                   ))}
@@ -83,7 +83,7 @@ const CodeEditor = ({
                   scrollBeyondLastLine: false,
                   tabSize: 2,
                   renderLineHighlight: "all",
-                  renderLineHighlight: "gutter",
+                  // renderLineHighlight: "gutter",
                   cursorBlinking: "smooth",
                   smoothScrolling: true,
                   padding: { top: 16, bottom: 16 },
@@ -102,7 +102,7 @@ const CodeEditor = ({
                     {[0, 1, 2].map((i) => (
                       <div
                         key={i}
-                        className="w-2 h-2 rounded-full bg-teal-500 animate-bounce"
+                        className="w-2 h-2 bg-teal-500 rounded-full animate-bounce"
                         style={{ animationDelay: `${i * 0.12}s` }}
                       />
                     ))}
@@ -122,7 +122,7 @@ const CodeEditor = ({
                 </pre>
               )}
               {!running && !output && (
-                <p className="text-xs text-slate-700 italic mt-1">
+                <p className="mt-1 text-xs italic text-slate-700">
                   Click <strong className="text-teal-600">▶ Run Code</strong> —
                   output appears here for{" "}
                   <strong className="text-teal-600">
